@@ -1,0 +1,464 @@
+.section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 58px 0 65px;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(145, 24, 16, 0.9),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #5c0704,
+      #86130c 50%,
+      #580603
+    );
+
+  color: #fff8ed;
+}
+
+.container {
+  width: min(88%, 1080px);
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+  max-width: 620px;
+
+  margin: 0 auto 32px;
+
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #d9aa55;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.titleRow h2 {
+  margin: 0 8px;
+
+  color: #fff6e8;
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+.titleRow > span {
+  width: 38px;
+  height: 1px;
+
+  background: #c99746;
+}
+
+.titleRow i {
+  color: #d5a34f;
+
+  font-size: 6px;
+  font-style: normal;
+}
+
+.bengaliHeading {
+  margin-top: 5px;
+
+  color: #e0b15b;
+
+  font-size: 16px;
+}
+
+.intro {
+  max-width: 510px;
+
+  margin: 10px auto 0;
+
+  color: rgba(255, 247, 234, 0.72);
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOUNDATION
+========================= */
+
+.foundation {
+  max-width: 940px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   TOP BEAM
+========================= */
+
+.topBeam {
+  min-height: 38px;
+
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  border-top: 1px solid rgba(218, 170, 80, 0.7);
+  border-bottom: 1px solid rgba(218, 170, 80, 0.5);
+
+  background: rgba(218, 170, 80, 0.04);
+}
+
+.topBeam span {
+  width: 70px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(218, 170, 80, 0.5)
+  );
+}
+
+.topBeam span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(218, 170, 80, 0.5),
+    transparent
+  );
+}
+
+.topBeam p {
+  color: #d6a54f;
+
+  font-family: var(--heading-font);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* =========================
+   THREE PILLARS
+========================= */
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 45px;
+
+  padding: 0 55px;
+}
+
+.pillar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   PILLAR TOP
+========================= */
+
+.pillarTop {
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border-bottom: 1px solid rgba(218, 170, 80, 0.5);
+}
+
+.pillarTop > span {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(218, 170, 80, 0.25);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #c99542;
+  border-radius: 50%;
+
+  background: #79100a;
+
+  color: #e0af57;
+
+  font-size: 17px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  position: relative;
+
+  min-height: 230px;
+
+  padding: 21px 19px 24px;
+
+  text-align: center;
+
+  border-left: 1px solid rgba(218, 170, 80, 0.27);
+  border-right: 1px solid rgba(218, 170, 80, 0.27);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.015)
+    );
+}
+
+.number {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  color: rgba(218, 170, 80, 0.18);
+
+  font-family: var(--heading-font);
+
+  font-size: 24px;
+}
+
+.subtitle {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #d3a04b;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.content h3 {
+  margin: 0;
+
+  color: #fff5e7;
+
+  font-family: var(--heading-font);
+
+  font-size: 27px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+.bengali {
+  margin-top: 3px;
+
+  color: #dda950;
+
+  font-size: 12px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  width: 80px;
+
+  margin: 12px auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(218, 170, 80, 0.3);
+}
+
+.divider i {
+  color: #d4a14a;
+
+  font-size: 5px;
+  font-style: normal;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description {
+  color: rgba(255, 247, 235, 0.82);
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================
+   PILLAR BASE
+========================= */
+
+.pillarBase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pillarBase span:first-child {
+  width: calc(100% + 15px);
+  height: 6px;
+
+  border: 1px solid rgba(218, 170, 80, 0.4);
+}
+
+.pillarBase span:last-child {
+  width: calc(100% + 27px);
+  height: 7px;
+
+  border-left: 1px solid rgba(218, 170, 80, 0.5);
+  border-right: 1px solid rgba(218, 170, 80, 0.5);
+  border-bottom: 1px solid rgba(218, 170, 80, 0.5);
+}
+
+/* =========================
+   SHARED FOUNDATION
+========================= */
+
+.bottomFoundation {
+  min-height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  margin-top: 0;
+
+  border-top: 1px solid rgba(218, 170, 80, 0.65);
+  border-bottom: 1px solid rgba(218, 170, 80, 0.65);
+
+  background: rgba(218, 170, 80, 0.05);
+
+  color: #d8a44d;
+
+  font-size: 11px;
+}
+
+.bottomFoundation i {
+  font-size: 6px;
+  font-style: normal;
+
+  opacity: 0.6;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.pillar {
+  transition: transform 0.3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+}
+
+.pillar:hover .icon {
+  background: #99170e;
+  color: #efc269;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .pillars {
+    gap: 25px;
+
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .section {
+    padding: 50px 0 55px;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    padding: 0 35px;
+  }
+
+  .pillar {
+    width: min(100%, 290px);
+
+    margin: 0 auto;
+  }
+
+  .content {
+    min-height: auto;
+  }
+
+  .topBeam {
+    margin-bottom: 25px;
+  }
+
+  .bottomFoundation {
+    margin-top: 28px;
+  }
+}

@@ -1,0 +1,530 @@
+.gallery {
+  position: relative;
+  overflow: hidden;
+
+  padding: 70px 0 75px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 255, 255, 0.8),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf2 0%,
+      #f8eddf 100%
+    );
+}
+
+.container {
+  position: relative;
+  z-index: 5;
+
+  width: min(88%, 1120px);
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+  max-width: 620px;
+
+  margin: 0 auto 38px;
+
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #9a6c35;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2.2px;
+
+  text-transform: uppercase;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.titleRow h2 {
+  margin: 0 8px;
+
+  color: var(--red);
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.line {
+  width: 42px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #bd873c
+  );
+}
+
+.line:last-child {
+  background: linear-gradient(
+    90deg,
+    #bd873c,
+    transparent
+  );
+}
+
+.ornament {
+  color: #b87f35;
+
+  font-size: 6px;
+}
+
+.bengali {
+  margin-top: 7px;
+
+  color: #a5261c;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.description {
+  max-width: 500px;
+
+  margin: 9px auto 0;
+
+  color: #77635b;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.galleryGrid {
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr 0.75fr;
+  grid-template-rows: repeat(2, 195px);
+
+  gap: 12px;
+}
+
+/* =========================
+   IMAGE CARD
+========================= */
+
+.imageCard {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 195px;
+
+  border: 1px solid rgba(181, 125, 55, 0.32);
+
+  background: #e8d8c3;
+
+  cursor: pointer;
+}
+
+/* Featured image occupies two rows */
+
+.featured {
+  grid-row: span 2;
+
+  min-height: 402px;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.image {
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.5s ease;
+}
+
+.imageCard:hover .image {
+  transform: scale(1.06);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(54, 6, 3, 0.72) 100%
+    );
+
+  transition: background 0.35s ease;
+}
+
+.imageCard:hover .overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(91, 8, 4, 0.05),
+      rgba(74, 7, 4, 0.82)
+    );
+}
+
+/* =========================
+   IMAGE TEXT
+========================= */
+
+.imageContent {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 18px;
+  bottom: 16px;
+
+  color: white;
+
+  transition: transform 0.3s ease;
+}
+
+.imageContent span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #edc374;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.6px;
+
+  text-transform: uppercase;
+}
+
+.imageContent h3 {
+  margin: 0;
+
+  color: #fff8ed;
+
+  font-family: var(--heading-font);
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.featured .imageContent {
+  left: 25px;
+  bottom: 23px;
+}
+
+.featured .imageContent h3 {
+  font-size: 29px;
+}
+
+.imageCard:hover .imageContent {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   SMALL IMAGE ICON
+========================= */
+
+.imageIcon {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 13px;
+  right: 13px;
+
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 236, 200, 0.5);
+  border-radius: 50%;
+
+  background: rgba(76, 8, 4, 0.35);
+
+  color: #f1c36f;
+
+  font-size: 11px;
+
+  opacity: 0;
+
+  transform: translateY(-5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.imageCard:hover .imageIcon {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================
+   GOLD DETAILS
+========================= */
+
+.imageCard::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 4;
+
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  bottom: 8px;
+
+  border: 1px solid rgba(234, 192, 111, 0);
+
+  pointer-events: none;
+
+  transition: border-color 0.35s ease;
+}
+
+.imageCard:hover::after {
+  border-color: rgba(234, 192, 111, 0.4);
+}
+
+/* =========================
+   VIEW ALL
+========================= */
+
+.viewAll {
+  margin-top: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.viewAll p {
+  color: #76625a;
+
+  font-family: var(--heading-font);
+
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.galleryButton {
+  padding: 11px 17px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--red);
+  border-radius: 3px;
+
+  background: var(--red);
+
+  color: #fff9ee;
+
+  font-family: var(--heading-font);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.galleryButton svg {
+  font-size: 12px;
+
+  transition: transform 0.3s ease;
+}
+
+.galleryButton:hover {
+  background: transparent;
+
+  color: var(--red);
+
+  transform: translateY(-2px);
+}
+
+.galleryButton:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================
+   BACKGROUND DECORATION
+========================= */
+
+.leftDecoration,
+.rightDecoration {
+  position: absolute;
+
+  color: rgba(140, 67, 35, 0.035);
+
+  font-size: 330px;
+
+  pointer-events: none;
+}
+
+.leftDecoration {
+  left: -130px;
+  bottom: -140px;
+}
+
+.rightDecoration {
+  right: -130px;
+  top: -120px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows: 300px 180px 180px;
+  }
+
+  .featured {
+    grid-column: span 2;
+    grid-row: auto;
+
+    min-height: 300px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .gallery {
+    padding: 55px 0 60px;
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows: 250px 150px 150px;
+
+    gap: 8px;
+  }
+
+  .featured {
+    min-height: 250px;
+  }
+
+  .imageCard {
+    min-height: 150px;
+  }
+
+  .imageContent {
+    left: 12px;
+    bottom: 11px;
+  }
+
+  .imageContent h3 {
+    font-size: 15px;
+  }
+
+  .featured .imageContent {
+    left: 18px;
+    bottom: 17px;
+  }
+
+  .featured .imageContent h3 {
+    font-size: 24px;
+  }
+
+  .imageIcon {
+    display: none;
+  }
+
+  .viewAll {
+    flex-direction: column;
+
+    margin-top: 23px;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .featured {
+    grid-column: auto;
+
+    min-height: 240px;
+  }
+
+  .imageCard {
+    min-height: 190px;
+  }
+}

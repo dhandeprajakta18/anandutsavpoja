@@ -1,0 +1,493 @@
+.about {
+  position: relative;
+  overflow: hidden;
+
+  padding: 95px 0;
+
+  background:
+    radial-gradient(
+      circle at 30% 50%,
+      rgba(255, 255, 255, 0.7),
+      transparent 42%
+    ),
+    linear-gradient(135deg, #fffaf1 0%, #f7ecdc 100%);
+
+  border-top: 1px solid rgba(142, 75, 37, 0.12);
+  border-bottom: 1px solid rgba(142, 75, 37, 0.12);
+}
+
+.container {
+  position: relative;
+  z-index: 5;
+
+  width: min(88%, 1200px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+
+  gap: clamp(60px, 8vw, 120px);
+}
+
+/* =====================================
+   LEFT CONTENT
+===================================== */
+
+.content {
+  max-width: 500px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #672019;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  text-transform: uppercase;
+}
+
+.content h2 {
+  margin: 0;
+
+  color: var(--red);
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+/* =====================================
+   DIVIDER
+===================================== */
+
+.divider {
+  width: 220px;
+
+  margin: 19px 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.line {
+  height: 1px;
+
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(186, 131, 54, 0),
+    #c4944a
+  );
+}
+
+.line:last-child {
+  background: linear-gradient(
+    90deg,
+    #c4944a,
+    rgba(186, 131, 54, 0)
+  );
+}
+
+.ornament {
+  color: #bb8538;
+
+  font-size: 11px;
+}
+
+/* =====================================
+   BENGALI
+===================================== */
+
+.content h3 {
+  margin-bottom: 24px;
+
+  color: #a62318;
+
+  font-family: var(--body-font);
+
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+/* =====================================
+   PARAGRAPH
+===================================== */
+
+.content p {
+  margin-bottom: 8px;
+
+  color: #4c3b35;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+.content p + p {
+  margin-top: 2px;
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.button {
+  width: fit-content;
+
+  margin-top: 25px;
+
+  padding: 14px 20px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 13px;
+
+  background: var(--red);
+
+  border: 1px solid var(--red);
+  border-radius: 4px;
+
+  box-shadow: 0 5px 14px rgba(100, 14, 8, 0.18);
+
+  color: #fff9ef;
+
+  font-family: var(--heading-font);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.buttonIcon {
+  color: #e0b057;
+
+  font-size: 17px;
+
+  transition: transform 0.4s ease;
+}
+
+.button:hover {
+  background: transparent;
+
+  color: var(--red);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(100, 14, 8, 0.13);
+}
+
+.button:hover .buttonIcon {
+  transform: rotate(90deg);
+}
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.imageSide {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+
+  width: min(100%, 610px);
+
+  padding: 7px;
+
+  border: 2px solid #b77a28;
+  border-radius: 42px 42px 42px 42px;
+
+  background: #f7e5c9;
+
+  box-shadow:
+    0 10px 30px rgba(93, 35, 13, 0.12),
+    inset 0 0 0 3px rgba(255, 249, 236, 0.9);
+}
+
+/* second inner border */
+
+.imageFrame::before {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(112, 51, 16, 0.75);
+  border-radius: 39px;
+
+  z-index: 3;
+}
+
+.imageInner {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  background: #e7d2b4;
+}
+
+.image {
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.imageFrame:hover .image {
+  transform: scale(1.035);
+}
+
+/* =====================================
+   FRAME DIAMONDS
+===================================== */
+
+.frameDiamond {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+
+  width: 24px;
+  height: 24px;
+
+  background: #f7e5c9;
+
+  border-left: 2px solid #b77a28;
+  border-top: 2px solid #b77a28;
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.topDiamond {
+  top: -13px;
+}
+
+.bottomDiamond {
+  bottom: -13px;
+
+  transform: translateX(-50%) rotate(225deg);
+}
+
+/* =====================================
+   BACKGROUND DECORATIONS
+===================================== */
+
+.leftPattern {
+  position: absolute;
+
+  left: -55px;
+  bottom: -60px;
+
+  color: rgba(155, 88, 44, 0.055);
+
+  font-family: serif;
+
+  font-size: 300px;
+
+  transform: rotate(-15deg);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.rightDecoration {
+  position: absolute;
+
+  right: -65px;
+  top: 50%;
+
+  width: 280px;
+  height: 360px;
+
+  transform: translateY(-50%);
+
+  opacity: 0.07;
+
+  color: #8e3d26;
+
+  pointer-events: none;
+}
+
+.eye {
+  position: absolute;
+
+  top: 100px;
+  left: 10px;
+
+  font-family: serif;
+
+  font-size: 220px;
+
+  transform: rotate(-10deg);
+}
+
+.trishul {
+  position: absolute;
+
+  top: -15px;
+  right: 40px;
+
+  font-size: 150px;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .container {
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 45px;
+
+    width: 90%;
+  }
+
+  .content p {
+    font-size: 13px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 800px) {
+  .about {
+    padding: 65px 0 75px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+  }
+
+  .content {
+    max-width: 600px;
+  }
+
+  .imageSide {
+    order: 2;
+  }
+
+  .imageFrame {
+    width: 100%;
+
+    border-radius: 30px;
+  }
+
+  .imageFrame::before {
+    border-radius: 27px;
+  }
+
+  .imageInner {
+    border-radius: 23px;
+  }
+
+  .rightDecoration {
+    right: -130px;
+
+    opacity: 0.045;
+  }
+
+  .leftPattern {
+    font-size: 220px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+  .about {
+    padding: 55px 0 65px;
+  }
+
+  .container {
+    width: 88%;
+
+    gap: 40px;
+  }
+
+  .content h2 {
+    font-size: 2.7rem;
+  }
+
+  .content h3 {
+    font-size: 1.05rem;
+  }
+
+  .content p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .divider {
+    width: 180px;
+  }
+
+  .button {
+    padding: 12px 16px;
+
+    font-size: 11px;
+  }
+
+  .imageFrame {
+    padding: 5px;
+
+    border-radius: 22px;
+  }
+
+  .imageFrame::before {
+    border-radius: 19px;
+  }
+
+  .imageInner {
+    aspect-ratio: 4 / 3;
+
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,569 @@
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 670px;
+
+  overflow: hidden;
+
+  background: #570703;
+}
+
+/* =========================================
+   BACKGROUND SLIDES
+========================================= */
+
+.slide {
+  position: absolute;
+  inset: 0;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+
+  transform: scale(1.06);
+
+  transition:
+    opacity 1.2s ease,
+    transform 7s ease;
+}
+
+.activeSlide {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(65, 2, 0, 0.96) 0%,
+      rgba(82, 4, 1, 0.91) 27%,
+      rgba(91, 5, 2, 0.7) 50%,
+      rgba(51, 2, 0, 0.25) 75%,
+      rgba(30, 0, 0, 0.18) 100%
+    );
+}
+
+/* Extra red texture/glow */
+
+.redGlow {
+  position: absolute;
+
+  z-index: 2;
+
+  left: -150px;
+  top: 50%;
+
+  width: 700px;
+  height: 700px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(142, 13, 7, 0.3);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  position: relative;
+  z-index: 5;
+
+  width: min(90%, 1240px);
+  min-height: 670px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.content {
+  width: min(610px, 53%);
+
+  color: white;
+
+  animation: contentEnter 0.9s ease both;
+}
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bengali heading */
+
+.bengali {
+  margin-bottom: 15px;
+
+  color: #e3b45d;
+
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+/* decorative line */
+
+.decorativeLine {
+  width: 180px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.decorativeLine span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #d5a44d;
+}
+
+.diamond {
+  color: #d5a44d;
+  font-size: 8px;
+}
+
+/* Main heading */
+
+.content h1 {
+  margin: 0;
+
+  color: #fff8ec;
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(3.5rem, 6.5vw, 6.2rem);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+/* YEAR */
+
+.year {
+  position: relative;
+
+  width: fit-content;
+
+  margin-top: 16px;
+
+  color: #e3b45d;
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(2rem, 3vw, 3rem);
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+}
+
+/* Paragraph */
+
+.content p {
+  max-width: 490px;
+
+  margin-top: 24px;
+
+  color: rgba(255, 248, 238, 0.9);
+
+  font-size: 16px;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+  width: fit-content;
+
+  margin-top: 32px;
+
+  padding: 14px 23px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  border: 1px solid #d5a44d;
+  border-radius: 4px;
+
+  background: rgba(92, 6, 2, 0.45);
+
+  color: #fff8ed;
+
+  font-family: var(--heading-font);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cta span {
+  color: #e4b458;
+}
+
+.cta:hover {
+  background: #d5a44d;
+  color: #5e0703;
+
+  transform: translateY(-3px);
+}
+
+.cta:hover span {
+  color: #5e0703;
+}
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.arrow {
+  position: absolute;
+
+  z-index: 10;
+
+  top: 50%;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  background: rgba(73, 4, 1, 0.35);
+
+  color: white;
+
+  font-family: serif;
+  font-size: 31px;
+
+  backdrop-filter: blur(4px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.arrow:hover {
+  background: #8f100b;
+
+  border-color: #d5a44d;
+}
+
+.leftArrow {
+  left: 28px;
+}
+
+.rightArrow {
+  right: 28px;
+}
+
+/* =========================================
+   DOTS
+========================================= */
+
+.dots {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+  bottom: 35px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+
+  background: transparent;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.activeDot {
+  width: 27px;
+
+  border-radius: 10px;
+
+  border-color: #d5a44d;
+
+  background: #d5a44d;
+}
+
+/* =========================================
+   BOTTOM DECORATION
+========================================= */
+
+.bottomDecoration {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: 130px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  transform: translateX(-50%);
+
+  color: rgba(218, 170, 81, 0.8);
+}
+
+.bottomDecoration span {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(218, 170, 81, 0.5);
+}
+
+.bottomDecoration div {
+  font-size: 9px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .container {
+    min-height: 600px;
+  }
+
+  .content {
+    width: 62%;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(62, 2, 0, 0.95) 0%,
+        rgba(72, 3, 0, 0.87) 45%,
+        rgba(52, 2, 0, 0.45) 75%,
+        rgba(30, 0, 0, 0.3) 100%
+      );
+  }
+
+  .leftArrow {
+    left: 15px;
+  }
+
+  .rightArrow {
+    right: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 620px;
+  }
+
+  .slide {
+    background-position: 65% center;
+  }
+
+  .container {
+    width: 88%;
+    min-height: 620px;
+
+    align-items: flex-end;
+
+    padding-bottom: 110px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(54, 2, 0, 0.97) 0%,
+        rgba(64, 3, 0, 0.87) 45%,
+        rgba(45, 1, 0, 0.4) 75%,
+        rgba(35, 0, 0, 0.2) 100%
+      );
+  }
+
+  .bengali {
+    font-size: 1.6rem;
+  }
+
+  .content h1 {
+    font-size: clamp(3rem, 13vw, 4.5rem);
+  }
+
+  .year {
+    font-size: 2rem;
+  }
+
+  .content p {
+    max-width: 430px;
+
+    margin-top: 18px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .cta {
+    margin-top: 24px;
+
+    padding: 12px 18px;
+
+    font-size: 12px;
+  }
+
+  .arrow {
+    top: auto;
+    bottom: 28px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 24px;
+
+    transform: none;
+  }
+
+  .leftArrow {
+    left: 5%;
+  }
+
+  .rightArrow {
+    right: 5%;
+  }
+
+  .dots {
+    bottom: 42px;
+  }
+
+  .bottomDecoration {
+    display: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 570px;
+  }
+
+  .container {
+    min-height: 570px;
+
+    padding-bottom: 100px;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .bengali {
+    font-size: 1.4rem;
+  }
+
+  .decorativeLine {
+    width: 130px;
+  }
+
+  .year {
+    font-size: 1.7rem;
+  }
+}

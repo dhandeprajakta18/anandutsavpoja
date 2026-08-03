@@ -1,0 +1,608 @@
+/* =========================
+   PAGE HERO
+========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 270px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 20px 55px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(158, 30, 20, 0.95),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #5b0704, #86130c, #570603);
+
+  color: #fff7e9;
+
+  text-align: center;
+}
+
+.heroPattern {
+  position: absolute;
+
+  right: -20px;
+  bottom: -65px;
+
+  color: rgba(230, 181, 87, 0.05);
+
+  font-size: 190px;
+  font-weight: 700;
+
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #e0ae55;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-weight: 500;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.titleDivider {
+  width: 125px;
+
+  margin: 14px auto 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.titleDivider span {
+  flex: 1;
+  height: 1px;
+
+  background: rgba(224, 174, 85, 0.6);
+}
+
+.titleDivider i {
+  color: #dfa94f;
+
+  font-size: 6px;
+  font-style: normal;
+}
+
+.bengaliTitle {
+  color: #e4b35b;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.heroDescription {
+  max-width: 500px;
+
+  margin: 10px auto 0;
+
+  color: rgba(255, 245, 230, 0.75);
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+  padding: 80px 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      #ffffff,
+      transparent 45%
+    ),
+    #fff9f0;
+}
+
+.container {
+  width: min(88%, 1100px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.imageSide {
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+
+  width: 100%;
+
+  padding: 10px;
+
+  border: 1px solid rgba(176, 117, 49, 0.4);
+}
+
+.imageFrame::before {
+  content: "";
+
+  position: absolute;
+
+  top: -13px;
+  left: -13px;
+
+  width: 70%;
+  height: 75%;
+
+  border-top: 1px solid rgba(143, 16, 11, 0.25);
+  border-left: 1px solid rgba(143, 16, 11, 0.25);
+
+  pointer-events: none;
+}
+
+.imageInner {
+  position: relative;
+
+  min-height: 650px;
+
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.imageFrame:hover .image {
+  transform: scale(1.025);
+}
+
+.cornerTop,
+.cornerBottom {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  background: #a77532;
+
+  transform: rotate(45deg);
+}
+
+.cornerTop {
+  top: -5px;
+  right: -5px;
+}
+
+.cornerBottom {
+  bottom: -5px;
+  left: -5px;
+}
+
+/* =========================
+   IMAGE CAPTION
+========================= */
+
+.imageCaption {
+  position: absolute;
+
+  right: -22px;
+  bottom: 30px;
+
+  min-width: 225px;
+
+  padding: 13px 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  background: #78100a;
+
+  border-left: 3px solid #d6a24d;
+
+  box-shadow: 0 10px 25px rgba(75, 22, 10, 0.16);
+
+  color: white;
+}
+
+.imageCaption > span {
+  color: #dfae55;
+}
+
+.imageCaption small {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #dca74e;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.imageCaption p {
+  font-family: var(--heading-font);
+
+  font-size: 12px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.sectionLabel {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #9c6d35;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2.2px;
+
+  text-transform: uppercase;
+}
+
+.content h2,
+.durgaHeading h2 {
+  margin: 0;
+
+  color: #80150f;
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  text-transform: uppercase;
+}
+
+.content h2 em {
+  color: #a67534;
+
+  font-weight: 500;
+  text-transform: none;
+}
+
+.divider {
+  width: 100px;
+
+  margin: 17px 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+
+  background: rgba(177, 119, 50, 0.5);
+}
+
+.divider i {
+  color: #ae7834;
+
+  font-size: 6px;
+  font-style: normal;
+}
+
+.content > p {
+  margin-bottom: 13px;
+
+  color: #675650;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.content .lead {
+  color: #493934;
+
+  font-family: var(--heading-font);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  line-height: 1.55;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+  width: fit-content;
+
+  margin-top: 9px;
+
+  padding: 11px 16px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #86150f;
+
+  background: #86150f;
+
+  color: #fff8ec;
+
+  font-family: var(--heading-font);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: transparent;
+
+  color: #86150f;
+
+  transform: translateY(-2px);
+}
+
+.button svg {
+  font-size: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.button:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================
+   DURGA PUJA
+========================= */
+
+.durga {
+  padding: 65px 0 70px;
+
+  background: #f7ead9;
+
+  border-top: 1px solid rgba(142, 61, 30, 0.08);
+}
+
+.durgaContainer {
+  width: min(86%, 900px);
+
+  margin: 0 auto;
+}
+
+.durgaHeading {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.bengaliSubtitle {
+  margin-top: 7px;
+
+  color: #a4271d;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.durgaContent {
+  columns: 2;
+
+  column-gap: 55px;
+}
+
+.durgaContent p {
+  margin: 0 0 17px;
+
+  break-inside: avoid;
+
+  color: #65534c;
+
+  font-size: 12px;
+
+  line-height: 1.85;
+}
+
+.largeLetter > span {
+  float: left;
+
+  margin: 3px 7px 0 0;
+
+  color: #86150f;
+
+  font-family: var(--heading-font);
+
+  font-size: 50px;
+  font-weight: 600;
+
+  line-height: 0.75;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+  max-width: 500px;
+
+  margin: 35px auto 0;
+
+  padding: 16px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  border-top: 1px solid rgba(172, 111, 44, 0.4);
+  border-bottom: 1px solid rgba(172, 111, 44, 0.4);
+
+  text-align: center;
+}
+
+.quote > span {
+  color: rgba(139, 24, 16, 0.25);
+
+  font-family: Georgia, serif;
+
+  font-size: 40px;
+}
+
+.quote p {
+  color: #891b14;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.quote small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8c7367;
+
+  font-family: var(--heading-font);
+
+  font-size: 10px;
+  font-style: italic;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .imageSide {
+    width: min(100%, 600px);
+
+    margin: 0 auto;
+  }
+
+  .imageInner {
+    min-height: 600px;
+  }
+
+  .content {
+    max-width: 650px;
+
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 240px;
+
+    padding: 60px 20px 45px;
+  }
+
+  .story {
+    padding: 60px 0;
+  }
+
+  .imageInner {
+    min-height: 520px;
+  }
+
+  .imageCaption {
+    right: -8px;
+
+    min-width: 200px;
+  }
+
+  .durga {
+    padding: 55px 0;
+  }
+
+  .durgaContent {
+    columns: 1;
+  }
+}
+
+@media (max-width: 430px) {
+  .imageInner {
+    min-height: 440px;
+  }
+
+  .imageCaption {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    width: calc(100% - 20px);
+    min-width: 0;
+
+    margin: -25px auto 0;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+  }
+}
