@@ -4,27 +4,27 @@ import styles from "./Sponsors.module.css";
 const sponsors = [
   {
     name: "Sponsor One",
-    logo: "/images/sponsors/sponsor-1.png",
+    logo: "/images/sponsors/logo3.png",
   },
   {
     name: "Sponsor Two",
-    logo: "/images/sponsors/sponsor-2.png",
+    logo: "/images/sponsors/logo2.png",
   },
   {
     name: "Sponsor Three",
-    logo: "/images/sponsors/sponsor-3.png",
+    logo: "/images/sponsors/planet-dezign-logo copy.png",
   },
   {
     name: "Sponsor Four",
-    logo: "/images/sponsors/sponsor-4.png",
+    logo: "/images/sponsors/ppglogo.png",
   },
   {
     name: "Sponsor Five",
-    logo: "/images/sponsors/sponsor-5.png",
+    logo: "/images/sponsors/mountainlogo.png",
   },
   {
     name: "Sponsor Six",
-    logo: "/images/sponsors/sponsor-6.png",
+    logo: "/images/sponsors/owl.png",
   },
 ];
 

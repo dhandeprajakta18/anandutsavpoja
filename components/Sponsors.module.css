@@ -27,9 +27,7 @@
 
 .heading {
   max-width: 580px;
-
   margin: 0 auto 28px;
-
   text-align: center;
 }
 
@@ -178,10 +176,12 @@
 
   overflow: hidden;
 
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
-/* fading edges */
+/* ========================
+   FADING EDGES
+======================== */
 
 .fadeLeft,
 .fadeRight {
@@ -192,7 +192,7 @@
   top: 0;
   bottom: 0;
 
-  width: 100px;
+  width: 90px;
 
   pointer-events: none;
 }
@@ -227,7 +227,7 @@
   display: flex;
   align-items: center;
 
-  gap: 18px;
+  gap: 55px;
 
   animation: sponsorScroll 28s linear infinite;
 }
@@ -242,30 +242,29 @@
   }
 
   to {
-    transform: translateX(calc(-50% - 9px));
+    transform: translateX(calc(-50% - 27.5px));
   }
 }
 
 /* ========================
-   SPONSOR CARD
+   SPONSOR LOGOS
 ======================== */
 
 .sponsorCard {
-  width: 190px;
-  height: 110px;
+  width: 240px;
+  height: 130px;
 
   flex-shrink: 0;
 
-  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: 1px solid rgba(184, 127, 55, 0.22);
+  padding: 0;
 
-  background: rgba(255, 255, 255, 0.55);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .logoBox {
@@ -276,47 +275,41 @@
   align-items: center;
   justify-content: center;
 
-  padding: 15px;
+  padding: 8px;
 
-  border: 1px solid rgba(184, 127, 55, 0.1);
-
-  background: #fffdf9;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .logo {
   width: auto;
   height: auto;
 
-  max-width: 145px;
-  max-height: 65px;
+  max-width: 220px;
+  max-height: 110px;
 
   object-fit: contain;
 
-  filter: grayscale(100%);
-
-  opacity: 0.72;
-
-  transition:
-    filter 0.35s ease,
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-.sponsorCard:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(143, 16, 11, 0.3);
-
-  box-shadow:
-    0 10px 25px rgba(86, 31, 17, 0.07);
-}
-
-.sponsorCard:hover .logo {
-  filter: grayscale(0%);
+  /* Original logo colors */
+  filter: none;
 
   opacity: 1;
 
-  transform: scale(1.04);
+  transition: transform 0.3s ease;
+}
+
+.sponsorCard:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.sponsorCard:hover .logo {
+  filter: none;
+
+  opacity: 1;
+
+  transform: scale(1.07);
 }
 
 /* ========================
@@ -385,13 +378,17 @@
 
 @media (max-width: 800px) {
   .sponsorCard {
-    width: 165px;
-    height: 100px;
+    width: 200px;
+    height: 110px;
   }
 
   .logo {
-    max-width: 125px;
-    max-height: 55px;
+    max-width: 185px;
+    max-height: 95px;
+  }
+
+  .track {
+    gap: 40px;
   }
 
   .fadeLeft,
@@ -410,21 +407,21 @@
   }
 
   .sponsorCard {
-    width: 145px;
-    height: 90px;
+    width: 165px;
+    height: 95px;
   }
 
   .logoBox {
-    padding: 12px;
+    padding: 5px;
   }
 
   .logo {
-    max-width: 110px;
-    max-height: 48px;
+    max-width: 155px;
+    max-height: 85px;
   }
 
   .track {
-    gap: 12px;
+    gap: 30px;
 
     animation-duration: 22s;
   }
