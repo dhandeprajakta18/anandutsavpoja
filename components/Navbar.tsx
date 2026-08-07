@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
@@ -16,9 +16,40 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  useEffect(() => {
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    // Always show at the top
+    if (currentScrollY < 20) {
+      setShowNavbar(true);
+    }
+    // Hide while scrolling down
+    else if (currentScrollY > lastScrollY) {
+      setShowNavbar(false);
+    }
+    // Show while scrolling up
+    else {
+      setShowNavbar(true);
+    }
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
-    <header className={styles.header}>
+<header
+  className={`${styles.header} ${
+    showNavbar ? styles.headerVisible : styles.headerHidden
+  }`}
+>
       <div className={styles.navbar}>
         {/* LOGO */}
         <Link href="/" className={styles.logo}>
@@ -95,9 +126,9 @@ export default function Navbar() {
             Donate
           </Link>
 
-          <button type="button" className={styles.mobileLanguage}>
+          {/* <button type="button" className={styles.mobileLanguage}>
             বাংলা
-          </button>
+          </button> */}
         </nav>
       </div>
     </header>

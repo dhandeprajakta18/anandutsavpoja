@@ -35,6 +35,7 @@ body {
   color: var(--text-dark);
   font-family: var(--body-font);
   overflow-x: hidden;
+   padding-top: 92px;
 }
 
 h1,
