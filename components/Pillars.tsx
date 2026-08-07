@@ -43,9 +43,7 @@ export default function Pillars() {
 
         {/* HEADING */}
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>
-            THE FOUNDATION OF ANANDA UTSAV
-          </span>
+         
 
           <div className={styles.titleRow}>
             <span />
@@ -100,9 +98,7 @@ export default function Pillars() {
 
                   {/* CONTENT */}
                   <div className={styles.content}>
-                    <span className={styles.number}>
-                      {pillar.number}
-                    </span>
+                  
 
                     <span className={styles.subtitle}>
                       {pillar.subtitle}

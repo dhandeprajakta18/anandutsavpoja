@@ -8,8 +8,8 @@ import styles from "./Navbar.module.css";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Media", href: "#media" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Media", href: "/media" },
   { label: "Social Activities", href: "/social-activities" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -42,7 +42,7 @@ export default function Navbar() {
 
         {/* RIGHT SIDE */}
         <div className={styles.actions}>
-          <Link href="#SponsorCTA" className={styles.donateButton}>
+          <Link href="/donate" className={styles.donateButton}>
             Donate
           </Link>
 
@@ -58,6 +58,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
             type="button"
           >
             <span />
@@ -69,9 +70,11 @@ export default function Navbar() {
 
       {/* MOBILE NAVIGATION */}
       <div
+        id="mobile-navigation"
         className={`${styles.mobileMenu} ${
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
+        aria-hidden={!menuOpen}
       >
         <nav className={styles.mobileNav}>
           {navLinks.map((link) => (
@@ -85,7 +88,7 @@ export default function Navbar() {
           ))}
 
           <Link
-            href="#donate"
+            href="/donate"
             className={styles.mobileDonate}
             onClick={() => setMenuOpen(false)}
           >

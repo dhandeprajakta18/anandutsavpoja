@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingDonate from "@/components/FloatingDonate";
 
 import "./globals.css";
 
@@ -72,6 +73,9 @@ export default function RootLayout({
 
         {/* GLOBAL FOOTER */}
         <Footer />
+
+        {/* ALWAYS-AVAILABLE DONATE LINK */}
+        <FloatingDonate />
 
       </body>
     </html>

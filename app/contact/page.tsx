@@ -53,9 +53,7 @@ export default function ContactPage() {
         </div>
 
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>
-            WE WOULD LOVE TO HEAR FROM YOU
-          </span>
+         
 
           <h1>Contact Us</h1>
 
@@ -85,9 +83,7 @@ export default function ContactPage() {
           {/* LEFT SIDE */}
 
           <div className={styles.infoSide}>
-            <span className={styles.sectionLabel}>
-              GET IN TOUCH
-            </span>
+            
 
             <h2>
               Let&apos;s Stay
@@ -314,7 +310,7 @@ export default function ContactPage() {
       <section className={styles.membershipSection} id="membership">
         <div className={styles.membershipContainer}>
           <div className={styles.membershipHeading}>
-            <span className={styles.sectionLabel}>JOIN OUR COMMUNITY</span>
+            
 
             <h2>Become A Member</h2>
 
@@ -337,7 +333,7 @@ export default function ContactPage() {
 
           <div className={styles.membershipGrid}>
             <article className={styles.membershipCard}>
-              <span className={styles.membershipNumber}>01</span>
+              
               <h3>Festival Participation</h3>
               <p>
                 Stay connected with Durga Puja, cultural programmes and other
@@ -346,7 +342,7 @@ export default function ContactPage() {
             </article>
 
             <article className={styles.membershipCard}>
-              <span className={styles.membershipNumber}>02</span>
+             
               <h3>Community Connection</h3>
               <p>
                 Meet families and community members, build lasting connections
@@ -355,7 +351,7 @@ export default function ContactPage() {
             </article>
 
             <article className={styles.membershipCard}>
-              <span className={styles.membershipNumber}>03</span>
+              
               <h3>Volunteer & Contribute</h3>
               <p>
                 Take part in festival organisation, cultural initiatives,
@@ -387,9 +383,7 @@ export default function ContactPage() {
 
       <section className={styles.bottomMessage}>
         <div className={styles.bottomInner}>
-          <span className={styles.smallLabel}>
-            ANANDA UTSAV
-          </span>
+          
 
           <h2>
             Celebrate With Us.

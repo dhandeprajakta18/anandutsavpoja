@@ -34,10 +34,7 @@ export default function SponsorCTA() {
       <div className={styles.container}>
         {/* HEADING */}
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>
-            BE A PART OF OUR JOURNEY
-          </span>
-
+         
           <div className={styles.titleRow}>
             <span className={styles.line} />
             <i>◆</i>

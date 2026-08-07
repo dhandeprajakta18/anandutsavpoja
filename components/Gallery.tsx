@@ -9,31 +9,31 @@ import styles from "./Gallery.module.css";
 
 const galleryImages = [
   {
-    src: "/images/gallery/gallery-1.jpg",
+    src: "/images/random3.png",
     alt: "Ananda Utsav Durga Puja celebration",
     title: "Durga Puja",
     category: "Devotion",
   },
   {
-    src: "/images/gallery/gallery-2.jpg",
+    src: "/images/sindoor-utsav.png",
     alt: "Sindoor Utsav celebration",
     title: "Sindoor Utsav",
     category: "Tradition",
   },
   {
-    src: "/images/gallery/gallery-3.jpg",
+    src: "/images/celebration.png",
     alt: "Cultural performance at Ananda Utsav",
     title: "Cultural Evening",
     category: "Festivities",
   },
   {
-    src: "/images/gallery/gallery-4.jpg",
+    src: "/images/celebration.png",
     alt: "Community gathering at Ananda Utsav",
     title: "Togetherness",
     category: "Community",
   },
   {
-    src: "/images/gallery/gallery-5.jpg",
+    src: "/images/random1.png",
     alt: "Traditional Bengali celebration",
     title: "Celebrations",
     category: "Memories",
@@ -55,9 +55,7 @@ export default function Gallery() {
         {/* HEADING */}
 
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>
-            MOMENTS WE CHERISH
-          </span>
+         
 
           <div className={styles.titleRow}>
             <span className={styles.line} />

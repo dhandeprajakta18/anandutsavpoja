@@ -18,7 +18,7 @@ export default function About() {
       <div className={styles.container}>
         {/* LEFT CONTENT */}
         <div className={styles.content}>
-          <span className={styles.eyebrow}>WHO WE ARE</span>
+        
 
           <h2>About Ananda Utsav</h2>
 

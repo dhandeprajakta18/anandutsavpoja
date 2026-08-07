@@ -14,11 +14,11 @@ import styles from "./Footer.module.css";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "#about" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Media", href: "#media" },
-  { label: "Social Activities", href: "#social-activities" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Media", href: "/media" },
+  { label: "Social Activities", href: "/social-activities" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const festivalLinks = [
@@ -187,7 +187,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <Link href="#sponsor" className={styles.donateButton}>
+            <Link href="/donate" className={styles.donateButton}>
               <FaHeart />
               <span>Support Ananda Utsav</span>
             </Link>

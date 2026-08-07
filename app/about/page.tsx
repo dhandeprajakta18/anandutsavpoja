@@ -21,7 +21,7 @@ export default function AboutPage() {
         </div>
 
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>OUR STORY</span>
+         
 
           <h1>About Ananda Utsav</h1>
 
@@ -75,9 +75,7 @@ export default function AboutPage() {
 
           {/* CONTENT SIDE */}
           <div className={styles.content}>
-            <span className={styles.sectionLabel}>
-              WHO WE ARE
-            </span>
+           
 
             <h2>
               More Than A Festival,
@@ -129,9 +127,7 @@ export default function AboutPage() {
       <section className={styles.durga}>
         <div className={styles.durgaContainer}>
           <div className={styles.durgaHeading}>
-            <span className={styles.sectionLabel}>
-              THE SOUL OF THE CELEBRATION
-            </span>
+           
 
             <h2>Durga Puja In Bengal</h2>
 

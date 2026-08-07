@@ -215,6 +215,12 @@
 .mobileMenu {
   display: none;
 
+  position: absolute;
+  z-index: 1001;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
   overflow: hidden;
 
   max-height: 0;
@@ -224,10 +230,13 @@
   transition: max-height 0.4s ease;
 
   border-top: 1px solid rgba(143, 16, 11, 0.1);
+
+  pointer-events: none;
 }
 
 .mobileMenuOpen {
   max-height: 600px;
+  pointer-events: auto;
 }
 
 .mobileNav {
@@ -311,7 +320,7 @@
    MOBILE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .navbar {
     height: 76px;
   }

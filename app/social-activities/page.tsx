@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./SocialActivities.module.css";
@@ -9,7 +12,7 @@ const activities = [
     bengali: "খাদ্য বিতরণ",
     description:
       "Sharing meals with families and individuals in need, bringing our community together through compassion and care.",
-    image: "/images/social/food-distribution.jpg",
+    image: "/images/random1.png",
     year: "2025",
   },
   {
@@ -18,7 +21,7 @@ const activities = [
     bengali: "শিক্ষা সহায়তা",
     description:
       "Supporting children with educational resources, learning materials and opportunities to help build a brighter future.",
-    image: "/images/social/education.jpg",
+    image: "/images/random2.png",
     year: "2025",
   },
   {
@@ -27,7 +30,7 @@ const activities = [
     bengali: "বস্ত্র বিতরণ",
     description:
       "Providing essential clothing to families and individuals who need support throughout our wider community.",
-    image: "/images/social/clothing.jpg",
+    image: "/images/random3.png",
     year: "2025",
   },
   {
@@ -36,7 +39,7 @@ const activities = [
     bengali: "স্বাস্থ্য ও সুস্থতা",
     description:
       "Community health initiatives focused on awareness, wellbeing and helping people access essential support.",
-    image: "/images/social/health.jpg",
+    image: "/images/random1.png",
     year: "2025",
   },
   {
@@ -45,7 +48,7 @@ const activities = [
     bengali: "সম্প্রদায় সহায়তা",
     description:
       "Standing beside our community during difficult times and extending meaningful support wherever it is needed.",
-    image: "/images/social/community.jpg",
+    image: "/images/random2.png",
     year: "2025",
   },
   {
@@ -54,20 +57,44 @@ const activities = [
     bengali: "স্বেচ্ছাসেবী উদ্যোগ",
     description:
       "Bringing volunteers together to create positive change through service, kindness and collective responsibility.",
-    image: "/images/social/volunteers.jpg",
+    image: "/images/random3.png",
     year: "2025",
   },
 ];
 
 const galleryImages = [
-  "/images/social/gallery-1.jpg",
-  "/images/social/gallery-2.jpg",
-  "/images/social/gallery-3.jpg",
-  "/images/social/gallery-4.jpg",
-  "/images/social/gallery-5.jpg",
-  "/images/social/gallery-6.jpg",
+ "/images/random1.png",
+  "/images/random2.png",
+  "/images/random3.png",
+  "/images/random1.png",
+  "/images/random2.png",
+  "/images/random3.png",
 ];
+function CountUp({ end }: { end: number }) {
+  const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    let current = 0;
+
+    const duration = 4000;
+    const increment = Math.ceil(end / 60);
+
+    const timer = setInterval(() => {
+      current += increment;
+
+      if (current >= end) {
+        current = end;
+        clearInterval(timer);
+      }
+
+      setCount(current);
+    }, duration / 60);
+
+    return () => clearInterval(timer);
+  }, [end]);
+
+  return <>{count}</>;
+}
 export default function SocialActivitiesPage() {
   return (
     <main className={styles.page}>
@@ -79,7 +106,7 @@ export default function SocialActivitiesPage() {
         <div className={styles.heroPattern} />
 
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>OUR COMMUNITY</span>
+          
 
           <div className={styles.titleRow}>
             <span />
@@ -114,7 +141,7 @@ export default function SocialActivitiesPage() {
       <section className={styles.intro}>
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
-            <span className={styles.smallTitle}>OUR PURPOSE</span>
+          
 
             <h2>Beyond The Celebration</h2>
 
@@ -160,10 +187,7 @@ export default function SocialActivitiesPage() {
                 </div>
 
                 <div className={styles.cardContent}>
-                  <span className={styles.cardNumber}>
-                    {String(activity.id).padStart(2, "0")}
-                  </span>
-
+                 
                   <h3>{activity.title}</h3>
 
                   <p className={styles.cardBengali}>{activity.bengali}</p>
@@ -189,7 +213,7 @@ export default function SocialActivitiesPage() {
           <div className={styles.featuredInner}>
             <div className={styles.featuredImage}>
               <Image
-                src="/images/social/featured.jpg"
+                src="/images/featured.png"
                 alt="Community social activity"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
@@ -199,7 +223,7 @@ export default function SocialActivitiesPage() {
             </div>
 
             <div className={styles.featuredContent}>
-              <span className={styles.smallTitle}>TOGETHER WE SERVE</span>
+              
 
               <h2>Small Acts. Meaningful Change.</h2>
 
@@ -237,34 +261,42 @@ export default function SocialActivitiesPage() {
       <section className={styles.impact}>
         <div className={styles.container}>
           <div className={styles.impactHeading}>
-            <span>OUR IMPACT</span>
+            
             <h2>Together, We Make A Difference</h2>
           </div>
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <strong>500+</strong>
+              <strong>
+  <CountUp end={500} />+
+</strong>
               <span>People Reached</span>
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.stat}>
-              <strong>200+</strong>
+             <strong>
+  <CountUp end={200} />+
+</strong>
               <span>Families Supported</span>
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.stat}>
-              <strong>50+</strong>
+             <strong>
+  <CountUp end={50} />+
+</strong>
               <span>Volunteers</span>
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.stat}>
-              <strong>10+</strong>
+             <strong>
+  <CountUp end={10} />+
+</strong>
               <span>Community Initiatives</span>
             </div>
           </div>
@@ -278,7 +310,7 @@ export default function SocialActivitiesPage() {
       <section className={styles.gallerySection}>
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
-            <span className={styles.smallTitle}>MOMENTS OF KINDNESS</span>
+            
 
             <h2>Social Activities Gallery</h2>
 
@@ -322,7 +354,7 @@ export default function SocialActivitiesPage() {
         <div className={styles.ctaDecoration}>✦</div>
 
         <div className={styles.ctaContent}>
-          <span>BE A PART OF THE JOURNEY</span>
+          
 
           <h2>Together, We Can Make A Difference</h2>
 

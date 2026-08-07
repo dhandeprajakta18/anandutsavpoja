@@ -38,9 +38,7 @@ export default function Sponsors() {
         {/* HEADING */}
 
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>
-            WITH GRATITUDE
-          </span>
+         
 
           <div className={styles.titleRow}>
             <span className={styles.line} />
