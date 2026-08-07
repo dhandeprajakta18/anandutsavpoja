@@ -2,7 +2,7 @@
   position: relative;
 
   width: 100%;
-  min-height: 670px;
+  min-height: 720px;
 
   overflow: hidden;
 
@@ -17,7 +17,7 @@
   position: absolute;
   inset: 0;
 
-  background-position: center;
+  background-position: 75% center;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -42,43 +42,21 @@
 .overlay {
   position: absolute;
   inset: 0;
-
   z-index: 1;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(65, 2, 0, 0.96) 0%,
-      rgba(82, 4, 1, 0.91) 27%,
-      rgba(91, 5, 2, 0.7) 50%,
-      rgba(51, 2, 0, 0.25) 75%,
-      rgba(30, 0, 0, 0.18) 100%
-    );
+  background: linear-gradient(
+    to right,
+    #5d0703 0%,
+    #5d0703 30%,
+    rgba(93, 7, 3, 0.82) 36%,
+    rgba(93, 7, 3, 0.35) 44%,
+    rgba(93, 7, 3, 0.08) 52%,
+    transparent 60%
+  );
 }
 
 /* Extra red texture/glow */
 
-.redGlow {
-  position: absolute;
-
-  z-index: 2;
-
-  left: -150px;
-  top: 50%;
-
-  width: 700px;
-  height: 700px;
-
-  transform: translateY(-50%);
-
-  border-radius: 50%;
-
-  background: rgba(142, 13, 7, 0.3);
-
-  filter: blur(120px);
-
-  pointer-events: none;
-}
 
 /* =========================================
    CONTAINER
@@ -92,6 +70,7 @@
   min-height: 670px;
 
   margin: 0 auto;
+padding-left: 40px;
 
   display: flex;
   align-items: center;
@@ -102,7 +81,9 @@
 ========================================= */
 
 .content {
-  width: min(610px, 53%);
+width: 32%;
+
+  max-width: 500px;
 
   color: white;
 
@@ -422,14 +403,14 @@
   }
 
   .overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(62, 2, 0, 0.95) 0%,
-        rgba(72, 3, 0, 0.87) 45%,
-        rgba(52, 2, 0, 0.45) 75%,
-        rgba(30, 0, 0, 0.3) 100%
-      );
+   background: linear-gradient(
+  to right,
+  rgba(62, 2, 0, 0.95) 0%,
+  rgba(62, 2, 0, 0.95) 38%,
+  rgba(62, 2, 0, 0.7) 48%,
+  rgba(62, 2, 0, 0.25) 60%,
+  transparent 72%
+);
   }
 
   .leftArrow {
@@ -450,13 +431,14 @@
     min-height: 620px;
   }
 
-  .slide {
-    background-position: 65% center;
-  }
+  .slide{
+    background-position:right center;
+    background-size:cover;
+}
 
   .container {
     width: 88%;
-    min-height: 620px;
+    min-height: 720px;
 
     align-items: flex-end;
 
@@ -533,6 +515,121 @@
 
   .bottomDecoration {
     display: none;
+  }
+}
+
+/* =========================================
+   SPLIT HERO: CONTENT + FULL IMAGE
+========================================= */
+@media (min-width: 1025px) {
+  .slide {
+    inset: 0 0 0 auto;
+    width: 60%;
+    background-position: center;
+    background-size: contain;
+    background-color: #3f0301;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      to right,
+      #5d0703 0%,
+      #5d0703 40%,
+      rgba(93, 7, 3, 0.18) 48%,
+      transparent 60%
+    );
+  }
+
+  .container {
+    min-height: 720px;
+  }
+
+  .content {
+    width: 38%;
+  }
+}
+
+/* On tablet and mobile, show the uncropped image first with no red overlay. */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 0;
+    background: #fffaf2;
+  }
+
+  .slide {
+    inset: 0 0 auto;
+    width: 100%;
+    height: clamp(270px, 58vw, 500px);
+    background-position: center;
+    background-size: contain;
+    background-color: #fffaf2;
+  }
+
+  .overlay,
+  .redGlow,
+  .arrow,
+  .dots,
+  .bottomDecoration {
+    display: none;
+  }
+
+  .container {
+    width: min(88%, 760px);
+    min-height: 0;
+    padding: clamp(300px, 62vw, 535px) 0 64px;
+    align-items: flex-start;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 620px;
+    color: var(--text-dark);
+    text-align: center;
+  }
+
+  .bengali {
+    color: var(--dark-gold);
+  }
+
+  .decorativeLine {
+    margin-inline: auto;
+  }
+
+  .content h1 {
+    color: var(--red);
+    font-size: clamp(2.8rem, 7vw, 4.8rem);
+  }
+
+  .content p {
+    margin-inline: auto;
+    color: var(--text-muted);
+  }
+
+  .cta {
+    margin-inline: auto;
+    background: var(--red);
+    color: #fff8ed;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide {
+    height: clamp(220px, 67vw, 380px);
+  }
+
+  .container {
+    width: 90%;
+    padding-top: clamp(245px, 71vw, 405px);
+    padding-bottom: 52px;
+  }
+
+  .bengali {
+    margin-bottom: 11px;
+    font-size: 1.45rem;
+  }
+
+  .content h1 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
   }
 }
 
