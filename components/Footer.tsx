@@ -212,26 +212,37 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* COPYRIGHT */}
-      <div className={styles.bottom}>
-        <div className={styles.bottomInner}>
-          <p>
-            © {new Date().getFullYear()} Ananda Utsav. All Rights Reserved.
-          </p>
+     {/* COPYRIGHT */}
+<div className={styles.bottom}>
+  <div className={styles.bottomInner}>
+    <p>
+      © {new Date().getFullYear()} Ananda Utsav. All Rights Reserved.
+    </p>
 
-          <div className={styles.bottomLinks}>
-            <Link href="/privacy-policy">
-              Privacy Policy
-            </Link>
+    <p className={styles.credit}>
+      Designed & Developed by{" "}
+      <a
+        href="https://planetdezign.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Planet Dezign
+      </a>
+    </p>
 
-            <span>•</span>
+    <div className={styles.bottomLinks}>
+      <Link href="/privacy-policy">
+        Privacy Policy
+      </Link>
 
-            <Link href="/terms">
-              Terms & Conditions
-            </Link>
-          </div>
-        </div>
-      </div>
+      <span>•</span>
+
+      <Link href="/terms">
+        Terms & Conditions
+      </Link>
+    </div>
+  </div>
+</div>
     </footer>
   );
 }

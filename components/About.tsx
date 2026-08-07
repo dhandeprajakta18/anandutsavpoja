@@ -60,7 +60,7 @@ export default function About() {
           <div className={styles.imageFrame}>
             <div className={styles.imageInner}>
               <Image
-                src="/images/about-ananda-utsav.png"
+                src="/real/about.jpeg"
                 alt="Ananda Utsav community celebration"
                 fill
                 sizes="(max-width: 850px) 90vw, 50vw"

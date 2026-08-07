@@ -6,7 +6,7 @@ import styles from "./Hero.module.css";
 
 const slides = [
   {
-    image: "/images/sindoor-utsav.png",
+    image: "/real/sindorutsav.jpeg",
     bengali: "সিঁদুর উৎসব",
     title: "Sindoor Utsav",
     year: "2026",
@@ -16,7 +16,7 @@ const slides = [
     buttonLink: "#about",
   },
   {
-    image: "/images/durga-puja.png",
+    image: "/real/anandutsav.jpeg",
     bengali: "শক্তির আরাধনা",
     title: "Ananda Utsav",
     year: "2026",
@@ -26,7 +26,7 @@ const slides = [
     buttonLink: "#about",
   },
   {
-    image: "/images/celebration.png",
+    image: "/real/celebration.jpeg",
     bengali: "ঐতিহ্য • আনন্দ • একতা",
     title: "Celebrating Together",
     year: "2026",
@@ -107,9 +107,9 @@ export default function Hero() {
             {slides[currentSlide].title}
           </h1>
 
-          <div className={styles.year}>
+          {/* <div className={styles.year}>
             {slides[currentSlide].year}
-          </div>
+          </div> */}
 
           <p>
             {slides[currentSlide].description}

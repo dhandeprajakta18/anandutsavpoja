@@ -27,7 +27,7 @@ const galleryImages = [
     category: "Festivities",
   },
   {
-    src: "/images/celebration.png",
+    src: "/images/about-ananda-utsav.png",
     alt: "Community gathering at Ananda Utsav",
     title: "Togetherness",
     category: "Community",
