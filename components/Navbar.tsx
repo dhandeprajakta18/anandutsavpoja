@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className={styles.logo}>
           <Image
-            src="/images/logo1.png"
+            src="/images/logonew.png"
             alt="Ananda Utsav Pooja"
             width={110}
             height={110}

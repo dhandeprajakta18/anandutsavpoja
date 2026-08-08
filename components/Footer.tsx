@@ -50,7 +50,7 @@ export default function Footer() {
             <Link href="/" className={styles.logo}>
               <div className={styles.logoWrap}>
                 <Image
-                  src="/images/logo1.png"
+                  src="/images/logonew.png"
                   alt="Ananda Utsav Pooja"
                   width={125}
                   height={125}
