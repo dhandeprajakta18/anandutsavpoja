@@ -19,19 +19,13 @@ const quickLinks = [
   { label: "Media", href: "/media" },
   { label: "Social Activities", href: "/social-activities" },
   { label: "Contact Us", href: "/contact" },
-];
-
-const festivalLinks = [
-  { label: "Pooja", href: "#pillars" },
-  { label: "Festivities", href: "#pillars" },
-  { label: "CSR Activities", href: "#pillars" },
-  { label: "Schedule", href: "#schedule" },
-  { label: "Our Sponsors", href: "#sponsors" },
+  {label : "Sponsorship", href : "/donate"},
 ];
 
 export default function Footer() {
   return (
     <footer className={styles.footer} id="contact">
+
       {/* Decorative top border */}
       <div className={styles.topBorder}>
         <span />
@@ -44,9 +38,15 @@ export default function Footer() {
       </div>
 
       <div className={styles.container}>
+
         <div className={styles.footerGrid}>
-          {/* BRAND */}
+
+          {/* =========================
+              BRAND
+          ========================= */}
+
           <div className={styles.brand}>
+
             <Link href="/" className={styles.logo}>
               <div className={styles.logoWrap}>
                 <Image
@@ -60,17 +60,19 @@ export default function Footer() {
             </Link>
 
             <p className={styles.bengaliBrand}>
-              ঐতিহ্য • সংস্কৃতি • সম্প্রীতি
+              ঐতিহ্য • সংস্কৃতি • সেবা
             </p>
 
             <p className={styles.brandText}>
-              Celebrating devotion, preserving Bengali culture and bringing
-              our community together through tradition, festivities and
-              service.
+              Celebrating devotion, preserving Bengali culture and
+              bringing our community together through tradition,
+              festivities and service.
             </p>
 
             {/* SOCIAL */}
+
             <div className={styles.socials}>
+
               <a
                 href="#"
                 aria-label="Facebook"
@@ -94,11 +96,18 @@ export default function Footer() {
               >
                 <FaYoutube />
               </a>
+
             </div>
+
           </div>
 
-          {/* QUICK LINKS */}
+
+          {/* =========================
+              QUICK LINKS
+          ========================= */}
+
           <div className={styles.column}>
+
             <h3>Quick Links</h3>
 
             <div className={styles.headingLine}>
@@ -107,36 +116,28 @@ export default function Footer() {
             </div>
 
             <nav className={styles.links}>
+
               {quickLinks.map((link) => (
-                <Link href={link.href} key={link.label}>
+                <Link
+                  href={link.href}
+                  key={link.label}
+                >
                   <span>›</span>
                   {link.label}
                 </Link>
               ))}
+
             </nav>
+
           </div>
 
-          {/* FESTIVAL */}
-          <div className={styles.column}>
-            <h3>Ananda Utsav</h3>
 
-            <div className={styles.headingLine}>
-              <span />
-              <i>◆</i>
-            </div>
+          {/* =========================
+              CONTACT
+          ========================= */}
 
-            <nav className={styles.links}>
-              {festivalLinks.map((link) => (
-                <Link href={link.href} key={link.label}>
-                  <span>›</span>
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* CONTACT */}
           <div className={styles.contact}>
+
             <h3>Get In Touch</h3>
 
             <div className={styles.headingLine}>
@@ -145,57 +146,92 @@ export default function Footer() {
             </div>
 
             <div className={styles.contactList}>
+
+              {/* ADDRESS */}
+
               <div className={styles.contactItem}>
+
                 <div className={styles.contactIcon}>
                   <FaLocationDot />
                 </div>
 
                 <div>
                   <span>Visit Us</span>
+
                   <p>
                     Add association address here,
                     <br />
                     City, State
                   </p>
                 </div>
+
               </div>
 
+
+              {/* PHONE */}
+
               <div className={styles.contactItem}>
+
                 <div className={styles.contactIcon}>
                   <FaPhone />
                 </div>
 
                 <div>
                   <span>Call Us</span>
+
                   <a href="tel:+910000000000">
                     +91 00000 00000
                   </a>
                 </div>
+
               </div>
 
+
+              {/* EMAIL */}
+
               <div className={styles.contactItem}>
+
                 <div className={styles.contactIcon}>
                   <FaEnvelope />
                 </div>
 
                 <div>
                   <span>Email Us</span>
+
                   <a href="mailto:info@anandautsav.org">
                     info@anandautsav.org
                   </a>
                 </div>
+
               </div>
+
             </div>
 
-            <Link href="/donate" className={styles.donateButton}>
+
+            {/* DONATE */}
+
+            <Link
+              href="/donate"
+              className={styles.donateButton}
+            >
               <FaHeart />
-              <span>Support Ananda Utsav</span>
+
+              <span>
+                Support Ananda Utsav
+              </span>
             </Link>
+
           </div>
+
         </div>
 
-        {/* FOOTER QUOTE */}
+
+        {/* =========================
+            FOOTER QUOTE
+        ========================= */}
+
         <div className={styles.footerMessage}>
+
           <span />
 
           <div>
@@ -209,40 +245,55 @@ export default function Footer() {
           </div>
 
           <span />
+
         </div>
+
       </div>
 
-     {/* COPYRIGHT */}
-<div className={styles.bottom}>
-  <div className={styles.bottomInner}>
-    <p>
-      © {new Date().getFullYear()} Ananda Utsav. All Rights Reserved.
-    </p>
 
-    <p className={styles.credit}>
-      Designed & Developed by{" "}
-      <a
-        href="https://planetdezign.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Planet Dezign
-      </a>
-    </p>
+      {/* =========================
+          COPYRIGHT
+      ========================= */}
 
-    <div className={styles.bottomLinks}>
-      <Link href="/privacy-policy">
-        Privacy Policy
-      </Link>
+      <div className={styles.bottom}>
 
-      <span>•</span>
+        <div className={styles.bottomInner}>
 
-      <Link href="/terms">
-        Terms & Conditions
-      </Link>
-    </div>
-  </div>
-</div>
+          <p>
+            © {new Date().getFullYear()} Ananda Utsav.
+            All Rights Reserved.
+          </p>
+
+          <p className={styles.credit}>
+            Designed & Developed by{" "}
+
+            <a
+              href="https://planetdezign.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Planet Dezign
+            </a>
+          </p>
+
+          <div className={styles.bottomLinks}>
+
+            <Link href="/privacy-policy">
+              Privacy Policy
+            </Link>
+
+            <span>•</span>
+
+            <Link href="/terms">
+              Terms &amp; Conditions
+            </Link>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </footer>
   );
 }

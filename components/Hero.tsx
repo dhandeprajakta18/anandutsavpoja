@@ -13,7 +13,7 @@ const slides = [
     description:
       "A celebration of devotion, tradition and the eternal spirit of Shakti.",
     buttonText: "Discover The Celebration",
-    buttonLink: "#about",
+    buttonLink: "/about",
   },
   {
     image: "/real/anandutsav.jpeg",
@@ -23,7 +23,7 @@ const slides = [
     description:
       "Where devotion meets celebration and generations come together.",
     buttonText: "Explore Ananda Utsav",
-    buttonLink: "#about",
+    buttonLink: "/about",
   },
   {
     image: "/real/celebration.jpeg",
@@ -33,7 +33,7 @@ const slides = [
     description:
       "Experience the colours, culture and joyous traditions of our community.",
     buttonText: "Join The Celebration",
-    buttonLink: "#schedule",
+    buttonLink: "/about",
   },
 ];
 

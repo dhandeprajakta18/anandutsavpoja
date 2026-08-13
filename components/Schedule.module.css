@@ -181,6 +181,10 @@
    ICON
 ===================================== */
 
+/* =====================================
+   ICON
+===================================== */
+
 .icon {
   position: absolute;
 
@@ -201,6 +205,53 @@
   color: #8d1d14;
 
   font-size: 23px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.icon svg {
+  width: 28px;
+  height: 28px;
+
+  display: block;
+
+  color: #8d1d14;
+
+  fill: currentColor;
+}
+
+.customSvg {
+  width: 32px !important;
+  height: 32px !important;
+
+  color: #8d1d14;
+
+  overflow: visible;
+}
+
+/* Banana leaf */
+
+.icon:has(.customSvg) {
+  color: #8d1d14;
+}
+
+/* Slightly larger dhunuchi */
+
+.icon:has(.customSvg) svg {
+  width: 31px;
+  height: 31px;
+}
+
+/* Hover */
+
+.card:hover .icon {
+  color: #a66d28;
+}
+
+.card:hover .icon svg {
+  color: #a66d28;
 }
 
 /* Remove previous line under icon */
@@ -452,3 +503,4 @@
     width: 25px;
   }
 }
+

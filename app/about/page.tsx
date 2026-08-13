@@ -23,7 +23,7 @@ export default function AboutPage() {
         <div className={styles.heroContent}>
          
 
-          <h1>About Ananda Utsav</h1>
+          <h1>About AnandaUtsav</h1>
 
           <div className={styles.titleDivider}>
             <span />
@@ -32,13 +32,13 @@ export default function AboutPage() {
           </div>
 
           <p className={styles.bengaliTitle}>
-            ঐতিহ্য • সংস্কৃতি • সম্প্রীতি
+            ঐতিহ্য • সংস্কৃতি • সেবা
           </p>
 
           <p className={styles.heroDescription}>
-            A celebration where devotion meets culture and a community
-            comes together as one.
-          </p>
+  A women-founded and women-led celebration bringing a little slice of
+  Bengal, the warmth of Pujo and the spirit of community to Mumbai.
+</p>
         </div>
       </section>
 
@@ -63,14 +63,14 @@ export default function AboutPage() {
               <span className={styles.cornerBottom} />
             </div>
 
-            <div className={styles.imageCaption}>
-              <span>✦</span>
+           <div className={styles.imageCaption}>
+  <span>✦</span>
 
-              <div>
-                <small>A CELEBRATION OF</small>
-                <p>Faith • Heritage • Togetherness</p>
-              </div>
-            </div>
+  <div>
+    <small>OUR SPIRIT</small>
+    <p>Heritage • Culture • Service</p>
+  </div>
+</div>
           </div>
 
           {/* CONTENT SIDE */}
@@ -90,30 +90,33 @@ export default function AboutPage() {
             </div>
 
             <p className={styles.lead}>
-              Ananda Utsav is a celebration rooted in devotion, Bengali
-              heritage and the joy of coming together as a community.
-            </p>
+  Ananda Utsav was born from a simple feeling — the longing to bring the
+  warmth, beauty and emotion of Durga Puja to Mumbai, and to create a
+  place that feels a little like home.
+</p>
 
-            <p>
-              At its heart is the spirit of Durga Puja — a time when families,
-              friends and communities gather to worship Maa Durga and celebrate
-              the values of strength, compassion and the triumph of good over
-              evil.
-            </p>
+<p>
+  Founded and run by women, Ananda Utsav is built on the belief that
+  traditions become more meaningful when we come together to keep them
+  alive. From planning the Puja and preparing for the rituals to creating
+  the celebrations around them, women from our community come together
+  with passion, care and a shared love for Maa Durga.
+</p>
 
-            <p>
-              Through traditional rituals, cultural programmes, music, dance,
-              festivities and community participation, Ananda Utsav creates a
-              space where generations can come together and remain connected
-              to the traditions that have shaped Bengali culture.
-            </p>
+<p>
+  Here, Pujo is not just about the rituals. It is about the sound of the
+  dhak, the fragrance of bhog, the colours of the festivities, familiar
+  music, cultural performances and those little moments that remind us of
+  Bengal. It is a space where children discover their roots, families
+  create memories and friends come together year after year.
+</p>
 
-            <p>
-              Our celebration extends beyond the days of Puja. Through social
-              responsibility and community initiatives, we aspire to carry the
-              spirit of togetherness beyond the festival and contribute
-              meaningfully to the society around us.
-            </p>
+<p>
+  At Ananda Utsav, you will find a little slice of Pujo in Mumbai — a
+  glimpse of Bengal brought to life through devotion, culture, food,
+  celebration and togetherness. And beyond the festivities, we hope to
+  carry that same spirit of care and service into the wider community.
+</p>
 
             <Link href="/gallery" className={styles.button}>
               <span>Explore Our Celebrations</span>
@@ -138,31 +141,35 @@ export default function AboutPage() {
 
           <div className={styles.durgaContent}>
             <p className={styles.largeLetter}>
-              <span>D</span>
-              urga Puja is far more than a religious festival in Bengal.
-              It is an emotion woven into Bengali life — a celebration of
-              faith, art, culture, family and community.
-            </p>
+  <span>D</span>
+  urga Puja is more than a festival to us. It is a feeling — the feeling
+  of coming home, of familiar sounds, familiar flavours and traditions
+  that stay with us wherever life takes us. It is a little piece of Bengal
+  that we carry in our hearts.
+</p>
 
-            <p>
-              The arrival of Maa Durga is traditionally celebrated as the
-              homecoming of the Goddess with her children. Across the festive
-              days, communities gather for worship, anjali, dhak, bhog,
-              cultural programmes and countless moments of togetherness.
-            </p>
+<p>
+  In Bengal, Pujo transforms everything. Streets come alive, dhaker taal
+  fills the air, homes open their doors and people come together to
+  celebrate. Maa Durga arrives not simply as a Goddess, but as a much-loved
+  daughter returning home. That feeling of homecoming is at the heart of
+  what we hope to recreate at Ananda Utsav.
+</p>
 
-            <p>
-              From the anticipation of Mahalaya and the principal days of
-              Shashthi, Saptami, Ashtami and Navami to the emotional farewell
-              of Vijaya Dashami, Durga Puja carries a unique rhythm of
-              devotion and celebration.
-            </p>
+<p>
+  From Mahalaya and the anticipation of Shashthi to the rituals of Saptami,
+  the devotion of Ashtami, the celebrations of Navami and the bittersweet
+  farewell of Dashami, every day carries its own emotion. Anjali, dhak,
+  bhog, sindoor, music and cultural celebrations become memories we look
+  forward to making together every year.
+</p>
 
-            <p>
-              On Dashami, traditions such as Devi Baran and Sindoor Khela mark
-              the farewell to Maa Durga before immersion, accompanied by the
-              hope of welcoming her again the following year.
-            </p>
+<p>
+  And when the time comes to say goodbye on Dashami, there is always the
+  same promise in our hearts — Maa will return, and so will the Pujo.
+  Until then, we carry its spirit with us and keep the traditions alive,
+  wherever we are.
+</p>
           </div>
 
           <div className={styles.quote}>

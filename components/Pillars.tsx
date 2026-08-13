@@ -32,8 +32,8 @@ const pillars = [
     bengali: "সমাজের প্রতি দায়বদ্ধতা",
     subtitle: "Compassion",
     description:
-      "Our celebrations go beyond festivities through social initiatives that support people, strengthen communities and create meaningful change.",
-  },
+  "Through community services and social initiatives, we come together to support those in need, extend a helping hand and contribute to the well-being of our wider community.",
+ },
 ];
 
 export default function Pillars() {

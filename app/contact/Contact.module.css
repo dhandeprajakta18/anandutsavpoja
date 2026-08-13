@@ -242,6 +242,60 @@
 }
 
 /* =========================
+   MEMBERSHIP & SPONSORSHIP
+========================= */
+
+.involvementOptions {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.involvementCard {
+  padding: 16px;
+  border: 1px solid rgba(176, 117, 49, 0.3);
+  background: rgba(255, 253, 248, 0.7);
+}
+
+.involvementCard > span {
+  display: block;
+  color: #a47536;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.involvementCard h3 {
+  margin: 5px 0 6px;
+  color: #80150f;
+  font-family: var(--heading-font);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.involvementCard p {
+  color: #71605a;
+  font-size: 9.5px;
+  line-height: 1.55;
+}
+
+.involvementCard a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #881810;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.involvementCard a:hover {
+  color: #a67534;
+}
+
+/* =========================
    CONTACT DETAILS
 ========================= */
 
@@ -419,7 +473,7 @@ a.contactTitle:hover {
 }
 
 .formTop {
-  padding: 24px 28px 20px;
+  padding: 18px 22px 16px;
 
   display: flex;
   align-items: center;
@@ -459,7 +513,7 @@ a.contactTitle:hover {
 
   font-family: var(--heading-font);
 
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
 }
 
@@ -468,7 +522,7 @@ a.contactTitle:hover {
 ========================= */
 
 .form {
-  padding: 28px;
+  padding: 20px 22px;
 
   background: #fffdf8;
 }
@@ -477,11 +531,11 @@ a.contactTitle:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  gap: 16px;
+  gap: 12px;
 }
 
 .field {
-  margin-bottom: 17px;
+  margin-bottom: 12px;
 }
 
 .field label {
@@ -529,7 +583,7 @@ a.contactTitle:hover {
 .field textarea {
   resize: vertical;
 
-  min-height: 110px;
+  min-height: 76px;
 
   line-height: 1.6;
 }
@@ -641,181 +695,6 @@ a.contactTitle:hover {
 }
 
 /* =========================
-   MEMBERSHIP
-========================= */
-
-.membershipSection {
-  padding: 70px 0;
-  background: #f7ead9;
-  border-top: 1px solid rgba(142, 61, 30, 0.08);
-}
-
-.membershipContainer {
-  width: min(88%, 1080px);
-  margin: 0 auto;
-}
-
-.membershipHeading {
-  max-width: 650px;
-  margin: 0 auto 34px;
-  text-align: center;
-}
-
-.membershipHeading h2 {
-  margin: 0;
-  color: #80150f;
-  font-family: var(--heading-font);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  font-weight: 600;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.membershipDivider {
-  width: 110px;
-  margin: 14px auto 9px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.membershipDivider span {
-  flex: 1;
-  height: 1px;
-  background: rgba(177, 119, 50, 0.5);
-}
-
-.membershipDivider i {
-  color: #ae7834;
-  font-size: 6px;
-  font-style: normal;
-}
-
-.membershipBengali {
-  color: #a4271d;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.membershipIntro {
-  max-width: 570px;
-  margin: 10px auto 0;
-  color: #71605a;
-  font-size: 11px;
-  line-height: 1.75;
-}
-
-.membershipGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.membershipCard {
-  position: relative;
-  min-height: 175px;
-  padding: 27px 25px 25px;
-  overflow: hidden;
-  border: 1px solid rgba(176, 117, 49, 0.32);
-  background: rgba(255, 251, 244, 0.72);
-}
-
-.membershipNumber {
-  position: absolute;
-  top: 8px;
-  right: 14px;
-  color: rgba(128, 21, 15, 0.08);
-  font-family: var(--heading-font);
-  font-size: 42px;
-  font-weight: 600;
-}
-
-.membershipCard h3 {
-  position: relative;
-  margin: 0 0 10px;
-  color: #80150f;
-  font-family: var(--heading-font);
-  font-size: 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.membershipCard h3::after {
-  content: "";
-  display: block;
-  width: 34px;
-  height: 1px;
-  margin-top: 9px;
-  background: #b27b36;
-}
-
-.membershipCard p {
-  position: relative;
-  color: #6d5a53;
-  font-size: 10.5px;
-  line-height: 1.7;
-}
-
-.membershipCta {
-  margin-top: 18px;
-  padding: 25px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 35px;
-  border: 1px solid rgba(213, 162, 77, 0.45);
-  background: #78100a;
-}
-
-.membershipCta > div {
-  max-width: 610px;
-}
-
-.membershipCta > div > span {
-  display: block;
-  margin-bottom: 4px;
-  color: #dda950;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1.6px;
-}
-
-.membershipCta h3 {
-  margin: 0;
-  color: #fff7e9;
-  font-family: var(--heading-font);
-  font-size: 22px;
-  font-weight: 500;
-}
-
-.membershipCta p {
-  margin-top: 6px;
-  color: rgba(255, 245, 230, 0.68);
-  font-size: 10px;
-  line-height: 1.65;
-}
-
-.membershipButton {
-  flex-shrink: 0;
-  padding: 11px 15px;
-  border: 1px solid #d7a34d;
-  background: #d7a34d;
-  color: #5c0703;
-  font-family: var(--heading-font);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-}
-
-.membershipButton:hover {
-  background: transparent;
-  color: #f0c36d;
-  transform: translateY(-2px);
-}
-
-/* =========================
    BOTTOM MESSAGE
 ========================= */
 
@@ -901,13 +780,6 @@ a.contactTitle:hover {
     margin: 0 auto;
   }
   
-  .membershipGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .membershipCard {
-    min-height: auto;
-  }
 }
 
 @media (max-width: 600px) {
@@ -935,14 +807,8 @@ a.contactTitle:hover {
     padding: 21px 20px;
   }
 
-  .membershipSection {
-    padding: 55px 0;
-  }
-
-  .membershipCta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+  .involvementOptions {
+    grid-template-columns: 1fr;
   }
 }
 

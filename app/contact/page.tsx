@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {
   FaEnvelope,
   FaLocationDot,
-  FaPhone,
   FaFacebookF,
   FaInstagram,
   FaYoutube,
@@ -24,13 +23,13 @@ const contactDetails = [
     title: "Ananda Utsav",
     text: "Add association address here, City, State, India",
   },
-  {
-    icon: FaPhone,
-    label: "Call Us",
-    title: "+91 00000 00000",
-    href: "tel:+910000000000",
-    text: "For general enquiries & participation",
-  },
+  // {
+  //   icon: FaPhone,
+  //   label: "Call Us",
+  //   title: "+91 00000 00000",
+  //   href: "tel:+910000000000",
+  //   text: "For general enquiries & participation",
+  // },
   {
     icon: FaEnvelope,
     label: "Write To Us",
@@ -40,13 +39,31 @@ const contactDetails = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ interest?: string }>;
+}) {
+  const { interest } = await searchParams;
+  const selectedInterest = [
+    "membership",
+    "general",
+    "participation",
+    "cultural",
+    "volunteer",
+    "personal-sponsor",
+    "corporate-sponsor",
+    "csr",
+  ].includes(interest ?? "")
+    ? interest
+    : "";
+
   return (
     <main>
       {/* =========================
           PAGE HERO
       ========================= */}
-
+{/* 
       <section className={styles.hero}>
         <div className={styles.heroPattern} aria-hidden="true">
           যোগাযোগ
@@ -72,7 +89,7 @@ export default function ContactPage() {
             learn more about Ananda Utsav, our doors are always open.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================
           CONTACT SECTION
@@ -107,6 +124,32 @@ export default function ContactPage() {
               volunteering, sponsorship opportunities, CSR initiatives or any
               other information about Ananda Utsav.
             </p>
+
+            <div className={styles.involvementOptions}>
+              <article className={styles.involvementCard}>
+                <span>JOIN THE COMMUNITY</span>
+                <h3>Become a Member</h3>
+                <p>
+                  Participate in our celebrations, meet the community and
+                  contribute to the traditions we share.
+                </p>
+                <a href="/contact?interest=membership#contact-form">
+                  Enquire about membership
+                </a>
+              </article>
+
+              <article className={styles.involvementCard}>
+                <span>SUPPORT ANANDA UTSAV</span>
+                <h3>Become a Sponsor</h3>
+                <p>
+                  Partner with us to support our festival, cultural programmes
+                  and community initiatives.
+                </p>
+                <a href="/contact?interest=corporate-sponsor#contact-form">
+                  Explore sponsorship
+                </a>
+              </article>
+            </div>
 
             {/* CONTACT DETAILS */}
 
@@ -232,7 +275,7 @@ export default function ContactPage() {
                 <select
                   id="subject"
                   name="subject"
-                  defaultValue=""
+                  defaultValue={selectedInterest}
                 >
                   <option value="" disabled>
                     Select an enquiry
@@ -280,7 +323,7 @@ export default function ContactPage() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={3}
                   placeholder="Tell us how we can help..."
                   required
                 />
@@ -299,80 +342,6 @@ export default function ContactPage() {
               <i>◆</i>
               <span />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================
-          MEMBERSHIP
-      ========================= */}
-
-      <section className={styles.membershipSection} id="membership">
-        <div className={styles.membershipContainer}>
-          <div className={styles.membershipHeading}>
-            
-
-            <h2>Become A Member</h2>
-
-            <div className={styles.membershipDivider}>
-              <span />
-              <i>◆</i>
-              <span />
-            </div>
-
-            <p className={styles.membershipBengali}>
-              একসাথে উদযাপন, একসাথে পথচলা
-            </p>
-
-            <p className={styles.membershipIntro}>
-              Membership is an invitation to be more closely connected with
-              Ananda Utsav — to participate, contribute and help us carry our
-              traditions and community spirit forward.
-            </p>
-          </div>
-
-          <div className={styles.membershipGrid}>
-            <article className={styles.membershipCard}>
-              
-              <h3>Festival Participation</h3>
-              <p>
-                Stay connected with Durga Puja, cultural programmes and other
-                Ananda Utsav celebrations throughout the year.
-              </p>
-            </article>
-
-            <article className={styles.membershipCard}>
-             
-              <h3>Community Connection</h3>
-              <p>
-                Meet families and community members, build lasting connections
-                and celebrate Bengali heritage together.
-              </p>
-            </article>
-
-            <article className={styles.membershipCard}>
-              
-              <h3>Volunteer & Contribute</h3>
-              <p>
-                Take part in festival organisation, cultural initiatives,
-                volunteering and social responsibility activities.
-              </p>
-            </article>
-          </div>
-
-          <div className={styles.membershipCta}>
-            <div>
-              <span>INTERESTED IN MEMBERSHIP?</span>
-              <h3>We&apos;d Love To Welcome You.</h3>
-              <p>
-                Send us your details and our team can share the current
-                membership process, eligibility and contribution information.
-              </p>
-            </div>
-
-            <a href="#contact-form" className={styles.membershipButton}>
-              Enquire About Membership
-            </a>
           </div>
         </div>
       </section>

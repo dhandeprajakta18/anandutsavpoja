@@ -443,3 +443,23 @@
     font-size: 11px;
   }
 }
+/* =====================================
+   SPONSOR DISCLAIMER
+===================================== */
+
+.disclaimer {
+  max-width: 650px;
+
+  margin: 18px auto 0;
+
+  text-align: center;
+
+  color: #8a756d;
+
+  font-size: 10px;
+  line-height: 1.6;
+
+  letter-spacing: 0.15px;
+
+  opacity: 0.85;
+}

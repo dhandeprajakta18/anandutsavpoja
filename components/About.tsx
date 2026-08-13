@@ -28,26 +28,28 @@ export default function About() {
             <span className={styles.line} />
           </div>
 
-          <h3>ঐতিহ্য • সংস্কৃতি • সম্প্রীতি</h3>
+          <h3>ঐতিহ্য • সংস্কৃতি • সেবা</h3>
 
-          <p>
-            Ananda Utsav is a community-driven cultural association dedicated
-            to celebrating our traditions, preserving our cultural heritage,
-            and bringing people together through devotion and festivities.
-          </p>
+<p>
+  Founded and run by women, Ananda Utsav is a celebration born from a
+  shared love for Maa Durga, our traditions and the spirit of community.
+  What began with a simple vision has grown into a space where women come
+  together to lead, create and keep the beautiful traditions of Durga Puja
+  alive.
+</p>
 
-          <p>
-            From organizing Durga Puja and traditional rituals to cultural
-            programs, festive celebrations and social initiatives, we create
-            meaningful experiences where families and generations can come
-            together as one community.
-          </p>
+<p>
+  From Puja rituals and decorations to cultural programmes, celebrations
+  and community initiatives, every part of Ananda Utsav carries the warmth,
+  strength and creativity of the women who make it happen.
+</p>
 
-          <p>
-            Beyond celebrations, our association believes in giving back to
-            society through community support and social activities, carrying
-            forward the true spirit of togetherness and compassion.
-          </p>
+<p>
+  At Ananda Utsav, you will find a little slice of Pujo in Mumbai — a
+  glimpse of Bengal brought to life through dhak, devotion, food, culture
+  and the joy of coming together. It is our way of keeping Bengal close to
+  our hearts, wherever we are.
+</p>
 
           <Link href="/about" className={styles.button}>
             <span>Discover Our Story</span>

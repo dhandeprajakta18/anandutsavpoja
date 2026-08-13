@@ -111,6 +111,12 @@ export default function Sponsors() {
 
           <span />
         </div>
+        {/* DISCLAIMER */}
+
+<div className={styles.disclaimer}>
+  The logos displayed above belong to their respective owners and are
+  used solely for sponsor recognition and acknowledgement.
+</div>
       </div>
     </section>
   );

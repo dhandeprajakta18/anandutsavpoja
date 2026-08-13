@@ -1,3 +1,4 @@
+//components/SponsorCTA.tsx
 import Link from "next/link";
 import {
   FaHandHoldingHeart,
@@ -10,12 +11,12 @@ import styles from "./SponsorCTA.module.css";
 const sponsorOptions = [
   {
     icon: FaHandHoldingHeart,
-    type: "Personal Sponsor",
+    type: "Donate Personally",
     bengali: "ব্যক্তিগত সহযোগিতা",
     description:
       "Be a part of Ananda Utsav personally and help us carry forward our traditions, celebrations and community spirit.",
     button: "Sponsor Personally",
-    href: "/sponsor/personal",
+    href: "/donate",
   },
   {
     icon: FaHandshake,
@@ -24,7 +25,7 @@ const sponsorOptions = [
     description:
       "Partner with Ananda Utsav as an organization and support a celebration that brings culture, community and people together.",
     button: "Become a Partner",
-    href: "/sponsor/corporate",
+    href: "/donate",
   },
 ];
 
