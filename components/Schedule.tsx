@@ -268,7 +268,7 @@ export default function Schedule() {
           </p>
 
           <a
-            href="/brochures/ananda-utsav-brochure.pdf"
+            href="/brochures/ananda-utsav-brochure.png"
             download
             className={styles.downloadButton}
           >
