@@ -19,14 +19,17 @@ const quickLinks = [
   { label: "Media", href: "/media" },
   { label: "Social Activities", href: "/social-activities" },
   { label: "Contact Us", href: "/contact" },
-  {label : "Sponsorship", href : "/donate"},
+  { label: "Sponsorship", href: "/donate" },
 ];
 
 export default function Footer() {
   return (
     <footer className={styles.footer} id="contact">
 
-      {/* Decorative top border */}
+      {/* =========================
+          TOP ORNAMENT
+      ========================= */}
+
       <div className={styles.topBorder}>
         <span />
         <i>◆</i>
@@ -38,6 +41,10 @@ export default function Footer() {
       </div>
 
       <div className={styles.container}>
+
+        {/* =========================
+            MAIN FOOTER
+        ========================= */}
 
         <div className={styles.footerGrid}>
 
@@ -69,7 +76,7 @@ export default function Footer() {
               festivities and service.
             </p>
 
-            {/* SOCIAL */}
+            {/* SOCIAL ICONS */}
 
             <div className={styles.socials}>
 
@@ -227,7 +234,7 @@ export default function Footer() {
 
 
         {/* =========================
-            FOOTER QUOTE
+            FOOTER MESSAGE
         ========================= */}
 
         <div className={styles.footerMessage}>
