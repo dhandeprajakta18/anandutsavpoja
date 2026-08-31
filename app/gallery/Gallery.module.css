@@ -1,668 +1,440 @@
-/* =====================================
-   GALLERY PAGE
-===================================== */
-
 .page {
   background: #fffaf2;
 }
 
-
-/* =====================================
-   INTRO
-===================================== */
-
 .intro {
   position: relative;
-
   overflow: hidden;
-
   padding: 78px 20px 62px;
-
   text-align: center;
-
   background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(212, 164, 77, 0.14),
-      transparent 42%
-    ),
+    radial-gradient(circle at 50% 0%, rgba(212, 164, 77, 0.14), transparent 42%),
     #fffaf2;
-
   border-bottom: 1px solid rgba(143, 16, 11, 0.08);
 }
 
 .container {
   position: relative;
-
-  z-index: 2;
-
+  z-index: 1;
   width: min(100%, 760px);
-
   margin: 0 auto;
 }
 
-
-/* =====================================
-   DECORATION
-===================================== */
-
 .introPattern {
   position: absolute;
-
   right: -20px;
   bottom: -55px;
-
   color: rgba(143, 16, 11, 0.035);
-
-  font-size: clamp(
-    8rem,
-    18vw,
-    14rem
-  );
-
+  font-size: clamp(8rem, 18vw, 14rem);
   line-height: 1;
-
   pointer-events: none;
 }
 
-
-/* =====================================
-   EYEBROW
-===================================== */
-
-.eyebrow {
-  display: inline-block;
-
-  color: #a66d28;
-
-  font-size: 0.68rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
-
-  text-transform: uppercase;
-}
-
-
-/* =====================================
-   TITLE
-===================================== */
-
 .intro h1 {
   margin: 12px 0 0;
-
   color: var(--red);
-
   font-family: var(--heading-font);
-
-  font-size: clamp(
-    2.8rem,
-    5vw,
-    4.2rem
-  );
-
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
   font-weight: 600;
-
   line-height: 1.05;
 }
 
-
-/* =====================================
-   TITLE DIVIDER
-===================================== */
-
 .titleDivider {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   margin: 18px 0 16px;
 }
 
 .titleDivider span {
   width: 48px;
   height: 1px;
-
   background: rgba(184, 128, 55, 0.55);
 }
 
 .titleDivider i {
   color: #b78037;
-
   font-size: 0.45rem;
-
   font-style: normal;
 }
 
-
-/* =====================================
-   BENGALI TITLE
-===================================== */
-
 .bengaliTitle {
   margin: 0;
-
   color: #9d241a;
-
   font-size: 1rem;
-
   font-weight: 600;
 }
 
-
-/* =====================================
-   DESCRIPTION
-===================================== */
-
 .description {
   max-width: 610px;
-
   margin: 14px auto 0;
-
   color: var(--text-muted);
-
   font-size: 0.94rem;
-
   line-height: 1.7;
 }
 
-
-/* =====================================
-   YEAR SECTION
-===================================== */
-
-.yearSection {
-  padding: 32px 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f8ecdc 0%,
-      #f2dfc6 100%
-    );
-
-  border-top: 1px solid rgba(143, 16, 11, 0.1);
-
-  border-bottom: 1px solid rgba(143, 16, 11, 0.1);
-}
-
-.yearContainer {
-  width: min(100%, 1100px);
-
-  margin: 0 auto;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 30px;
-}
-
-
-/* =====================================
-   YEAR LABEL
-===================================== */
-
-.yearHeading {
-  color: #7d1711;
-
-  font-family: var(--heading-font);
-
-  font-size: 0.82rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-
-  white-space: nowrap;
-}
-
-
-/* =====================================
-   YEAR BAR
-===================================== */
-
-.yearBar {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-}
-
-
-/* =====================================
-   YEAR BUTTON
-===================================== */
-
-.yearButton {
-  min-width: 82px;
-
-  min-height: 50px;
-
-  padding: 12px 20px;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #fffdf8;
-
-  border: 1px solid rgba(125, 23, 17, 0.28);
-
-  border-radius: 3px;
-
-  color: #4b302a;
-
-  font-family: var(--heading-font);
-
-  /* Larger year text */
-  font-size: 1rem;
-
-  font-weight: 700;
-
-  line-height: 1;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 3px 8px rgba(80, 22, 12, 0.06);
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-
-/* =====================================
-   YEAR BUTTON HOVER
-===================================== */
-
-.yearButton:hover {
-  background: #8f100b;
-
-  border-color: #8f100b;
-
-  color: #fffaf0;
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 6px 14px rgba(143, 16, 11, 0.18);
-}
-
-
-/* =====================================
-   ACTIVE YEAR
-===================================== */
-
-.activeYear {
-  background: #8f100b;
-
-  border-color: #8f100b;
-
-  color: #fffaf0;
-
-  font-weight: 700;
-
-  box-shadow:
-    0 6px 14px rgba(143, 16, 11, 0.2);
-}
-
-.activeYear:hover {
-  background: #8f100b;
-
-  border-color: #8f100b;
-
-  color: #fffaf0;
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 7px 16px rgba(143, 16, 11, 0.22);
-}
-
-
-/* =====================================
-   GALLERY SECTION
-===================================== */
-
 .gallerySection {
-  padding: 62px 4% 95px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fffaf2 0%,
-      #f9eee1 100%
-    );
+  padding: 58px 4% 95px;
+  background: linear-gradient(180deg, #fffaf2 0%, #f9eee1 100%);
 }
 
 .galleryContainer {
   width: min(100%, 1180px);
-
   margin: 0 auto;
 }
 
-
-/* =====================================
-   GALLERY HEADING
-===================================== */
-
 .galleryHeading {
-  margin-bottom: 32px;
-
+  max-width: 580px;
+  margin: 0 auto 34px;
   text-align: center;
+}
+
+.galleryEyebrow {
+  margin: 0 0 7px;
+  color: #a66d28;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .galleryHeading h2 {
   margin: 0;
-
   color: var(--red);
-
   font-family: var(--heading-font);
-
-  font-size: clamp(
-    2rem,
-    4vw,
-    3rem
-  );
-
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
   font-weight: 600;
-
-  line-height: 1;
+  line-height: 1.05;
 }
 
-.galleryHeading p {
-  margin: 10px auto 0;
-
+.galleryHeading > p:last-child {
+  margin: 11px auto 0;
   color: var(--text-muted);
-
   font-size: 0.84rem;
-
   line-height: 1.6;
 }
 
-
-/* =====================================
-   GALLERY GRID
-===================================== */
-
 .galleryGrid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 22px;
+  column-count: 4;
+  column-gap: 18px;
 }
-
-
-/* =====================================
-   CARD
-===================================== */
 
 .card {
   position: relative;
-
+  display: block;
+  width: 100%;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  break-inside: avoid;
+  margin: 0 0 18px;
   overflow: hidden;
-
-  background: #fffdf9;
-
-  border: 1px solid rgba(143, 16, 11, 0.12);
-
-  box-shadow:
-    0 10px 26px rgba(80, 22, 12, 0.06);
-
+  background: #f1e5d6;
+  border: 1px solid rgba(143, 16, 11, 0.13);
+  cursor: zoom-in;
+  box-shadow: 0 10px 26px rgba(80, 22, 12, 0.07);
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card::after {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(234, 192, 111, 0);
+  content: "";
+  pointer-events: none;
+  transition: border-color 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 17px 34px rgba(80, 22, 12, 0.11);
+  z-index: 1;
+  transform: translateY(-4px);
+  border-color: rgba(143, 16, 11, 0.24);
+  box-shadow: 0 18px 34px rgba(80, 22, 12, 0.13);
 }
 
+.card:focus-visible {
+  outline: 3px solid #c99a45;
+  outline-offset: 3px;
+}
 
-/* =====================================
-   IMAGE WRAP
-===================================== */
-
-.imageWrap {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 1.35;
-
-  overflow: hidden;
-
-  background: #f1e5d6;
+.card:hover::after {
+  border-color: rgba(234, 192, 111, 0.56);
 }
 
 .image {
-  object-fit: cover;
-
-  transition:
-    transform 0.45s ease;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
 }
 
 .card:hover .image {
-  transform: scale(1.045);
+  transform: scale(1.035);
 }
 
-
-/* =====================================
-   EMPTY STATE
-===================================== */
-
-.noImages {
-  grid-column: 1 / -1;
-
-  padding: 70px 20px;
-
-  text-align: center;
-
-  color: var(--text-muted);
-
-  background: rgba(255, 255, 255, 0.5);
-
-  border: 1px dashed rgba(143, 16, 11, 0.18);
+.photoNumber {
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+  padding: 4px 7px;
+  background: rgba(75, 5, 3, 0.72);
+  color: #fff7e9;
+  font-family: var(--heading-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.noImages p {
+.card:hover .photoNumber {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:focus-visible .photoNumber {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lightbox {
+  width: min(92vw, 1280px);
+  max-width: calc(100% - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.lightbox::backdrop {
+  background: rgba(44, 8, 4, 0.86);
+  backdrop-filter: blur(6px);
+}
+
+.lightboxContent {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+}
+
+.lightboxFigure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
   margin: 0;
-
-  font-size: 0.9rem;
+  padding: 9px;
+  background: #fffaf2;
+  border: 1px solid rgba(234, 192, 111, 0.72);
+  box-shadow: 0 24px 58px rgba(25, 4, 2, 0.45);
 }
 
+.lightboxImage {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 92px);
+  max-height: calc(100dvh - 145px);
+  object-fit: contain;
+}
 
-/* =====================================
-   TABLET
-===================================== */
+.lightboxCaption {
+  width: 100%;
+  margin: 0;
+  padding: 10px 4px 1px;
+  color: #7d1711;
+  font-family: var(--heading-font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
 
-@media (max-width: 1050px) {
-  .yearContainer {
-    flex-direction: column;
+.lightboxClose,
+.lightboxNav {
+  position: absolute;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid rgba(255, 238, 204, 0.68);
+  border-radius: 50%;
+  background: rgba(75, 5, 3, 0.82);
+  color: #fff8ed;
+  cursor: pointer;
+  font-size: 1rem;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
 
-    gap: 18px;
-  }
+.lightboxClose {
+  top: 14px;
+  right: 14px;
+}
 
-  .yearHeading {
-    font-size: 0.8rem;
+.lightboxNav {
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-    text-align: center;
-  }
+.lightboxPrevious {
+  left: 14px;
+}
 
-  .yearBar {
-    max-width: 850px;
+.lightboxNext {
+  right: 14px;
+}
 
-    gap: 10px;
-  }
+.lightboxClose:hover,
+.lightboxNav:hover {
+  background: #fff8ed;
+  color: var(--red);
+}
 
+.lightboxClose:hover {
+  transform: rotate(90deg);
+}
+
+.lightboxPrevious:hover {
+  transform: translate(-3px, -50%);
+}
+
+.lightboxNext:hover {
+  transform: translate(3px, -50%);
+}
+
+.lightboxClose:focus-visible,
+.lightboxNav:focus-visible {
+  outline: 3px solid #f0c66e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1080px) {
   .galleryGrid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    column-count: 3;
   }
 }
 
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 680px) {
+@media (max-width: 760px) {
   .intro {
     padding: 60px 20px 48px;
   }
 
   .intro h1 {
-    font-size: clamp(
-      2.5rem,
-      11vw,
-      3.3rem
-    );
+    font-size: clamp(2.5rem, 11vw, 3.3rem);
   }
 
   .description {
     font-size: 0.87rem;
-
     line-height: 1.65;
   }
-
-
-  /* YEAR SELECTOR */
-
-  .yearSection {
-    padding: 28px 15px;
-  }
-
-  .yearContainer {
-    gap: 15px;
-  }
-
-  .yearHeading {
-    font-size: 0.7rem;
-
-    letter-spacing: 0.13em;
-  }
-
-  .yearBar {
-    width: 100%;
-
-    gap: 8px;
-  }
-
-  .yearButton {
-    min-width: 76px;
-
-    min-height: 48px;
-
-    padding: 11px 16px;
-
-    font-size: 0.95rem;
-  }
-
-
-  /* GALLERY */
 
   .gallerySection {
     padding: 45px 5% 70px;
   }
 
   .galleryHeading {
-    margin-bottom: 24px;
-  }
-
-  .galleryHeading h2 {
-    font-size: 2.2rem;
+    margin-bottom: 25px;
   }
 
   .galleryGrid {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
+    column-count: 2;
+    column-gap: 12px;
   }
 
-  .imageWrap {
-    aspect-ratio: 1.35;
+  .card {
+    margin-bottom: 12px;
+  }
+
+  .lightbox {
+    width: calc(100vw - 24px);
+    max-width: calc(100% - 24px);
+  }
+
+  .lightboxFigure {
+    padding: 6px;
+  }
+
+  .lightboxImage {
+    max-width: calc(100vw - 38px);
+    max-height: calc(100dvh - 128px);
+  }
+
+  .lightboxCaption {
+    padding-top: 8px;
+    font-size: 0.7rem;
+  }
+
+  .lightboxClose,
+  .lightboxNav {
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightboxClose {
+    top: 10px;
+    right: 10px;
+  }
+
+  .lightboxPrevious {
+    left: 8px;
+  }
+
+  .lightboxNext {
+    right: 8px;
   }
 }
 
-
-/* =====================================
-   SMALL MOBILE
-===================================== */
-
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .intro {
-    padding:
-      52px
-      17px
-      42px;
+    padding: 52px 17px 42px;
   }
 
-  .intro h1 {
-    font-size: 2.4rem;
+  .titleDivider {
+    margin: 16px 0 14px;
   }
-
-  .titleDivider span {
-    width: 36px;
-  }
-
-
-  /* YEAR SELECTOR */
-
-  .yearSection {
-    padding: 25px 12px;
-  }
-
-  .yearContainer {
-    gap: 13px;
-  }
-
-  .yearHeading {
-    font-size: 0.68rem;
-  }
-
-  .yearBar {
-    gap: 7px;
-  }
-
-  .yearButton {
-    min-width: 70px;
-
-    min-height: 46px;
-
-    padding: 10px 14px;
-
-    font-size: 0.9rem;
-  }
-
-
-  /* GALLERY */
 
   .gallerySection {
-    padding-left: 17px;
+    padding-right: 4%;
+    padding-left: 4%;
+  }
 
-    padding-right: 17px;
+  .galleryGrid {
+    column-gap: 10px;
+  }
+
+  .card {
+    margin-bottom: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after,
+  .image,
+  .photoNumber {
+    transition: none;
+  }
+
+  .lightboxClose,
+  .lightboxNav {
+    transition: none;
   }
 }
