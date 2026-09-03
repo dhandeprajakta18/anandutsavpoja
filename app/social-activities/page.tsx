@@ -68,15 +68,6 @@ const activities = [
   },
 ];
 
-const galleryImages = [
-  "/images/random1.png",
-  "/images/random2.png",
-  "/images/random3.png",
-  "/images/random1.png",
-  "/images/random2.png",
-  "/images/random3.png",
-];
-
 function CountUp({ end }: { end: number }) {
   const [count, setCount] = useState(0);
 
@@ -106,14 +97,11 @@ function CountUp({ end }: { end: number }) {
 export default function SocialActivitiesPage() {
   return (
     <main className={styles.page}>
-
       {/* =========================
           HERO
       ========================= */}
 
       <section className={styles.hero}>
-
-        {/* Background Bengali decoration */}
         <div
           className={styles.heroPattern}
           aria-hidden="true"
@@ -127,13 +115,11 @@ export default function SocialActivitiesPage() {
           </span>
         </div>
 
-        {/* Decorative icons */}
-
         <div
           className={styles.heroIconLeft}
           aria-hidden="true"
         >
-         <FaHandsHolding />
+          <FaHandsHolding />
         </div>
 
         <div
@@ -150,14 +136,8 @@ export default function SocialActivitiesPage() {
           <FaPeopleGroup />
         </div>
 
-        {/* Hero content */}
-
         <div className={styles.heroContent}>
-
-         
-
           <div className={styles.titleRow}>
-
             <span />
 
             <i>◆</i>
@@ -167,7 +147,6 @@ export default function SocialActivitiesPage() {
             <i>◆</i>
 
             <span />
-
           </div>
 
           <p className={styles.bengaliTitle}>
@@ -180,14 +159,6 @@ export default function SocialActivitiesPage() {
             positive difference within our community.
           </p>
 
-          <div className={styles.heroOrnament}>
-            <span />
-
-            <i>✦</i>
-
-            <span />
-          </div>
-
           <div className={styles.heroMessage}>
             <FaHeart />
 
@@ -197,74 +168,61 @@ export default function SocialActivitiesPage() {
 
             <FaHeart />
           </div>
-
         </div>
       </section>
 
-
       {/* =========================
-          INTRODUCTION
+          BIG INTRO PARAGRAPH
       ========================= */}
 
       <section className={styles.intro}>
-
         <div className={styles.container}>
-
-          <div className={styles.sectionHeading}>
-
-            <h2>
-              Beyond The Celebration
-            </h2>
-
-            <p className={styles.bengali}>
-              উৎসবের বাইরেও আমাদের পথচলা
-            </p>
-
-            <div className={styles.divider}>
-              <span />
-              <i>◆</i>
-              <span />
-            </div>
-
+          <div className={styles.introDecoration}>
+            <span />
+            <i>✦</i>
+            <span />
           </div>
 
           <p className={styles.introText}>
-            At Ananda Utsav, our celebration is rooted in
-            togetherness. Beyond the festivities, we believe in
-            standing beside our community and contributing to
-            causes that make a meaningful difference in
-            people&apos;s lives.
+            At Ananda Utsav, we believe that the spirit of
+            celebration should extend far beyond the festive
+            days themselves. Our social initiatives are built
+            around compassion, community and collective
+            responsibility — supporting people through food
+            distribution, educational assistance, wellbeing
+            initiatives, clothing donations and volunteer-led
+            efforts. Through every activity, our aim is to stand
+            beside those who need support, create meaningful
+            connections and carry the values of kindness and
+            togetherness throughout the year.
           </p>
 
+          <div className={styles.introDecorationBottom}>
+            <span />
+            <i>◆</i>
+            <span />
+          </div>
         </div>
-
       </section>
 
-
       {/* =========================
-          ACTIVITIES
+          ACTIVITIES / IMAGES
       ========================= */}
 
       <section className={styles.activitiesSection}>
-
         <div className={styles.container}>
-
           <div className={styles.activitiesGrid}>
-
             {activities.map((activity) => (
-
               <article
                 className={styles.activityCard}
                 key={activity.id}
               >
-
                 <div className={styles.imageWrapper}>
-
                   <Image
                     src={activity.image}
                     alt={activity.title}
                     fill
-                    sizes="(max-width: 700px) 100vw, 50vw"
+                    sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
                     className={styles.activityImage}
                   />
 
@@ -273,11 +231,9 @@ export default function SocialActivitiesPage() {
                   <span className={styles.year}>
                     {activity.year}
                   </span>
-
                 </div>
 
                 <div className={styles.cardContent}>
-
                   <h3>
                     {activity.title}
                   </h3>
@@ -291,32 +247,21 @@ export default function SocialActivitiesPage() {
                   <p className={styles.cardDescription}>
                     {activity.description}
                   </p>
-
                 </div>
-
               </article>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
       {/* =========================
-          FEATURED SECTION
+          FEATURED
       ========================= */}
 
       <section className={styles.featured}>
-
         <div className={styles.container}>
-
           <div className={styles.featuredInner}>
-
             <div className={styles.featuredImage}>
-
               <Image
                 src="/images/featured.png"
                 alt="Community social activity"
@@ -325,10 +270,12 @@ export default function SocialActivitiesPage() {
               />
 
               <div className={styles.featuredImageBorder} />
-
             </div>
 
             <div className={styles.featuredContent}>
+              {/* <span className={styles.smallTitle}>
+                Community & Care
+              </span> */}
 
               <h2>
                 Small Acts. Meaningful Change.
@@ -358,38 +305,36 @@ export default function SocialActivitiesPage() {
                 className={styles.textLink}
               >
                 Get Involved
+
                 <span>→</span>
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* =========================
           IMPACT
       ========================= */}
 
       <section className={styles.impact}>
-
         <div className={styles.container}>
-
           <div className={styles.impactHeading}>
+            <span>Our Impact</span>
 
             <h2>
               Together, We Make A Difference
             </h2>
 
+            <p>
+              Every contribution, every volunteer and every
+              initiative helps us reach more people and create
+              meaningful change.
+            </p>
           </div>
 
           <div className={styles.stats}>
-
             <div className={styles.stat}>
-
               <strong>
                 <CountUp end={500} />+
               </strong>
@@ -397,13 +342,11 @@ export default function SocialActivitiesPage() {
               <span>
                 People Reached
               </span>
-
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.stat}>
-
               <strong>
                 <CountUp end={200} />+
               </strong>
@@ -411,13 +354,11 @@ export default function SocialActivitiesPage() {
               <span>
                 Families Supported
               </span>
-
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.stat}>
-
               <strong>
                 <CountUp end={50} />+
               </strong>
@@ -425,13 +366,11 @@ export default function SocialActivitiesPage() {
               <span>
                 Volunteers
               </span>
-
             </div>
 
             <div className={styles.statDivider} />
 
             <div className={styles.stat}>
-
               <strong>
                 <CountUp end={10} />+
               </strong>
@@ -439,87 +378,27 @@ export default function SocialActivitiesPage() {
               <span>
                 Community Initiatives
               </span>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
-
-      {/* =========================
-          GALLERY
-      ========================= */}
-
-      <section className={styles.gallerySection}>
-
-        <div className={styles.container}>
-
-          <div className={styles.sectionHeading}>
-
-            <h2>
-              Social Activities Gallery
-            </h2>
-
-            <p className={styles.bengali}>
-              সেবার কিছু মুহূর্ত
-            </p>
-
-            <div className={styles.divider}>
-              <span />
-              <i>◆</i>
-              <span />
-            </div>
-
-          </div>
-
-          <div className={styles.gallery}>
-
-            {galleryImages.map((image, index) => (
-
-              <div
-                className={`${styles.galleryItem} ${
-                  index === 0 || index === 5
-                    ? styles.galleryLarge
-                    : ""
-                }`}
-                key={`${image}-${index}`}
-              >
-
-                <Image
-                  src={image}
-                  alt={`Social activity ${index + 1}`}
-                  fill
-                  sizes="(max-width: 600px) 100vw, 33vw"
-                  className={styles.galleryImage}
-                />
-
-                <div className={styles.galleryOverlay} />
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
 
       {/* =========================
           CTA
       ========================= */}
 
       <section className={styles.cta}>
-
-        <div className={styles.ctaDecoration}>
-          ✦
+        <div
+          className={styles.ctaBackgroundText}
+          aria-hidden="true"
+        >
+          সেবা
         </div>
 
         <div className={styles.ctaContent}>
+          <div className={styles.ctaDecoration}>
+            ✦
+          </div>
 
           <h2>
             Together, We Can Make A Difference
@@ -535,7 +414,6 @@ export default function SocialActivitiesPage() {
           </p>
 
           <div className={styles.ctaButtons}>
-
             <Link
               href="/contact?interest=volunteer#contact-form"
               className={styles.primaryButton}
@@ -549,13 +427,9 @@ export default function SocialActivitiesPage() {
             >
               Donate
             </Link>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

@@ -50,7 +50,7 @@ export default function AboutPage() {
             <div className={styles.imageFrame}>
               <div className={styles.imageInner}>
                 <Image
-                  src="/images/about-ananda-utsav.png"
+                  src="/real/aboutus.jpeg"
                   alt="Durga Puja celebration at Ananda Utsav"
                   fill
                   priority
@@ -90,34 +90,35 @@ export default function AboutPage() {
             </div>
 
             <p className={styles.lead}>
-  Ananda Utsav was born from a simple feeling — the longing to bring the
-  warmth, beauty and emotion of Durga Puja to Mumbai, and to create a
-  place that feels a little like home.
+  Ananda Utsav is a celebration of devotion, culture and community — a
+  place where the spirit of Durga Puja comes alive in the heart of Mumbai.
+  What began as a shared desire to celebrate our traditions together has
+  grown into an occasion that families look forward to every year.
 </p>
 
 <p>
-  Founded and run by women, Ananda Utsav is built on the belief that
-  traditions become more meaningful when we come together to keep them
-  alive. From planning the Puja and preparing for the rituals to creating
-  the celebrations around them, women from our community come together
-  with passion, care and a shared love for Maa Durga.
+  At the heart of Ananda Utsav is a dedicated community of women who bring
+  the celebration together with creativity, commitment and care. From the
+  preparations and sacred rituals to cultural programmes and festive
+  experiences, every detail is shaped by collective effort and a deep
+  respect for our traditions.
 </p>
 
 <p>
-  Here, Pujo is not just about the rituals. It is about the sound of the
-  dhak, the fragrance of bhog, the colours of the festivities, familiar
-  music, cultural performances and those little moments that remind us of
-  Bengal. It is a space where children discover their roots, families
-  create memories and friends come together year after year.
+  Each year, the celebration brings together generations through the
+  familiar rhythms of the dhak, the joy of offering anjali, shared meals,
+  music, performances and festive gatherings. For some, it brings back
+  cherished memories of Bengal; for others, especially younger
+  generations, it becomes a beautiful introduction to their cultural
+  heritage.
 </p>
 
 <p>
-  At Ananda Utsav, you will find a little slice of Pujo in Mumbai — a
-  glimpse of Bengal brought to life through devotion, culture, food,
-  celebration and togetherness. And beyond the festivities, we hope to
-  carry that same spirit of care and service into the wider community.
+  More than an annual festival, Ananda Utsav is about creating meaningful
+  connections. It is a space to celebrate our roots, welcome new friendships
+  and share the richness of Bengali culture with the wider community —
+  carrying forward the values of devotion, togetherness and service.
 </p>
-
             <Link href="/gallery" className={styles.button}>
               <span>Explore Our Celebrations</span>
               <FaArrowRightLong />
@@ -132,7 +133,7 @@ export default function AboutPage() {
           <div className={styles.durgaHeading}>
            
 
-            <h2>Durga Puja In Bengal</h2>
+            <h2>The Spirit of Durga Puja</h2>
 
             <p className={styles.bengaliSubtitle}>
               দুর্গোৎসব — বাঙালির আবেগ

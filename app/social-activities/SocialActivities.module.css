@@ -1,5 +1,6 @@
 .page {
   overflow: hidden;
+
   background: #fffaf2;
 }
 
@@ -9,92 +10,24 @@
 
 .container {
   width: min(92%, 1200px);
+
   margin: 0 auto;
 }
 
 .smallTitle {
   display: block;
-  margin-bottom: 8px;
+
+  margin-bottom: 10px;
 
   color: #a7783d;
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 2.4px;
 
   text-transform: uppercase;
 }
-
-.sectionHeading {
-  max-width: 650px;
-  margin: 0 auto 45px;
-  text-align: center;
-}
-
-.sectionHeading h2 {
-  margin: 0;
-
-  color: var(--red);
-
-  font-family: var(--heading-font);
-
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 600;
-
-  line-height: 1.1;
-
-  text-transform: uppercase;
-}
-
-.bengali {
-  margin-top: 8px;
-
-  color: #a5261c;
-
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.divider {
-  width: 150px;
-
-  margin: 16px auto 0;
-
-  display: flex;
-  align-items: center;
-
-  gap: 9px;
-}
-
-.divider span {
-  flex: 1;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #bc863c
-    );
-}
-
-.divider span:last-child {
-  background:
-    linear-gradient(
-      90deg,
-      #bc863c,
-      transparent
-    );
-}
-
-.divider i {
-  color: #b77f35;
-
-  font-size: 6px;
-  font-style: normal;
-}
-
 
 /* =========================
    HERO
@@ -103,13 +36,13 @@
 .hero {
   position: relative;
 
-  min-height: 440px;
+  min-height: 245px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 120px 20px 80px;
+  padding: 70px 20px 32px;
 
   overflow: hidden;
 
@@ -145,10 +78,10 @@
 
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: 380px;
+  height: 380px;
 
-  top: -250px;
+  top: -255px;
   left: 50%;
 
   transform: translateX(-50%);
@@ -158,13 +91,12 @@
   background:
     radial-gradient(
       circle,
-      rgba(183, 127, 53, 0.13),
+      rgba(183, 127, 53, 0.14),
       transparent 68%
     );
 
   pointer-events: none;
 }
-
 
 /* =========================
    HERO PATTERN
@@ -181,42 +113,45 @@
 .patternLeft {
   position: absolute;
 
-  left: -35px;
-  bottom: 15px;
+  left: 20px;
+  bottom: 2px;
 
-  color: rgba(143, 16, 11, 0.055);
+  color: rgba(143, 16, 11, 0.05);
 
   font-family: var(--heading-font);
 
-  font-size: clamp(7rem, 15vw, 12rem);
+  font-size: clamp(4rem, 9vw, 7rem);
 
   font-weight: 600;
 
   line-height: 1;
+
+  white-space: nowrap;
 }
 
 .patternRight {
   position: absolute;
 
-  right: -65px;
-  top: 30px;
+  right: 20px;
+  top: 10px;
 
-  color: rgba(183, 127, 53, 0.065);
+  color: rgba(183, 127, 53, 0.06);
 
   font-family: var(--heading-font);
 
-  font-size: clamp(5rem, 11vw, 9rem);
+  font-size: clamp(3.5rem, 7vw, 5.8rem);
 
   font-weight: 600;
 
   line-height: 1;
 
-  transform: rotate(-8deg);
+  white-space: nowrap;
+
+  transform: rotate(-5deg);
 }
 
-
 /* =========================
-   DECORATIVE ICONS
+   HERO ICONS
 ========================= */
 
 .heroIconLeft,
@@ -231,15 +166,13 @@
   justify-content: center;
 
   border:
-    1px solid rgba(169, 113, 48, 0.3);
+    1px solid rgba(169, 113, 48, 0.26);
 
   background:
     rgba(255, 252, 244, 0.72);
 
-  color: #a87532;
-
   box-shadow:
-    0 8px 25px rgba(100, 50, 20, 0.08);
+    0 8px 25px rgba(100, 50, 20, 0.07);
 
   backdrop-filter: blur(5px);
 
@@ -248,66 +181,58 @@
     box-shadow 0.35s ease;
 }
 
-.heroIconLeft:hover,
-.heroIconRight:hover,
-.heroPeopleIcon:hover {
-  box-shadow:
-    0 12px 30px rgba(100, 50, 20, 0.14);
-}
-
-
-/* Helping hands */
-
 .heroIconLeft {
-  width: 64px;
-  height: 64px;
-
-  left: 10%;
-  top: 28%;
-
-  border-radius: 50%;
-
-  font-size: 23px;
-
-  transform: rotate(-8deg);
-}
-
-
-/* Heart */
-
-.heroIconRight {
-  width: 55px;
-  height: 55px;
-
-  right: 11%;
-  top: 22%;
-
-  border-radius: 50%;
-
-  color: #a5261c;
-
-  font-size: 19px;
-
-  transform: rotate(8deg);
-}
-
-
-/* People */
-
-.heroPeopleIcon {
   width: 48px;
   height: 48px;
 
-  right: 17%;
-  bottom: 20%;
+  left: 10%;
+  top: 27%;
 
   border-radius: 50%;
 
   color: #a87532;
 
-  font-size: 17px;
+  font-size: 18px;
+
+  transform: rotate(-8deg);
 }
 
+.heroIconRight {
+  width: 45px;
+  height: 45px;
+
+  right: 11%;
+  top: 24%;
+
+  border-radius: 50%;
+
+  color: #a5261c;
+
+  font-size: 16px;
+
+  transform: rotate(8deg);
+}
+
+.heroPeopleIcon {
+  width: 40px;
+  height: 40px;
+
+  right: 17%;
+  bottom: 15%;
+
+  border-radius: 50%;
+
+  color: #a87532;
+
+  font-size: 14px;
+}
+
+.heroIconLeft:hover,
+.heroIconRight:hover,
+.heroPeopleIcon:hover {
+  box-shadow:
+    0 12px 30px rgba(100, 50, 20, 0.13);
+}
 
 /* =========================
    HERO CONTENT
@@ -325,51 +250,17 @@
   text-align: center;
 }
 
-
-/* =========================
-   HERO LABEL
-========================= */
-
-.heroLabel {
-  display: inline-block;
-
-  margin-bottom: 15px;
-
-  padding: 7px 15px;
-
-  border:
-    1px solid rgba(167, 117, 57, 0.28);
-
-  background:
-    rgba(255, 252, 244, 0.65);
-
-  color: #9a6c35;
-
-  font-size: 9px;
-
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================
-   TITLE ROW
-========================= */
-
 .titleRow {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap: 12px;
+  gap: 11px;
 }
 
 .titleRow > span {
-  width: 55px;
+  width: 50px;
   height: 1px;
 
   background:
@@ -392,78 +283,123 @@
 .titleRow i {
   color: #b77f35;
 
-  font-size: 7px;
+  font-size: 6px;
 
   font-style: normal;
 }
 
 .titleRow h1 {
-  margin: 0 10px;
+  margin: 0 8px;
 
   color: var(--red);
 
   font-family: var(--heading-font);
 
   font-size:
-    clamp(2.8rem, 6vw, 5rem);
+    clamp(2.2rem, 4.5vw, 3.65rem);
 
   font-weight: 600;
 
-  line-height: 0.95;
+  line-height: 1;
 
   text-transform: uppercase;
 }
 
-
-/* =========================
-   BENGALI TITLE
-========================= */
-
 .bengaliTitle {
-  margin-top: 16px;
+  margin-top: 8px;
 
   color: #a5261c;
 
-  font-size: 20px;
+  font-size: 16px;
 
   font-weight: 600;
 }
 
-
-/* =========================
-   DESCRIPTION
-========================= */
-
 .heroDescription {
-  max-width: 590px;
+  max-width: 560px;
 
-  margin: 18px auto 0;
+  margin: 9px auto 0;
 
   color: #77635b;
 
-  font-size: 13px;
+  font-size: 11.5px;
 
-  line-height: 1.8;
+  line-height: 1.65;
 }
 
-
-/* =========================
-   HERO ORNAMENT
-========================= */
-
-.heroOrnament {
-  width: 180px;
-
-  margin: 24px auto 0;
+.heroMessage {
+  margin-top: 11px;
 
   display: flex;
-
   align-items: center;
+  justify-content: center;
 
-  gap: 12px;
+  gap: 9px;
+
+  color: #8f100b;
+
+  font-family: var(--heading-font);
+
+  font-size: 12px;
+
+  font-weight: 600;
 }
 
-.heroOrnament span {
+.heroMessage svg {
+  color: #b77f35;
+
+  font-size: 8px;
+}
+
+/* =========================
+   BIG INTRO
+========================= */
+
+.intro {
+  position: relative;
+
+  padding: 65px 0 58px;
+
+  background: #fffaf2;
+}
+
+.introText {
+  max-width: 960px;
+
+  margin: 0 auto;
+
+  color: #594943;
+
+  font-family: var(--heading-font);
+
+  font-size:
+    clamp(1.1rem, 2vw, 1.5rem);
+
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+.introDecoration,
+.introDecorationBottom {
+  width: 150px;
+
+  margin: 0 auto 26px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.introDecorationBottom {
+  margin: 27px auto 0;
+}
+
+.introDecoration span,
+.introDecorationBottom span {
   flex: 1;
 
   height: 1px;
@@ -472,89 +408,35 @@
     linear-gradient(
       90deg,
       transparent,
-      rgba(183, 127, 53, 0.4)
+      rgba(185, 129, 56, 0.65)
     );
 }
 
-.heroOrnament span:last-child {
+.introDecoration span:last-child,
+.introDecorationBottom span:last-child {
   background:
     linear-gradient(
       90deg,
-      rgba(183, 127, 53, 0.4),
+      rgba(185, 129, 56, 0.65),
       transparent
     );
 }
 
-.heroOrnament i {
-  color: #b77f35;
+.introDecoration i,
+.introDecorationBottom i {
+  color: #b98138;
 
   font-size: 8px;
 
   font-style: normal;
 }
 
-
-/* =========================
-   HERO BENGALI MESSAGE
-========================= */
-
-.heroMessage {
-  margin-top: 18px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 10px;
-
-  color: #8f100b;
-
-  font-family: var(--heading-font);
-
-  font-size: 14px;
-
-  font-weight: 600;
-}
-
-.heroMessage svg {
-  color: #b77f35;
-
-  font-size: 9px;
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro {
-  padding: 85px 0 65px;
-
-  background: #fffaf2;
-}
-
-.introText {
-  max-width: 750px;
-
-  margin: -20px auto 0;
-
-  color: #6f5d55;
-
-  font-size: 14px;
-
-  line-height: 1.9;
-
-  text-align: center;
-}
-
-
 /* =========================
    ACTIVITIES
 ========================= */
 
 .activitiesSection {
-  padding: 20px 0 100px;
+  padding: 15px 0 100px;
 
   background: #fffaf2;
 }
@@ -563,9 +445,9 @@
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(3, minmax(0, 1fr));
 
-  gap: 55px 35px;
+  gap: 55px 26px;
 }
 
 .activityCard {
@@ -575,11 +457,14 @@
 .imageWrapper {
   position: relative;
 
-  height: 330px;
+  height: 285px;
 
   overflow: hidden;
 
   background: #efe5d7;
+
+  box-shadow:
+    0 12px 30px rgba(89, 52, 28, 0.06);
 }
 
 .activityImage {
@@ -590,7 +475,7 @@
 }
 
 .activityCard:hover .activityImage {
-  transform: scale(1.045);
+  transform: scale(1.05);
 }
 
 .imageOverlay {
@@ -601,8 +486,8 @@
   background:
     linear-gradient(
       180deg,
-      transparent 55%,
-      rgba(67, 20, 13, 0.28)
+      transparent 48%,
+      rgba(67, 20, 13, 0.32)
     );
 }
 
@@ -634,7 +519,25 @@
 .cardContent {
   position: relative;
 
-  padding: 23px 10px 0 45px;
+  padding: 22px 10px 0 20px;
+}
+
+.cardContent::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 25px;
+
+  width: 2px;
+  height: 32px;
+
+  background:
+    linear-gradient(
+      #b98138,
+      rgba(185, 129, 56, 0.15)
+    );
 }
 
 .cardContent h3 {
@@ -644,9 +547,11 @@
 
   font-family: var(--heading-font);
 
-  font-size: 24px;
+  font-size: 20px;
 
   font-weight: 600;
+
+  line-height: 1.2;
 
   text-transform: uppercase;
 }
@@ -675,13 +580,14 @@
 .cardDescription {
   max-width: 490px;
 
+  margin: 0;
+
   color: #75645c;
 
   font-size: 12px;
 
   line-height: 1.75;
 }
-
 
 /* =========================
    FEATURED
@@ -714,10 +620,19 @@
   position: relative;
 
   height: 470px;
+
+  overflow: hidden;
 }
 
 .featuredImage img {
   object-fit: cover;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.featuredImage:hover img {
+  transform: scale(1.025);
 }
 
 .featuredImageBorder {
@@ -726,13 +641,13 @@
   inset: 15px;
 
   border:
-    1px solid rgba(255, 255, 255, 0.6);
+    1px solid rgba(255, 255, 255, 0.65);
 
   pointer-events: none;
 }
 
 .featuredContent h2 {
-  max-width: 450px;
+  max-width: 470px;
 
   margin: 0 0 10px;
 
@@ -768,7 +683,7 @@
 }
 
 .featuredContent > p:not(.featuredBengali) {
-  max-width: 480px;
+  max-width: 490px;
 
   margin-bottom: 14px;
 
@@ -786,7 +701,7 @@
 
   gap: 13px;
 
-  margin-top: 12px;
+  margin-top: 13px;
 
   color: var(--red);
 
@@ -812,21 +727,44 @@
   transform: translateX(5px);
 }
 
-
 /* =========================
    IMPACT
 ========================= */
 
 .impact {
-  padding: 85px 0;
+  padding: 85px 0 90px;
 
-  background: var(--red);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(232, 189, 105, 0.12),
+      transparent 38%
+    ),
+    var(--red);
 }
 
 .impactHeading {
-  margin-bottom: 45px;
+  max-width: 690px;
+
+  margin: 0 auto 48px;
 
   text-align: center;
+}
+
+.impactHeading > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #e8bd69;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.2px;
+
+  text-transform: uppercase;
 }
 
 .impactHeading h2 {
@@ -842,6 +780,19 @@
   font-weight: 500;
 
   text-transform: uppercase;
+}
+
+.impactHeading p {
+  max-width: 530px;
+
+  margin: 12px auto 0;
+
+  color:
+    rgba(255, 248, 235, 0.68);
+
+  font-size: 11.5px;
+
+  line-height: 1.75;
 }
 
 .stats {
@@ -899,69 +850,6 @@
     rgba(244, 213, 151, 0.25);
 }
 
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallerySection {
-  padding: 95px 0;
-
-  background: #fffaf2;
-}
-
-.gallery {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  grid-auto-rows: 220px;
-
-  gap: 10px;
-}
-
-.galleryItem {
-  position: relative;
-
-  overflow: hidden;
-
-  background: #eee2d3;
-}
-
-.galleryLarge {
-  grid-column: span 2;
-}
-
-.galleryImage {
-  object-fit: cover;
-
-  transition:
-    transform 0.7s ease;
-}
-
-.galleryItem:hover .galleryImage {
-  transform: scale(1.06);
-}
-
-.galleryOverlay {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    rgba(83, 24, 16, 0);
-
-  transition:
-    background 0.4s ease;
-}
-
-.galleryItem:hover .galleryOverlay {
-  background:
-    rgba(83, 24, 16, 0.12);
-}
-
-
 /* =========================
    CTA
 ========================= */
@@ -976,12 +864,43 @@
   background:
     radial-gradient(
       circle at center,
-      rgba(183, 127, 53, 0.12),
+      rgba(183, 127, 53, 0.13),
       transparent 45%
     ),
     #f8eddd;
 
   text-align: center;
+}
+
+.ctaBackgroundText {
+  position: absolute;
+
+  left: 50%;
+  bottom: -28px;
+
+  transform: translateX(-50%);
+
+  color:
+    rgba(143, 16, 11, 0.035);
+
+  font-family: var(--heading-font);
+
+  font-size:
+    clamp(8rem, 18vw, 15rem);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+
+  z-index: 2;
 }
 
 .ctaDecoration {
@@ -993,7 +912,7 @@
 }
 
 .ctaContent h2 {
-  max-width: 650px;
+  max-width: 680px;
 
   margin: 10px auto 0;
 
@@ -1039,7 +958,6 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 12px;
@@ -1047,9 +965,9 @@
 
 .primaryButton,
 .secondaryButton {
-  min-width: 140px;
+  min-width: 145px;
 
-  padding: 13px 25px;
+  padding: 14px 25px;
 
   font-size: 9px;
 
@@ -1064,7 +982,8 @@
   transition:
     background 0.3s ease,
     color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .primaryButton {
@@ -1090,23 +1009,29 @@
   transform: translateY(-2px);
 }
 
+.primaryButton:hover {
+  box-shadow:
+    0 8px 20px rgba(143, 16, 11, 0.16);
+}
+
 .secondaryButton:hover {
   color: #fff;
 
   background: var(--red);
 }
 
-
 /* =========================
    TABLET
 ========================= */
 
-@media (max-width: 900px) {
-
+@media (max-width: 1000px) {
   .hero {
-    min-height: 390px;
+    min-height: 235px;
 
-    padding-top: 110px;
+    padding:
+      66px
+      20px
+      30px;
   }
 
   .heroIconLeft {
@@ -1121,12 +1046,19 @@
     right: 9%;
   }
 
+  .introText {
+    max-width: 840px;
+  }
+
   .activitiesGrid {
-    gap: 45px 25px;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 50px 24px;
   }
 
   .imageWrapper {
-    height: 280px;
+    height: 300px;
   }
 
   .featuredInner {
@@ -1134,81 +1066,72 @@
   }
 
   .featuredImage {
-    height: 400px;
-  }
-
-  .gallery {
-    grid-template-columns:
-      repeat(2, 1fr);
+    height: 410px;
   }
 }
-
 
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
 
   .hero {
-    min-height: 390px;
+    min-height: 220px;
 
     padding:
-      100px
+      62px
       18px
-      60px;
+      28px;
   }
 
   .heroIconLeft {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
 
-    left: 5%;
+    left: 4%;
     top: 16%;
-
-    font-size: 17px;
-  }
-
-  .heroIconRight {
-    width: 43px;
-    height: 43px;
-
-    right: 6%;
-    top: 15%;
 
     font-size: 15px;
   }
 
+  .heroIconRight {
+    width: 39px;
+    height: 39px;
+
+    right: 5%;
+    top: 16%;
+
+    font-size: 13px;
+  }
+
   .heroPeopleIcon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 
     right: 8%;
-    bottom: 12%;
+    bottom: 10%;
 
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .patternLeft {
-    left: -25px;
-    bottom: 5px;
+    left: 8px;
+    bottom: 3px;
 
-    font-size: 7rem;
+    font-size: 4.7rem;
   }
 
   .patternRight {
-    right: -50px;
-    top: 25px;
+    right: 8px;
+    top: 8px;
 
-    font-size: 5rem;
-  }
+    font-size: 3.6rem;
 
-  .heroLabel {
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    padding: 6px 11px;
+    transform: rotate(-3deg);
   }
 
   .titleRow {
@@ -1223,27 +1146,45 @@
     margin: 0 5px;
 
     font-size:
-      clamp(2.2rem, 10vw, 3.2rem);
+      clamp(2rem, 9vw, 2.9rem);
   }
 
   .bengaliTitle {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .heroDescription {
-    font-size: 12px;
+    max-width: 500px;
+
+    font-size: 10.8px;
   }
 
   .heroMessage {
-    font-size: 13px;
+    font-size: 11.5px;
   }
 
   .intro {
-    padding: 65px 0 50px;
+    padding: 50px 0 45px;
+  }
+
+  .introText {
+    max-width: 94%;
+
+    font-size: 1.05rem;
+
+    line-height: 1.72;
+  }
+
+  .introDecoration {
+    margin-bottom: 21px;
+  }
+
+  .introDecorationBottom {
+    margin-top: 22px;
   }
 
   .activitiesSection {
-    padding-bottom: 70px;
+    padding: 5px 0 75px;
   }
 
   .activitiesGrid {
@@ -1253,11 +1194,11 @@
   }
 
   .imageWrapper {
-    height: 280px;
+    height: 320px;
   }
 
   .cardContent {
-    padding-left: 38px;
+    padding-left: 20px;
   }
 
   .featured {
@@ -1271,7 +1212,7 @@
   }
 
   .featuredImage {
-    height: 380px;
+    height: 390px;
   }
 
   .featuredContent {
@@ -1289,32 +1230,21 @@
     margin-right: auto;
   }
 
+  .impact {
+    padding: 70px 0 75px;
+  }
+
   .stats {
     display: grid;
 
     grid-template-columns:
       repeat(2, 1fr);
 
-    gap: 40px 10px;
+    gap: 42px 10px;
   }
 
   .statDivider {
     display: none;
-  }
-
-  .gallerySection {
-    padding: 70px 0;
-  }
-
-  .gallery {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    grid-auto-rows: 180px;
-  }
-
-  .galleryLarge {
-    grid-column: span 2;
   }
 
   .cta {
@@ -1322,15 +1252,18 @@
   }
 }
 
-
 /* =========================
    SMALL MOBILE
 ========================= */
 
 @media (max-width: 480px) {
-
   .hero {
-    min-height: 350px;
+    min-height: 205px;
+
+    padding:
+      56px
+      16px
+      25px;
   }
 
   .titleRow > span,
@@ -1338,30 +1271,91 @@
     display: none;
   }
 
+  .titleRow h1 {
+    font-size: 2.2rem;
+  }
+
   .heroIconLeft {
-    left: 4%;
-    top: 12%;
+    left: 3%;
+    top: 11%;
   }
 
   .heroIconRight {
-    right: 4%;
-    top: 12%;
+    right: 3%;
+    top: 11%;
   }
 
   .heroPeopleIcon {
     display: none;
   }
 
+  .patternLeft {
+    left: 5px;
+
+    font-size: 4rem;
+  }
+
   .patternRight {
-    opacity: 0.7;
+    right: 4px;
+
+    font-size: 3rem;
+
+    opacity: 0.75;
+  }
+
+  .bengaliTitle {
+    margin-top: 7px;
+
+    font-size: 14px;
+  }
+
+  .heroDescription {
+    margin-top: 7px;
+
+    font-size: 10px;
+
+    line-height: 1.55;
   }
 
   .heroMessage {
+    margin-top: 8px;
+
     gap: 7px;
+
+    font-size: 11px;
+  }
+
+  .intro {
+    padding: 42px 0 38px;
+  }
+
+  .introText {
+    max-width: 96%;
+
+    font-size: 0.98rem;
+
+    line-height: 1.7;
+  }
+
+  .introDecoration,
+  .introDecorationBottom {
+    width: 125px;
+  }
+
+  .activitiesGrid {
+    gap: 44px;
   }
 
   .imageWrapper {
-    height: 235px;
+    height: 250px;
+  }
+
+  .cardContent h3 {
+    font-size: 18px;
+  }
+
+  .cardDescription {
+    font-size: 11.5px;
   }
 
   .featuredImage {
@@ -1372,14 +1366,8 @@
     gap: 35px 5px;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
-
-    grid-auto-rows: 230px;
-  }
-
-  .galleryLarge {
-    grid-column: span 1;
+  .impactHeading {
+    margin-bottom: 38px;
   }
 
   .ctaButtons {

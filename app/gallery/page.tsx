@@ -1,6 +1,7 @@
+//app/gallery/page.tsx
 import styles from "./Gallery.module.css";
 import GalleryGrid from "./GalleryGrid";
-import { galleryImages } from "./galleryData";
+import { galleryCategories, galleryImages } from "./galleryData";
 
 export default function GalleryPage() {
   return (
@@ -39,7 +40,7 @@ export default function GalleryPage() {
             </p> */}
           </div>
 
-          <GalleryGrid images={galleryImages} />
+          <GalleryGrid images={galleryImages} categories={galleryCategories} />
         </div>
       </section>
     </main>

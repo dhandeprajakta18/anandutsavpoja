@@ -9,23 +9,43 @@ import {
 } from "react-icons/fa6";
 
 import styles from "./Gallery.module.css";
-import type { GalleryImage } from "./galleryData";
+import type { GalleryCategory, GalleryImage } from "./galleryData";
 
 type GalleryGridProps = {
   images: GalleryImage[];
+  categories: GalleryCategory[];
 };
 
 function imageDescription(index: number) {
   return `Ananda Utsav celebration photograph ${index + 1}`;
 }
 
-export default function GalleryGrid({ images }: GalleryGridProps) {
+export default function GalleryGrid({
+  images,
+  categories,
+}: GalleryGridProps) {
+  const [selectedCategoryId, setSelectedCategoryId] = useState<
+    GalleryCategory["id"] | null
+  >(null);
+
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
+  /*
+   * selectedCategoryId === null
+   * means show ALL gallery images.
+   */
+  const activeImages =
+    selectedCategoryId === null
+      ? images
+      : categories.find(
+          (category) => category.id === selectedCategoryId
+        )?.images ?? images;
+
   const selectedImage =
-    selectedIndex === null ? null : images[selectedIndex];
+    selectedIndex === null ? null : activeImages[selectedIndex];
 
   const closeLightbox = useCallback(() => {
     const dialog = dialogRef.current;
@@ -41,16 +61,22 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
   const moveImage = useCallback(
     (direction: 1 | -1) => {
       setSelectedIndex((currentIndex) => {
-        if (currentIndex === null) {
+        if (currentIndex === null || activeImages.length === 0) {
           return currentIndex;
         }
 
-        return (currentIndex + direction + images.length) % images.length;
+        return (
+          (currentIndex + direction + activeImages.length) %
+          activeImages.length
+        );
       });
     },
-    [images.length]
+    [activeImages.length]
   );
 
+  /*
+   * Open / close dialog whenever selected image changes.
+   */
   useEffect(() => {
     const dialog = dialogRef.current;
 
@@ -71,6 +97,9 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
     }
   }, [selectedIndex]);
 
+  /*
+   * Keyboard navigation.
+   */
   useEffect(() => {
     if (selectedIndex === null) {
       return;
@@ -100,10 +129,12 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
     };
 
     document.body.style.overflow = "hidden";
+
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = previousOverflow;
+
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [moveImage, selectedIndex]);
@@ -113,6 +144,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     triggerRef.current = event.currentTarget;
+
     setSelectedIndex(index);
   };
 
@@ -124,7 +156,9 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
     });
   };
 
-  const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
+  const handleDialogClick = (
+    event: React.MouseEvent<HTMLDialogElement>
+  ) => {
     if (event.target === event.currentTarget) {
       closeLightbox();
     }
@@ -138,33 +172,93 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
     }
   };
 
+  /*
+   * Show ALL images.
+   */
+  const showAllImages = () => {
+    triggerRef.current = null;
+    setSelectedIndex(null);
+    setSelectedCategoryId(null);
+  };
+
+  /*
+   * Show only selected category.
+   */
+  const selectCategory = (
+    categoryId: GalleryCategory["id"]
+  ) => {
+    triggerRef.current = null;
+    setSelectedIndex(null);
+    setSelectedCategoryId(categoryId);
+  };
+
   return (
     <>
+      {/* CATEGORY FILTERS */}
+      <div
+        className={styles.categoryBar}
+        aria-label="Gallery categories"
+      >
+        {/* ALL PHOTOS */}
+        <button
+          type="button"
+          className={styles.categoryButton}
+          onClick={showAllImages}
+          aria-pressed={selectedCategoryId === null}
+        >
+          All Photos
+        </button>
+
+        {/* CATEGORY BUTTONS */}
+        {categories.map((category) => (
+          <button
+            type="button"
+            className={styles.categoryButton}
+            key={category.id}
+            onClick={() => selectCategory(category.id)}
+            aria-pressed={selectedCategoryId === category.id}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+
+      {/* GALLERY */}
       <div className={styles.galleryGrid}>
-        {images.map((image, index) => (
+        {activeImages.map((image, index) => (
           <button
             type="button"
             className={styles.card}
-            key={image.src}
+            key={`${image}-${index}`}
             onClick={(event) => openImage(index, event)}
-            aria-label={`Open photograph ${index + 1} of ${images.length}`}
+            aria-label={`Open photograph ${index + 1} of ${
+              activeImages.length
+            }`}
           >
             <Image
-              src={image.src}
+              src={image}
               alt=""
-              width={image.width}
-              height={image.height}
-              sizes="(max-width: 520px) 44vw, (max-width: 760px) 43vw, (max-width: 1080px) 29vw, 280px"
+              fill
+              sizes="
+                (max-width: 520px) 44vw,
+                (max-width: 760px) 43vw,
+                (max-width: 1080px) 29vw,
+                280px
+              "
               className={styles.image}
             />
 
-            <span className={styles.photoNumber} aria-hidden="true">
+            <span
+              className={styles.photoNumber}
+              aria-hidden="true"
+            >
               {String(index + 1).padStart(2, "0")}
             </span>
           </button>
         ))}
       </div>
 
+      {/* LIGHTBOX */}
       <dialog
         ref={dialogRef}
         className={styles.lightbox}
@@ -173,7 +267,9 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
         aria-label={
           selectedIndex === null
             ? "Gallery image viewer"
-            : `Viewing photograph ${selectedIndex + 1} of ${images.length}`
+            : `Viewing photograph ${
+                selectedIndex + 1
+              } of ${activeImages.length}`
         }
       >
         {selectedImage && selectedIndex !== null && (
@@ -181,6 +277,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
             className={styles.lightboxContent}
             onClick={handleLightboxContentClick}
           >
+            {/* CLOSE */}
             <button
               type="button"
               className={styles.lightboxClose}
@@ -191,38 +288,50 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
               <FaXmark aria-hidden="true" />
             </button>
 
-            <button
-              type="button"
-              className={`${styles.lightboxNav} ${styles.lightboxPrevious}`}
-              onClick={() => moveImage(-1)}
-              aria-label="View previous photograph"
-            >
-              <FaChevronLeft aria-hidden="true" />
-            </button>
+            {/* PREVIOUS */}
+            {activeImages.length > 1 && (
+              <button
+                type="button"
+                className={`${styles.lightboxNav} ${styles.lightboxPrevious}`}
+                onClick={() => moveImage(-1)}
+                aria-label="View previous photograph"
+              >
+                <FaChevronLeft aria-hidden="true" />
+              </button>
+            )}
 
+            {/* IMAGE */}
             <figure className={styles.lightboxFigure}>
-              <Image
-                src={selectedImage.src}
-                alt={imageDescription(selectedIndex)}
-                width={selectedImage.width}
-                height={selectedImage.height}
-                sizes="(max-width: 760px) 92vw, 86vw"
-                className={styles.lightboxImage}
-              />
+              <div className={styles.lightboxMedia}>
+                <Image
+                  src={selectedImage}
+                  alt={imageDescription(selectedIndex)}
+                  fill
+                  sizes="(max-width: 760px) 92vw, 86vw"
+                  className={styles.lightboxImage}
+                />
+              </div>
 
-              <figcaption className={styles.lightboxCaption} aria-live="polite">
-                Photograph {selectedIndex + 1} of {images.length}
+              <figcaption
+                className={styles.lightboxCaption}
+                aria-live="polite"
+              >
+                Photograph {selectedIndex + 1} of{" "}
+                {activeImages.length}
               </figcaption>
             </figure>
 
-            <button
-              type="button"
-              className={`${styles.lightboxNav} ${styles.lightboxNext}`}
-              onClick={() => moveImage(1)}
-              aria-label="View next photograph"
-            >
-              <FaChevronRight aria-hidden="true" />
-            </button>
+            {/* NEXT */}
+            {activeImages.length > 1 && (
+              <button
+                type="button"
+                className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+                onClick={() => moveImage(1)}
+                aria-label="View next photograph"
+              >
+                <FaChevronRight aria-hidden="true" />
+              </button>
+            )}
           </div>
         )}
       </dialog>

@@ -17,10 +17,11 @@ export const metadata: Metadata = {
 };
 
 const bankDetails = [
-  ["Account Name", "Add account name"],
-  ["Bank Name", "Add bank name"],
-  ["Account Number", "Add account number"],
-  ["IFSC Code", "Add IFSC code"],
+  ["Account Name", "Ananda Utsav Cultural Association"],
+  ["Bank Name", "Kotak Mahindra Bank"],
+  ["Branch", "Seven Bunglows"],
+  ["Account Number", "1814127754"],
+  ["IFSC Code", "KKBK0001242"],
 ];
 
 export default function DonatePage() {

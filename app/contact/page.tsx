@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 
 const contactDetails = [
   {
-    icon: FaLocationDot,
-    label: "Visit Us",
-    title: "Ananda Utsav",
-    text: "Add association address here, City, State, India",
-  },
+  icon: FaLocationDot,
+  label: "Visit Us",
+  title: "Ananda Utsav Cultural Association",
+  text: "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Goregaon West, Mumbai. Next to Ozone Swimming Pool.",
+},
   // {
   //   icon: FaPhone,
   //   label: "Call Us",

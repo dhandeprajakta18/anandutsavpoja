@@ -14,14 +14,23 @@
       rgba(255, 255, 255, 0.7),
       transparent 45%
     ),
-    linear-gradient(180deg, #fffaf2 0%, #f8eddf 100%);
+    linear-gradient(
+      180deg,
+      #fffaf2 0%,
+      #f8eddf 100%
+    );
 }
 
 .container {
   position: relative;
   z-index: 5;
 
-  width: min(88%, 1120px);
+  /*
+   * Wider container so all 6 cards
+   * fit comfortably in a single row.
+   */
+  width: min(94%, 1380px);
+
   margin: 0 auto;
 }
 
@@ -31,11 +40,13 @@
 
 .heading {
   margin-bottom: 50px;
+
   text-align: center;
 }
 
 .titleRow {
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -48,6 +59,7 @@
   color: #7e1711;
 
   font-family: var(--heading-font);
+
   font-size: 27px;
   font-weight: 600;
 
@@ -77,6 +89,7 @@
 
 .ornament {
   color: #b78037;
+
   font-size: 8px;
 }
 
@@ -95,9 +108,14 @@
 
 .scheduleGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
 
-  gap: 28px;
+  /*
+   * ALL 6 CARDS IN ONE ROW
+   */
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 16px;
 
   align-items: stretch;
 }
@@ -109,13 +127,14 @@
 .card {
   position: relative;
 
-  min-height: 205px;
-
-  padding: 42px 14px 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  min-width: 0;
+  min-height: 220px;
+
+  padding: 42px 11px 20px;
 
   text-align: center;
 
@@ -131,13 +150,14 @@
     box-shadow 0.3s ease;
 }
 
-/*
-   This creates the little raised
-   temple arch at the top of the card
-*/
+/* =====================================
+   ARCH
+===================================== */
 
 .arch {
   position: absolute;
+
+  z-index: 1;
 
   top: -31px;
   left: 50%;
@@ -153,15 +173,7 @@
   border-bottom: 0;
 
   border-radius: 34px 34px 0 0;
-
-  z-index: 1;
 }
-
-/*
-  Cover the bottom border of the arch
-  so it becomes visually connected
-  with the card.
-*/
 
 .arch::after {
   content: "";
@@ -181,10 +193,6 @@
    ICON
 ===================================== */
 
-/* =====================================
-   ICON
-===================================== */
-
 .icon {
   position: absolute;
 
@@ -193,14 +201,14 @@
   top: -21px;
   left: 50%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 44px;
   height: 38px;
 
   transform: translateX(-50%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   color: #8d1d14;
 
@@ -212,10 +220,10 @@
 }
 
 .icon svg {
+  display: block;
+
   width: 28px;
   height: 28px;
-
-  display: block;
 
   color: #8d1d14;
 
@@ -231,37 +239,22 @@
   overflow: visible;
 }
 
-/* Banana leaf */
-
 .icon:has(.customSvg) {
   color: #8d1d14;
 }
-
-/* Slightly larger dhunuchi */
 
 .icon:has(.customSvg) svg {
   width: 31px;
   height: 31px;
 }
 
-/* Hover */
-
-.card:hover .icon {
-  color: #a66d28;
-}
-
+.card:hover .icon,
 .card:hover .icon svg {
   color: #a66d28;
 }
 
-/* Remove previous line under icon */
-
 .icon::after {
   display: none;
-}
-
-.card:hover .icon {
-  color: #a66d28;
 }
 
 /* =====================================
@@ -280,8 +273,6 @@
   font-size: 13px;
   font-weight: 600;
 }
-
-/* tiny elegant separator */
 
 .smallDivider {
   width: 25px;
@@ -303,10 +294,10 @@
 
   font-family: var(--heading-font);
 
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .bengaliDay {
@@ -325,7 +316,8 @@
 ===================================== */
 
 .card p {
-  max-width: 155px;
+  width: 100%;
+  max-width: 165px;
 
   margin: 0 auto;
 
@@ -338,7 +330,7 @@
 }
 
 /* =====================================
-   HOVER
+   CARD HOVER
 ===================================== */
 
 .card:hover {
@@ -351,76 +343,198 @@
 }
 
 /* =====================================
-   BROCHURE
+   BROCHURE / DOWNLOAD CTA
 ===================================== */
 
 .brochure {
-  margin-top: 35px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin-top: 48px;
 
   text-align: center;
 }
 
 .brochure > p {
-  max-width: 480px;
+  max-width: 590px;
 
-  margin-bottom: 14px;
+  margin: 0 0 20px;
 
-  color: #76615a;
+  color: #6c544d;
 
-  font-size: 11px;
-  line-height: 1.6;
+  font-size: 13px;
+
+  line-height: 1.7;
 }
 
+/* =====================================
+   DOWNLOAD BUTTON
+===================================== */
+
 .downloadButton {
-  padding: 11px 18px;
+  position: relative;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  gap: 9px;
+  min-width: 350px;
 
-  background: #8f100b;
+  padding: 17px 30px;
+
+  gap: 13px;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #98170f 0%,
+    #7e100b 100%
+  );
 
   border: 1px solid #8f100b;
-  border-radius: 3px;
+
+  border-radius: 5px;
 
   color: #fffaf0;
 
   font-family: var(--heading-font);
 
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
 
-  letter-spacing: 0.4px;
+  line-height: 1.2;
 
+  letter-spacing: 0.7px;
+
+  text-decoration: none;
   text-transform: uppercase;
 
-  transition: 0.3s ease;
+  box-shadow:
+    0 8px 20px rgba(126, 23, 17, 0.18),
+    0 2px 6px rgba(126, 23, 17, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =====================================
+   BUTTON HIGHLIGHT
+===================================== */
+
+.downloadButton::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 65%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.55s ease;
+}
+
+.downloadButton:hover::before {
+  left: 130%;
 }
 
 .downloadButton:hover {
-  background: transparent;
+  background: #fffaf2;
+
   color: #8f100b;
 
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 13px 28px rgba(126, 23, 17, 0.19),
+    0 4px 8px rgba(126, 23, 17, 0.1);
 }
+
+/* =====================================
+   DOWNLOAD ICON
+===================================== */
 
 .downloadIcon {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
 
-  font-size: 13px;
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid rgba(255, 250, 240, 0.48);
+
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.downloadButton:hover .downloadIcon {
+  border-color: rgba(143, 16, 11, 0.45);
+
+  transform: translateY(2px);
+}
+
+/* =====================================
+   DOWNLOAD TEXT
+===================================== */
+
+.downloadText {
+  display: inline-flex;
+
+  align-items: baseline;
+
+  gap: 6px;
+}
+
+.year {
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
 }
 
 .flower {
-  color: #d7a34f;
-  font-size: 11px;
+  flex-shrink: 0;
+
+  color: #e8bd69;
+
+  font-size: 15px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.downloadButton:hover .flower {
+  color: #b78037;
+
+  transform: rotate(45deg);
 }
 
 /* =====================================
@@ -449,16 +563,40 @@
 }
 
 /* =====================================
-   RESPONSIVE
+   MEDIUM DESKTOP
 ===================================== */
 
-@media (max-width: 1050px) {
-  .scheduleGrid {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1200px) {
+  .container {
+    width: 94%;
+  }
 
-    gap: 50px 24px;
+  .scheduleGrid {
+    /*
+     * At this width 3 + 3 gives the cards
+     * enough space without becoming too narrow.
+     */
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 50px 20px;
+  }
+
+  .card {
+    min-height: 205px;
+
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .card p {
+    max-width: 190px;
   }
 }
+
+/* =====================================
+   TABLET
+===================================== */
 
 @media (max-width: 700px) {
   .schedule {
@@ -470,7 +608,8 @@
   }
 
   .scheduleGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
     gap: 50px 18px;
   }
@@ -478,7 +617,33 @@
   .heading {
     margin-bottom: 55px;
   }
+
+  .brochure {
+    margin-top: 40px;
+  }
+
+  .brochure > p {
+    max-width: 440px;
+
+    font-size: 12px;
+  }
+
+  .downloadButton {
+    width: 100%;
+    min-width: 0;
+    max-width: 390px;
+
+    padding: 16px 22px;
+
+    gap: 10px;
+
+    font-size: 13px;
+  }
 }
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 480px) {
   .scheduleGrid {
@@ -490,9 +655,9 @@
   .card {
     width: min(100%, 245px);
 
-    margin: 0 auto;
-
     min-height: 195px;
+
+    margin: 0 auto;
   }
 
   .titleRow h2 {
@@ -502,5 +667,35 @@
   .line {
     width: 25px;
   }
-}
 
+  .brochure > p {
+    font-size: 11.5px;
+  }
+
+  .downloadButton {
+    width: 100%;
+
+    padding: 15px 14px;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.45px;
+  }
+
+  .downloadIcon {
+    width: 25px;
+    height: 25px;
+
+    font-size: 16px;
+  }
+
+  .flower {
+    font-size: 12px;
+  }
+
+  .year {
+    font-size: 15px;
+  }
+}

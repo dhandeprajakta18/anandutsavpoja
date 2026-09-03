@@ -9,34 +9,34 @@ import styles from "./Gallery.module.css";
 
 const galleryImages = [
   {
-    src: "/images/random3.png",
-    alt: "Ananda Utsav Durga Puja celebration",
+    src: "/real/durgapuja.jpeg",
+    alt: "Durga Puja at Ananda Utsav",
     title: "Durga Puja",
     category: "Devotion",
   },
   {
-    src: "/images/sindoor-utsav.png",
-    alt: "Sindoor Utsav celebration",
-    title: "Sindoor Utsav",
+    src: "/real/khutipuja.jpeg",
+    alt: "Khuti Puja at Ananda Utsav",
+    title: "Khuti Puja",
     category: "Tradition",
   },
   {
-    src: "/images/celebration.png",
-    alt: "Cultural performance at Ananda Utsav",
+    src: "/real/cultural1.jpeg",
+    alt: "Cultural evening at Ananda Utsav",
     title: "Cultural Evening",
+    category: "Celebration",
+  },
+  {
+    src: "/real/sandhipuja1.jpeg",
+    alt: "Sandhi Puja at Ananda Utsav",
+    title: "Sandhi Puja",
+    category: "Devotion",
+  },
+  {
+    src: "/real/foodstall1.jpeg",
+    alt: "Food stalls at Ananda Utsav",
+    title: "Food Stall",
     category: "Festivities",
-  },
-  {
-    src: "/images/about-ananda-utsav.png",
-    alt: "Community gathering at Ananda Utsav",
-    title: "Togetherness",
-    category: "Community",
-  },
-  {
-    src: "/images/random1.png",
-    alt: "Traditional Bengali celebration",
-    title: "Celebrations",
-    category: "Memories",
   },
 ];
 
