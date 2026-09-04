@@ -166,9 +166,9 @@ export default function Footer() {
                   <span>Visit Us</span>
 
                   <p>
-                    Add association address here,
+                    Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Next to Ozone Swimming Pool.
                     <br />
-                    City, State
+                   Goregaon West, Mumbai.
                   </p>
                 </div>
 
