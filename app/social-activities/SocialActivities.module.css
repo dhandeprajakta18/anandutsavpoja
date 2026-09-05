@@ -435,47 +435,41 @@
    ACTIVITIES
 ========================= */
 
-.activitiesSection {
-  padding: 15px 0 100px;
-
-  background: #fffaf2;
-}
-
 .activitiesGrid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 55px 26px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .activityCard {
-  min-width: 0;
+  position: relative;
+  overflow: hidden;
+
+  background: transparent;
+  border: none;
+
+  box-shadow: 0 10px 26px rgba(80, 22, 12, 0.08);
 }
 
 .imageWrapper {
   position: relative;
 
-  height: 285px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
 
   overflow: hidden;
 
-  background: #efe5d7;
-
-  box-shadow:
-    0 12px 30px rgba(89, 52, 28, 0.06);
+  background: #f1e5d6;
 }
 
 .activityImage {
   object-fit: cover;
 
-  transition:
-    transform 0.7s ease;
+  transition: transform 0.5s ease;
 }
 
 .activityCard:hover .activityImage {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .imageOverlay {

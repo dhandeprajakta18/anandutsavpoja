@@ -343,23 +343,24 @@
   max-width: 100%;
 
   margin: 0;
-  padding: 9px;
+  padding: 0;
 
-  background: #fffaf2;
-
-  border: 1px solid rgba(234, 192, 111, 0.72);
-
-  box-shadow: 0 24px 58px rgba(25, 4, 2, 0.45);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .lightboxMedia {
   position: relative;
 
   width: 100%;
-
   flex: 1;
 
   min-height: 0;
+}
+
+.lightboxImage {
+  object-fit: contain;
 }
 
 .lightboxImage {
@@ -370,9 +371,9 @@
   width: 100%;
 
   margin: 0;
-  padding: 10px 4px 1px;
+  padding: 10px 4px 0;
 
-  color: #7d1711;
+  color: #fff8ed;
 
   font-family: var(--heading-font);
   font-size: 0.78rem;
@@ -578,6 +579,19 @@
   .galleryGrid {
     gap: 10px;
   }
+}
+.emptyGallery {
+  width: 100%;
+
+  padding: 80px 20px;
+
+  color: var(--text-muted);
+
+  font-family: var(--heading-font);
+
+  font-size: 1rem;
+
+  text-align: center;
 }
 
 /* =========================

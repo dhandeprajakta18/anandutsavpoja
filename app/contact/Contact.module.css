@@ -1,150 +1,36 @@
 /* =========================
-   HERO
-========================= */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-
-  min-height: 270px;
-
-  padding: 70px 20px 55px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(158, 30, 20, 0.95),
-      transparent 55%
-    ),
-    linear-gradient(135deg, #5b0704, #86130c, #570603);
-
-  color: #fff7e9;
-
-  text-align: center;
-}
-
-.heroPattern {
-  position: absolute;
-
-  right: -25px;
-  bottom: -35px;
-
-  color: rgba(230, 181, 87, 0.04);
-
-  font-size: 115px;
-  font-weight: 700;
-
-  white-space: nowrap;
-
-  pointer-events: none;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 2;
-
-  max-width: 700px;
-}
-
-.eyebrow {
-  display: block;
-
-  margin-bottom: 9px;
-
-  color: #e0ae55;
-
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-}
-
-.hero h1 {
-  margin: 0;
-
-  font-family: var(--heading-font);
-
-  font-size: clamp(2.7rem, 5vw, 4.5rem);
-  font-weight: 500;
-
-  line-height: 1;
-
-  text-transform: uppercase;
-}
-
-.titleDivider {
-  width: 125px;
-
-  margin: 14px auto 10px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-}
-
-.titleDivider span {
-  flex: 1;
-
-  height: 1px;
-
-  background: rgba(224, 174, 85, 0.6);
-}
-
-.titleDivider i {
-  color: #dfa94f;
-
-  font-size: 6px;
-  font-style: normal;
-}
-
-.bengaliTitle {
-  color: #e4b35b;
-
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.heroDescription {
-  max-width: 530px;
-
-  margin: 10px auto 0;
-
-  color: rgba(255, 245, 230, 0.75);
-
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-/* =========================
    CONTACT SECTION
 ========================= */
 
 .contactSection {
-  padding: 80px 0;
+  position: relative;
+
+  padding: 70px 0 90px;
 
   background:
     radial-gradient(
-      circle at 80% 30%,
+      circle at 80% 20%,
       #ffffff,
-      transparent 40%
+      transparent 42%
     ),
     #fff9f0;
 }
 
+/* =========================
+   TOP TWO COLUMN LAYOUT
+========================= */
+
 .container {
-  width: min(88%, 1080px);
+  width: min(90%, 1180px);
 
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
 
-  gap: 75px;
+  grid-template-columns:
+    0.92fr 1.08fr;
+
+  gap: 70px;
 
   align-items: center;
 }
@@ -153,29 +39,19 @@
    LEFT CONTENT
 ========================= */
 
-.sectionLabel {
-  display: block;
-
-  margin-bottom: 8px;
-
-  color: #9c6d35;
-
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 2.2px;
-
-  text-transform: uppercase;
-}
-
-.infoSide h2 {
+.infoSide h1 {
   margin: 0;
 
   color: #80150f;
 
   font-family: var(--heading-font);
 
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(
+    2.7rem,
+    4vw,
+    4rem
+  );
+
   font-weight: 600;
 
   line-height: 0.98;
@@ -183,7 +59,7 @@
   text-transform: uppercase;
 }
 
-.infoSide h2 em {
+.infoSide h1 em {
   color: #a67534;
 
   font-weight: 500;
@@ -197,6 +73,7 @@
   margin: 18px 0;
 
   display: flex;
+
   align-items: center;
 
   gap: 7px;
@@ -207,38 +84,44 @@
 
   height: 1px;
 
-  background: rgba(177, 119, 50, 0.5);
+  background:
+    rgba(177, 119, 50, 0.5);
 }
 
 .divider i {
   color: #ae7834;
 
   font-size: 6px;
+
   font-style: normal;
 }
 
 .intro {
-  max-width: 420px;
+  max-width: 460px;
+
+  margin: 0;
 
   color: #493934;
 
   font-family: var(--heading-font);
 
-  font-size: 16px;
+  font-size: 17px;
+
   font-weight: 600;
 
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .description {
-  max-width: 440px;
+  max-width: 470px;
 
-  margin-top: 10px;
+  margin: 12px 0 0;
 
   color: #71605a;
 
-  font-size: 11px;
-  line-height: 1.75;
+  font-size: 11.5px;
+
+  line-height: 1.8;
 }
 
 /* =========================
@@ -246,48 +129,75 @@
 ========================= */
 
 .involvementOptions {
-  margin-top: 24px;
+  margin-top: 25px;
+
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 12px;
 }
 
 .involvementCard {
   padding: 16px;
-  border: 1px solid rgba(176, 117, 49, 0.3);
-  background: rgba(255, 253, 248, 0.7);
+
+  border:
+    1px solid rgba(176, 117, 49, 0.3);
+
+  background:
+    rgba(255, 253, 248, 0.72);
 }
 
 .involvementCard > span {
   display: block;
+
   color: #a47536;
+
   font-size: 7px;
+
   font-weight: 700;
+
   letter-spacing: 1.2px;
 }
 
 .involvementCard h3 {
   margin: 5px 0 6px;
+
   color: #80150f;
+
   font-family: var(--heading-font);
+
   font-size: 19px;
+
   font-weight: 600;
+
   line-height: 1;
 }
 
 .involvementCard p {
+  margin: 0;
+
   color: #71605a;
+
   font-size: 9.5px;
+
   line-height: 1.55;
 }
 
 .involvementCard a {
   display: inline-block;
+
   margin-top: 10px;
+
   color: #881810;
+
   font-size: 8px;
+
   font-weight: 700;
+
   letter-spacing: 0.5px;
+
   text-transform: uppercase;
 }
 
@@ -300,16 +210,18 @@
 ========================= */
 
 .contactList {
-  margin-top: 28px;
+  margin-top: 27px;
 
   display: flex;
+
   flex-direction: column;
 
-  gap: 20px;
+  gap: 18px;
 }
 
 .contactItem {
   display: grid;
+
   grid-template-columns: 46px 1fr;
 
   gap: 14px;
@@ -322,10 +234,13 @@
   height: 42px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(135, 23, 15, 0.25);
+  border:
+    1px solid rgba(135, 23, 15, 0.25);
+
   border-radius: 50%;
 
   background: #fffaf2;
@@ -335,7 +250,8 @@
   font-size: 14px;
 
   box-shadow:
-    0 0 0 4px rgba(180, 122, 51, 0.06);
+    0 0 0 4px
+      rgba(180, 122, 51, 0.06);
 }
 
 .contactLabel {
@@ -346,6 +262,7 @@
   color: #a47536;
 
   font-size: 8px;
+
   font-weight: 700;
 
   letter-spacing: 1.4px;
@@ -363,9 +280,12 @@
   font-family: var(--heading-font);
 
   font-size: 14px;
+
   font-weight: 600;
 
   line-height: 1.4;
+
+  text-decoration: none;
 }
 
 a.contactTitle:hover {
@@ -373,7 +293,7 @@ a.contactTitle:hover {
 }
 
 .contactText {
-  margin-top: 2px;
+  margin: 2px 0 0;
 
   color: #907970;
 
@@ -385,10 +305,12 @@ a.contactTitle:hover {
 ========================= */
 
 .socialSection {
-  margin-top: 28px;
-  padding-top: 20px;
+  margin-top: 25px;
 
-  border-top: 1px solid rgba(166, 111, 49, 0.2);
+  padding-top: 18px;
+
+  border-top:
+    1px solid rgba(166, 111, 49, 0.2);
 }
 
 .socialSection > span {
@@ -399,6 +321,7 @@ a.contactTitle:hover {
   color: #9b713f;
 
   font-size: 8px;
+
   font-weight: 700;
 
   letter-spacing: 1.5px;
@@ -415,10 +338,13 @@ a.contactTitle:hover {
   height: 31px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(134, 21, 15, 0.25);
+  border:
+    1px solid rgba(134, 21, 15, 0.25);
+
   border-radius: 50%;
 
   color: #86150f;
@@ -439,6 +365,218 @@ a.contactTitle:hover {
 }
 
 /* =========================
+   RIGHT IMAGE
+========================= */
+
+.imageSide {
+  position: relative;
+
+  width: 100%;
+}
+
+.imageFrame {
+  position: relative;
+
+  width: 100%;
+
+  padding: 10px;
+
+  border:
+    1px solid rgba(176, 117, 49, 0.42);
+}
+
+.imageFrame::before {
+  content: "";
+
+  position: absolute;
+
+  top: -13px;
+  right: -13px;
+
+  width: 65%;
+  height: 70%;
+
+  border-top:
+    1px solid rgba(143, 16, 11, 0.25);
+
+  border-right:
+    1px solid rgba(143, 16, 11, 0.25);
+
+  pointer-events: none;
+}
+
+.imageInner {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #eee0ce;
+}
+
+.contactImage {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.7s ease;
+}
+
+.imageFrame:hover .contactImage {
+  transform: scale(1.025);
+}
+
+.cornerTop,
+.cornerBottom {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  background: #a77532;
+
+  transform: rotate(45deg);
+}
+
+.cornerTop {
+  top: -5px;
+  left: -5px;
+}
+
+.cornerBottom {
+  right: -5px;
+  bottom: -5px;
+}
+
+.imageCaption {
+  position: absolute;
+
+  left: -22px;
+  bottom: 24px;
+
+  min-width: 240px;
+
+  padding: 13px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: #78100a;
+
+  border-left:
+    3px solid #d6a24d;
+
+  box-shadow:
+    0 10px 25px
+      rgba(75, 22, 10, 0.16);
+
+  color: white;
+}
+
+.imageCaption > span {
+  color: #dfae55;
+}
+
+.imageCaption small {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #dca74e;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.imageCaption p {
+  margin: 0;
+
+  font-family: var(--heading-font);
+
+  font-size: 12px;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.formSection {
+  width: min(90%, 900px);
+
+  /*
+   * This negative margin brings the
+   * form upward so the user sees that
+   * another section continues below.
+   */
+  margin: 55px auto 0;
+
+  scroll-margin-top: 100px;
+}
+
+.formIntro {
+  max-width: 580px;
+
+  margin: 0 auto 24px;
+
+  text-align: center;
+}
+
+.formIntro > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #a47536;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.formIntro h2 {
+  margin: 0;
+
+  color: #80150f;
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3rem
+  );
+
+  font-weight: 600;
+
+  line-height: 1.05;
+}
+
+.formIntro p {
+  max-width: 480px;
+
+  margin: 10px auto 0;
+
+  color: #71605a;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+/* =========================
    FORM CARD
 ========================= */
 
@@ -447,12 +585,15 @@ a.contactTitle:hover {
 
   padding: 8px;
 
-  border: 1px solid rgba(176, 117, 49, 0.42);
+  border:
+    1px solid rgba(176, 117, 49, 0.42);
 
-  background: rgba(255, 252, 246, 0.8);
+  background:
+    rgba(255, 252, 246, 0.85);
 
   box-shadow:
-    0 18px 45px rgba(88, 40, 20, 0.07);
+    0 18px 45px
+      rgba(88, 40, 20, 0.08);
 }
 
 .formWrapper::before {
@@ -463,24 +604,29 @@ a.contactTitle:hover {
   top: -11px;
   right: -11px;
 
-  width: 45%;
-  height: 42%;
+  width: 38%;
+  height: 38%;
 
-  border-top: 1px solid rgba(135, 21, 15, 0.25);
-  border-right: 1px solid rgba(135, 21, 15, 0.25);
+  border-top:
+    1px solid rgba(135, 21, 15, 0.25);
+
+  border-right:
+    1px solid rgba(135, 21, 15, 0.25);
 
   pointer-events: none;
 }
 
 .formTop {
-  padding: 18px 22px 16px;
+  padding: 18px 24px 16px;
 
   display: flex;
+
   align-items: center;
 
   gap: 12px;
 
-  border-bottom: 1px solid rgba(178, 120, 50, 0.2);
+  border-bottom:
+    1px solid rgba(178, 120, 50, 0.2);
 
   background: #7a100a;
 
@@ -501,6 +647,7 @@ a.contactTitle:hover {
   color: #dca950;
 
   font-size: 7px;
+
   font-weight: 700;
 
   letter-spacing: 1.7px;
@@ -514,6 +661,7 @@ a.contactTitle:hover {
   font-family: var(--heading-font);
 
   font-size: 22px;
+
   font-weight: 500;
 }
 
@@ -522,20 +670,22 @@ a.contactTitle:hover {
 ========================= */
 
 .form {
-  padding: 20px 22px;
+  padding: 24px;
 
   background: #fffdf8;
 }
 
 .formRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
 
-  gap: 12px;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
 }
 
 .field {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .field label {
@@ -546,6 +696,7 @@ a.contactTitle:hover {
   color: #674e47;
 
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: 0.3px;
@@ -560,11 +711,13 @@ a.contactTitle:hover {
 .field textarea {
   width: 100%;
 
-  padding: 11px 12px;
+  padding: 12px 13px;
 
   outline: none;
 
-  border: 1px solid rgba(153, 111, 76, 0.25);
+  border:
+    1px solid rgba(153, 111, 76, 0.25);
+
   border-radius: 0;
 
   background: #fffaf3;
@@ -572,6 +725,7 @@ a.contactTitle:hover {
   color: #493934;
 
   font: inherit;
+
   font-size: 10.5px;
 
   transition:
@@ -581,9 +735,9 @@ a.contactTitle:hover {
 }
 
 .field textarea {
-  resize: vertical;
+  min-height: 100px;
 
-  min-height: 76px;
+  resize: vertical;
 
   line-height: 1.6;
 }
@@ -596,12 +750,14 @@ a.contactTitle:hover {
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  border-color: rgba(135, 21, 15, 0.55);
+  border-color:
+    rgba(135, 21, 15, 0.55);
 
   background: #ffffff;
 
   box-shadow:
-    0 0 0 3px rgba(135, 21, 15, 0.04);
+    0 0 0 3px
+      rgba(135, 21, 15, 0.04);
 }
 
 /* =========================
@@ -611,11 +767,12 @@ a.contactTitle:hover {
 .submitButton {
   width: 100%;
 
-  min-height: 43px;
+  min-height: 44px;
 
   border: 1px solid #82140e;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -630,6 +787,7 @@ a.contactTitle:hover {
   font-family: var(--heading-font);
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 0.7px;
@@ -642,7 +800,8 @@ a.contactTitle:hover {
 .submitButton svg {
   font-size: 10px;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
 
 .submitButton:hover {
@@ -665,6 +824,7 @@ a.contactTitle:hover {
   padding: 13px 20px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -677,20 +837,25 @@ a.contactTitle:hover {
   width: 30px;
   height: 1px;
 
-  background: rgba(171, 112, 46, 0.4);
+  background:
+    rgba(171, 112, 46, 0.4);
 }
 
 .formBottom i {
   color: #ad7937;
 
   font-size: 5px;
+
   font-style: normal;
 }
 
 .formBottom p {
+  margin: 0;
+
   color: #8a261d;
 
   font-size: 10px;
+
   font-weight: 600;
 }
 
@@ -718,19 +883,6 @@ a.contactTitle:hover {
   margin: 0 auto;
 }
 
-.smallLabel {
-  display: block;
-
-  margin-bottom: 7px;
-
-  color: #dca950;
-
-  font-size: 8px;
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-}
-
 .bottomInner h2 {
   margin: 0;
 
@@ -738,7 +890,12 @@ a.contactTitle:hover {
 
   font-family: var(--heading-font);
 
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(
+    2rem,
+    4vw,
+    3rem
+  );
+
   font-weight: 500;
 
   line-height: 1.05;
@@ -757,40 +914,84 @@ a.contactTitle:hover {
 .bottomInner p {
   margin-top: 13px;
 
-  color: rgba(241, 192, 103, 0.85);
+  color:
+    rgba(241, 192, 103, 0.85);
 
   font-size: 13px;
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .container {
+    width: min(90%, 760px);
+
     grid-template-columns: 1fr;
 
     gap: 55px;
   }
 
-  .infoSide,
-  .formWrapper {
-    width: min(100%, 650px);
-
-    margin: 0 auto;
+  .infoSide {
+    width: 100%;
   }
-  
+
+  .imageSide {
+    width: 100%;
+  }
+
+  .imageInner {
+    aspect-ratio: 16 / 10;
+  }
+
+  .formSection {
+    width: min(90%, 760px);
+
+    margin-top: 65px;
+  }
 }
 
-@media (max-width: 600px) {
-  .hero {
-    min-height: 240px;
+/* =========================
+   MOBILE
+========================= */
 
-    padding: 60px 20px 45px;
+@media (max-width: 600px) {
+  .contactSection {
+    padding: 55px 0 70px;
   }
 
-  .contactSection {
-    padding: 60px 0;
+  .container {
+    width: 88%;
+
+    gap: 45px;
+  }
+
+  .infoSide h1 {
+    font-size: 2.4rem;
+  }
+
+  .involvementOptions {
+    grid-template-columns: 1fr;
+  }
+
+  .imageInner {
+    aspect-ratio: 4 / 3;
+  }
+
+  .imageCaption {
+    right: 10px;
+    left: auto;
+
+    bottom: -22px;
+
+    min-width: 210px;
+  }
+
+  .formSection {
+    width: 88%;
+
+    margin-top: 75px;
   }
 
   .formRow {
@@ -800,25 +1001,48 @@ a.contactTitle:hover {
   }
 
   .form {
-    padding: 23px 20px;
+    padding: 22px 19px;
   }
 
   .formTop {
-    padding: 21px 20px;
-  }
-
-  .involvementOptions {
-    grid-template-columns: 1fr;
+    padding: 18px 19px;
   }
 }
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 430px) {
   .container {
     width: 90%;
   }
 
-  .infoSide h2 {
-    font-size: 2.2rem;
+  .infoSide h1 {
+    font-size: 2.15rem;
+  }
+
+  .imageCaption {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    width: calc(100% - 20px);
+
+    min-width: 0;
+
+    margin: -24px auto 0;
+  }
+
+  .formSection {
+    width: 90%;
+
+    margin-top: 55px;
+  }
+
+  .formIntro h2 {
+    font-size: 2rem;
   }
 
   .formBottom span {
@@ -827,9 +1051,5 @@ a.contactTitle:hover {
 
   .formBottom p {
     text-align: center;
-  }
-
-  .heroPattern {
-    font-size: 80px;
   }
 }

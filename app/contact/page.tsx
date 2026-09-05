@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   FaEnvelope,
   FaLocationDot,
@@ -18,18 +19,11 @@ export const metadata: Metadata = {
 
 const contactDetails = [
   {
-  icon: FaLocationDot,
-  label: "Visit Us",
-  title: "Ananda Utsav Cultural Association",
-  text: "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Goregaon West, Mumbai. Next to Ozone Swimming Pool.",
-},
-  // {
-  //   icon: FaPhone,
-  //   label: "Call Us",
-  //   title: "+91 00000 00000",
-  //   href: "tel:+910000000000",
-  //   text: "For general enquiries & participation",
-  // },
+    icon: FaLocationDot,
+    label: "Visit Us",
+    title: "Ananda Utsav Cultural Association",
+    text: "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Goregaon West, Mumbai. Next to Ozone Swimming Pool.",
+  },
   {
     icon: FaEnvelope,
     label: "Write To Us",
@@ -45,6 +39,7 @@ export default async function ContactPage({
   searchParams: Promise<{ interest?: string }>;
 }) {
   const { interest } = await searchParams;
+
   const selectedInterest = [
     "membership",
     "general",
@@ -61,52 +56,19 @@ export default async function ContactPage({
   return (
     <main>
       {/* =========================
-          PAGE HERO
-      ========================= */}
-{/* 
-      <section className={styles.hero}>
-        <div className={styles.heroPattern} aria-hidden="true">
-          যোগাযোগ
-        </div>
-
-        <div className={styles.heroContent}>
-         
-
-          <h1>Contact Us</h1>
-
-          <div className={styles.titleDivider}>
-            <span />
-            <i>◆</i>
-            <span />
-          </div>
-
-          <p className={styles.bengaliTitle}>
-            আমাদের সঙ্গে যোগাযোগ করুন
-          </p>
-
-          <p className={styles.heroDescription}>
-            Whether you wish to participate, collaborate, support or simply
-            learn more about Ananda Utsav, our doors are always open.
-          </p>
-        </div>
-      </section> */}
-
-      {/* =========================
-          CONTACT SECTION
+          CONTACT INTRO
       ========================= */}
 
       <section className={styles.contactSection}>
         <div className={styles.container}>
-          {/* LEFT SIDE */}
+          {/* LEFT CONTENT */}
 
           <div className={styles.infoSide}>
-            
-
-            <h2>
+            <h1>
               Let&apos;s Stay
               <br />
               <em>Connected.</em>
-            </h2>
+            </h1>
 
             <div className={styles.divider}>
               <span />
@@ -114,7 +76,7 @@ export default async function ContactPage({
               <span />
             </div>
 
-            <p className={styles.intro}>
+            {/* <p className={styles.intro}>
               Ananda Utsav grows through the participation, support and
               togetherness of our community.
             </p>
@@ -123,16 +85,21 @@ export default async function ContactPage({
               Reach out to us for festival enquiries, cultural participation,
               volunteering, sponsorship opportunities, CSR initiatives or any
               other information about Ananda Utsav.
-            </p>
+            </p> */}
+
+            {/* MEMBERSHIP + SPONSORSHIP */}
 
             <div className={styles.involvementOptions}>
               <article className={styles.involvementCard}>
                 <span>JOIN THE COMMUNITY</span>
+
                 <h3>Become a Member</h3>
+
                 <p>
                   Participate in our celebrations, meet the community and
                   contribute to the traditions we share.
                 </p>
+
                 <a href="/contact?interest=membership#contact-form">
                   Enquire about membership
                 </a>
@@ -140,11 +107,14 @@ export default async function ContactPage({
 
               <article className={styles.involvementCard}>
                 <span>SUPPORT ANANDA UTSAV</span>
+
                 <h3>Become a Sponsor</h3>
+
                 <p>
                   Partner with us to support our festival, cultural programmes
                   and community initiatives.
                 </p>
+
                 <a href="/contact?interest=corporate-sponsor#contact-form">
                   Explore sponsorship
                 </a>
@@ -158,7 +128,10 @@ export default async function ContactPage({
                 const Icon = item.icon;
 
                 return (
-                  <div className={styles.contactItem} key={item.label}>
+                  <div
+                    className={styles.contactItem}
+                    key={item.label}
+                  >
                     <div className={styles.iconCircle}>
                       <Icon />
                     </div>
@@ -211,15 +184,60 @@ export default async function ContactPage({
             </div>
           </div>
 
-          {/* RIGHT SIDE — FORM */}
+          {/* RIGHT IMAGE */}
 
-          <div className={styles.formWrapper} id="contact-form">
+          <div className={styles.imageSide}>
+            <div className={styles.imageFrame}>
+              <div className={styles.imageInner}>
+                <Image
+                  src="/real/contactus.jpeg"
+                  alt="Ananda Utsav community celebration"
+                  fill
+                  priority
+                  sizes="(max-width: 850px) 90vw, 46vw"
+                  className={styles.contactImage}
+                />
+              </div>
+
+              <span className={styles.cornerTop} />
+              <span className={styles.cornerBottom} />
+            </div>
+
+            <div className={styles.imageCaption}>
+              <span>✦</span>
+
+              <div>
+                <small>ANANDA UTSAV</small>
+                <p>Community • Culture • Togetherness</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FORM PREVIEW / FORM */}
+
+        <div
+          className={styles.formSection}
+          id="contact-form"
+        >
+          <div className={styles.formIntro}>
+            {/* <span>SEND US A MESSAGE</span> */}
+
+            <h2>How Can We Help?</h2>
+
+            <p>
+              Tell us what you&apos;re interested in and we&apos;ll be happy
+              to hear from you.
+            </p>
+          </div>
+
+          <div className={styles.formWrapper}>
             <div className={styles.formTop}>
               <span>✦</span>
 
               <div>
-                <small>SEND US A MESSAGE</small>
-                <h3>How Can We Help?</h3>
+                <small>GET IN TOUCH</small>
+                <h3>Send Us A Message</h3>
               </div>
             </div>
 
@@ -253,66 +271,68 @@ export default async function ContactPage({
                 </div>
               </div>
 
-              <div className={styles.field}>
-                <label htmlFor="email">
-                  Email Address <span>*</span>
-                </label>
+              <div className={styles.formRow}>
+                <div className={styles.field}>
+                  <label htmlFor="email">
+                    Email Address <span>*</span>
+                  </label>
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="yourname@email.com"
-                  required
-                />
-              </div>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="yourname@email.com"
+                    required
+                  />
+                </div>
 
-              <div className={styles.field}>
-                <label htmlFor="subject">
-                  I&apos;m Interested In
-                </label>
+                <div className={styles.field}>
+                  <label htmlFor="subject">
+                    I&apos;m Interested In
+                  </label>
 
-                <select
-                  id="subject"
-                  name="subject"
-                  defaultValue={selectedInterest}
-                >
-                  <option value="" disabled>
-                    Select an enquiry
-                  </option>
+                  <select
+                    id="subject"
+                    name="subject"
+                    defaultValue={selectedInterest}
+                  >
+                    <option value="" disabled>
+                      Select an enquiry
+                    </option>
 
-                  <option value="membership">
-                    Membership Enquiry
-                  </option>
+                    <option value="membership">
+                      Membership Enquiry
+                    </option>
 
-                  <option value="general">
-                    General Enquiry
-                  </option>
+                    <option value="general">
+                      General Enquiry
+                    </option>
 
-                  <option value="participation">
-                    Festival Participation
-                  </option>
+                    <option value="participation">
+                      Festival Participation
+                    </option>
 
-                  <option value="cultural">
-                    Cultural Programme
-                  </option>
+                    <option value="cultural">
+                      Cultural Programme
+                    </option>
 
-                  <option value="volunteer">
-                    Volunteering
-                  </option>
+                    <option value="volunteer">
+                      Volunteering
+                    </option>
 
-                  <option value="personal-sponsor">
-                    Personal Sponsorship
-                  </option>
+                    <option value="personal-sponsor">
+                      Personal Sponsorship
+                    </option>
 
-                  <option value="corporate-sponsor">
-                    Corporate Sponsorship
-                  </option>
+                    <option value="corporate-sponsor">
+                      Corporate Sponsorship
+                    </option>
 
-                  <option value="csr">
-                    CSR / Social Activities
-                  </option>
-                </select>
+                    <option value="csr">
+                      CSR / Social Activities
+                    </option>
+                  </select>
+                </div>
               </div>
 
               <div className={styles.field}>
@@ -323,13 +343,16 @@ export default async function ContactPage({
                 <textarea
                   id="message"
                   name="message"
-                  rows={3}
+                  rows={4}
                   placeholder="Tell us how we can help..."
                   required
                 />
               </div>
 
-              <button type="submit" className={styles.submitButton}>
+              <button
+                type="submit"
+                className={styles.submitButton}
+              >
                 <span>Send Message</span>
                 <FaPaperPlane />
               </button>
@@ -338,7 +361,9 @@ export default async function ContactPage({
             <div className={styles.formBottom}>
               <span />
               <i>◆</i>
+
               <p>আপনাদের সহযোগিতাই আমাদের শক্তি</p>
+
               <i>◆</i>
               <span />
             </div>
@@ -352,8 +377,6 @@ export default async function ContactPage({
 
       <section className={styles.bottomMessage}>
         <div className={styles.bottomInner}>
-          
-
           <h2>
             Celebrate With Us.
             <br />

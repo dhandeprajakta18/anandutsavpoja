@@ -134,13 +134,15 @@
 }
 
 .container {
-  width: min(88%, 1100px);
+  width: min(92%, 1180px);
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
 
-  gap: 75px;
+  /* slightly more room for horizontal image */
+  grid-template-columns: 1.08fr 0.92fr;
+
+  gap: 65px;
 
   align-items: center;
 }
@@ -151,6 +153,8 @@
 
 .imageSide {
   position: relative;
+
+  width: 100%;
 }
 
 .imageFrame {
@@ -180,16 +184,28 @@
   pointer-events: none;
 }
 
+/*
+   HORIZONTAL IMAGE CONTAINER
+*/
+
 .imageInner {
   position: relative;
 
-  min-height: 650px;
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  min-height: 0;
 
   overflow: hidden;
+
+  background: #efe2d3;
 }
 
 .image {
   object-fit: cover;
+
+  object-position: center;
 
   transition: transform 0.8s ease;
 }
@@ -228,7 +244,7 @@
   position: absolute;
 
   right: -22px;
-  bottom: 30px;
+  bottom: 24px;
 
   min-width: 225px;
 
@@ -266,6 +282,8 @@
 }
 
 .imageCaption p {
+  margin: 0;
+
   font-family: var(--heading-font);
 
   font-size: 12px;
@@ -389,7 +407,12 @@
 
   text-transform: uppercase;
 
-  transition: 0.3s ease;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .button:hover {
@@ -508,6 +531,8 @@
 }
 
 .quote p {
+  margin: 0;
+
   color: #891b14;
 
   font-size: 18px;
@@ -531,25 +556,27 @@
    RESPONSIVE
 ========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .container {
+    width: min(90%, 760px);
+
     grid-template-columns: 1fr;
 
     gap: 55px;
   }
 
   .imageSide {
-    width: min(100%, 600px);
+    width: 100%;
 
     margin: 0 auto;
   }
 
   .imageInner {
-    min-height: 600px;
+    aspect-ratio: 16 / 10;
   }
 
   .content {
-    max-width: 650px;
+    max-width: 700px;
 
     margin: 0 auto;
   }
@@ -566,8 +593,12 @@
     padding: 60px 0;
   }
 
+  .container {
+    width: 88%;
+  }
+
   .imageInner {
-    min-height: 520px;
+    aspect-ratio: 4 / 3;
   }
 
   .imageCaption {
@@ -586,8 +617,22 @@
 }
 
 @media (max-width: 430px) {
+  .hero {
+    min-height: 220px;
+
+    padding: 52px 18px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .story {
+    padding: 50px 0;
+  }
+
   .imageInner {
-    min-height: 440px;
+    aspect-ratio: 4 / 3;
   }
 
   .imageCaption {
@@ -604,5 +649,9 @@
 
   .content h2 {
     font-size: 2rem;
+  }
+
+  .durgaContainer {
+    width: 88%;
   }
 }

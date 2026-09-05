@@ -1,7 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+
 import Image from "next/image";
+
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -9,82 +16,143 @@ import {
 } from "react-icons/fa6";
 
 import styles from "./Gallery.module.css";
-import type { GalleryCategory, GalleryImage } from "./galleryData";
+
+/* =====================================
+   TYPES
+===================================== */
+
+type GalleryImage = string;
+
+type GalleryCategory = {
+  id: "durga-puja" | "members";
+  label: string;
+  images: GalleryImage[];
+};
 
 type GalleryGridProps = {
-  images: GalleryImage[];
   categories: GalleryCategory[];
 };
 
-function imageDescription(index: number) {
-  return `Ananda Utsav celebration photograph ${index + 1}`;
+/* =====================================
+   IMAGE DESCRIPTION
+===================================== */
+
+function imageDescription(
+  index: number
+) {
+  return `Ananda Utsav celebration photograph ${
+    index + 1
+  }`;
 }
 
+/* =====================================
+   COMPONENT
+===================================== */
+
 export default function GalleryGrid({
-  images,
   categories,
 }: GalleryGridProps) {
-  const [selectedCategoryId, setSelectedCategoryId] = useState<
-    GalleryCategory["id"] | null
-  >(null);
+  const [
+    selectedCategoryId,
+    setSelectedCategoryId,
+  ] = useState<
+    "durga-puja" | "members"
+  >("durga-puja");
 
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [
+    selectedIndex,
+    setSelectedIndex,
+  ] = useState<number | null>(null);
 
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef =
+    useRef<HTMLDialogElement>(null);
 
-  /*
-   * selectedCategoryId === null
-   * means show ALL gallery images.
-   */
+  const triggerRef =
+    useRef<HTMLButtonElement>(null);
+
+  /* =====================================
+     ACTIVE CATEGORY
+  ===================================== */
+
+  const activeCategory =
+    categories.find(
+      (category) =>
+        category.id ===
+        selectedCategoryId
+    );
+
   const activeImages =
-    selectedCategoryId === null
-      ? images
-      : categories.find(
-          (category) => category.id === selectedCategoryId
-        )?.images ?? images;
+    activeCategory?.images ?? [];
+
+  /* =====================================
+     SELECTED IMAGE
+  ===================================== */
 
   const selectedImage =
-    selectedIndex === null ? null : activeImages[selectedIndex];
+    selectedIndex === null
+      ? null
+      : activeImages[selectedIndex];
 
-  const closeLightbox = useCallback(() => {
-    const dialog = dialogRef.current;
+  /* =====================================
+     CLOSE LIGHTBOX
+  ===================================== */
 
-    if (dialog?.open) {
-      dialog.close();
-      return;
-    }
+  const closeLightbox =
+    useCallback(() => {
+      const dialog =
+        dialogRef.current;
 
-    setSelectedIndex(null);
-  }, []);
+      if (dialog?.open) {
+        dialog.close();
+
+        return;
+      }
+
+      setSelectedIndex(null);
+    }, []);
+
+  /* =====================================
+     PREVIOUS / NEXT
+  ===================================== */
 
   const moveImage = useCallback(
     (direction: 1 | -1) => {
-      setSelectedIndex((currentIndex) => {
-        if (currentIndex === null || activeImages.length === 0) {
-          return currentIndex;
-        }
+      setSelectedIndex(
+        (currentIndex) => {
+          if (
+            currentIndex === null ||
+            activeImages.length === 0
+          ) {
+            return currentIndex;
+          }
 
-        return (
-          (currentIndex + direction + activeImages.length) %
-          activeImages.length
-        );
-      });
+          return (
+            (currentIndex +
+              direction +
+              activeImages.length) %
+            activeImages.length
+          );
+        }
+      );
     },
     [activeImages.length]
   );
 
-  /*
-   * Open / close dialog whenever selected image changes.
-   */
+  /* =====================================
+     OPEN DIALOG
+  ===================================== */
+
   useEffect(() => {
-    const dialog = dialogRef.current;
+    const dialog =
+      dialogRef.current;
 
     if (!dialog) {
       return;
     }
 
-    if (selectedIndex === null) {
+    if (
+      selectedIndex === null
+    ) {
       if (dialog.open) {
         dialog.close();
       }
@@ -97,17 +165,23 @@ export default function GalleryGrid({
     }
   }, [selectedIndex]);
 
-  /*
-   * Keyboard navigation.
-   */
+  /* =====================================
+     KEYBOARD NAVIGATION
+  ===================================== */
+
   useEffect(() => {
-    if (selectedIndex === null) {
+    if (
+      selectedIndex === null
+    ) {
       return;
     }
 
-    const previousOverflow = document.body.style.overflow;
+    const previousOverflow =
+      document.body.style.overflow;
 
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (
+      event: KeyboardEvent
+    ) => {
       if (
         event.defaultPrevented ||
         event.altKey ||
@@ -117,223 +191,373 @@ export default function GalleryGrid({
         return;
       }
 
-      if (event.key === "ArrowLeft") {
+      if (
+        event.key ===
+        "ArrowLeft"
+      ) {
         event.preventDefault();
+
         moveImage(-1);
       }
 
-      if (event.key === "ArrowRight") {
+      if (
+        event.key ===
+        "ArrowRight"
+      ) {
         event.preventDefault();
+
         moveImage(1);
       }
     };
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+      "hidden";
 
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener(
+      "keydown",
+      handleKeyDown
+    );
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow =
+        previousOverflow;
 
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
     };
-  }, [moveImage, selectedIndex]);
+  }, [
+    moveImage,
+    selectedIndex,
+  ]);
+
+  /* =====================================
+     OPEN IMAGE
+  ===================================== */
 
   const openImage = (
     index: number,
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    triggerRef.current = event.currentTarget;
+    triggerRef.current =
+      event.currentTarget;
 
     setSelectedIndex(index);
   };
 
-  const handleDialogClose = () => {
-    setSelectedIndex(null);
+  /* =====================================
+     DIALOG CLOSED
+  ===================================== */
 
-    window.requestAnimationFrame(() => {
-      triggerRef.current?.focus();
-    });
-  };
+  const handleDialogClose =
+    () => {
+      setSelectedIndex(null);
+
+      window.requestAnimationFrame(
+        () => {
+          triggerRef.current?.focus();
+        }
+      );
+    };
+
+  /* =====================================
+     CLICK BACKDROP
+  ===================================== */
 
   const handleDialogClick = (
     event: React.MouseEvent<HTMLDialogElement>
   ) => {
-    if (event.target === event.currentTarget) {
+    if (
+      event.target ===
+      event.currentTarget
+    ) {
       closeLightbox();
     }
   };
 
-  const handleLightboxContentClick = (
-    event: React.MouseEvent<HTMLDivElement>
-  ) => {
-    if (event.target === event.currentTarget) {
-      closeLightbox();
-    }
-  };
+  /* =====================================
+     CLICK EMPTY LIGHTBOX AREA
+  ===================================== */
 
-  /*
-   * Show ALL images.
-   */
-  const showAllImages = () => {
-    triggerRef.current = null;
-    setSelectedIndex(null);
-    setSelectedCategoryId(null);
-  };
+  const handleLightboxContentClick =
+    (
+      event: React.MouseEvent<HTMLDivElement>
+    ) => {
+      if (
+        event.target ===
+        event.currentTarget
+      ) {
+        closeLightbox();
+      }
+    };
 
-  /*
-   * Show only selected category.
-   */
+  /* =====================================
+     CATEGORY
+  ===================================== */
+
   const selectCategory = (
-    categoryId: GalleryCategory["id"]
+    categoryId:
+      | "durga-puja"
+      | "members"
   ) => {
     triggerRef.current = null;
+
     setSelectedIndex(null);
-    setSelectedCategoryId(categoryId);
+
+    setSelectedCategoryId(
+      categoryId
+    );
   };
 
   return (
     <>
-      {/* CATEGORY FILTERS */}
+      {/* =====================================
+          CATEGORY FILTERS
+      ===================================== */}
+
       <div
-        className={styles.categoryBar}
+        className={
+          styles.categoryBar
+        }
         aria-label="Gallery categories"
       >
-        {/* ALL PHOTOS */}
-        <button
-          type="button"
-          className={styles.categoryButton}
-          onClick={showAllImages}
-          aria-pressed={selectedCategoryId === null}
-        >
-          All Photos
-        </button>
-
-        {/* CATEGORY BUTTONS */}
-        {categories.map((category) => (
-          <button
-            type="button"
-            className={styles.categoryButton}
-            key={category.id}
-            onClick={() => selectCategory(category.id)}
-            aria-pressed={selectedCategoryId === category.id}
-          >
-            {category.label}
-          </button>
-        ))}
-      </div>
-
-      {/* GALLERY */}
-      <div className={styles.galleryGrid}>
-        {activeImages.map((image, index) => (
-          <button
-            type="button"
-            className={styles.card}
-            key={`${image}-${index}`}
-            onClick={(event) => openImage(index, event)}
-            aria-label={`Open photograph ${index + 1} of ${
-              activeImages.length
-            }`}
-          >
-            <Image
-              src={image}
-              alt=""
-              fill
-              sizes="
-                (max-width: 520px) 44vw,
-                (max-width: 760px) 43vw,
-                (max-width: 1080px) 29vw,
-                280px
-              "
-              className={styles.image}
-            />
-
-            <span
-              className={styles.photoNumber}
-              aria-hidden="true"
+        {categories.map(
+          (category) => (
+            <button
+              type="button"
+              key={category.id}
+              className={
+                styles.categoryButton
+              }
+              onClick={() =>
+                selectCategory(
+                  category.id
+                )
+              }
+              aria-pressed={
+                selectedCategoryId ===
+                category.id
+              }
             >
-              {String(index + 1).padStart(2, "0")}
-            </span>
-          </button>
-        ))}
+              {category.label}
+            </button>
+          )
+        )}
       </div>
 
-      {/* LIGHTBOX */}
+      {/* =====================================
+          IMAGE GRID
+      ===================================== */}
+
+      {activeImages.length >
+      0 ? (
+        <div
+          className={
+            styles.galleryGrid
+          }
+        >
+          {activeImages.map(
+            (image, index) => (
+              <button
+                type="button"
+                className={
+                  styles.card
+                }
+                key={image}
+                onClick={(event) =>
+                  openImage(
+                    index,
+                    event
+                  )
+                }
+                aria-label={`Open photograph ${
+                  index + 1
+                } of ${
+                  activeImages.length
+                }`}
+              >
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  sizes="
+                    (max-width: 520px) 44vw,
+                    (max-width: 760px) 43vw,
+                    (max-width: 1080px) 29vw,
+                    280px
+                  "
+                  className={
+                    styles.image
+                  }
+                />
+
+                <span
+                  className={
+                    styles.photoNumber
+                  }
+                  aria-hidden="true"
+                >
+                  {String(
+                    index + 1
+                  ).padStart(
+                    2,
+                    "0"
+                  )}
+                </span>
+              </button>
+            )
+          )}
+        </div>
+      ) : (
+        <div
+          className={
+            styles.emptyGallery
+          }
+        >
+          No photographs available
+          yet.
+        </div>
+      )}
+
+      {/* =====================================
+          LIGHTBOX
+      ===================================== */}
+
       <dialog
         ref={dialogRef}
-        className={styles.lightbox}
-        onClose={handleDialogClose}
-        onClick={handleDialogClick}
+        className={
+          styles.lightbox
+        }
+        onClose={
+          handleDialogClose
+        }
+        onClick={
+          handleDialogClick
+        }
         aria-label={
           selectedIndex === null
             ? "Gallery image viewer"
             : `Viewing photograph ${
                 selectedIndex + 1
-              } of ${activeImages.length}`
+              } of ${
+                activeImages.length
+              }`
         }
       >
-        {selectedImage && selectedIndex !== null && (
-          <div
-            className={styles.lightboxContent}
-            onClick={handleLightboxContentClick}
-          >
-            {/* CLOSE */}
-            <button
-              type="button"
-              className={styles.lightboxClose}
-              onClick={closeLightbox}
-              aria-label="Close image viewer"
-              autoFocus
+        {selectedImage &&
+          selectedIndex !==
+            null && (
+            <div
+              className={
+                styles.lightboxContent
+              }
+              onClick={
+                handleLightboxContentClick
+              }
             >
-              <FaXmark aria-hidden="true" />
-            </button>
+              {/* CLOSE */}
 
-            {/* PREVIOUS */}
-            {activeImages.length > 1 && (
               <button
                 type="button"
-                className={`${styles.lightboxNav} ${styles.lightboxPrevious}`}
-                onClick={() => moveImage(-1)}
-                aria-label="View previous photograph"
+                className={
+                  styles.lightboxClose
+                }
+                onClick={
+                  closeLightbox
+                }
+                aria-label="Close image viewer"
+                autoFocus
               >
-                <FaChevronLeft aria-hidden="true" />
-              </button>
-            )}
-
-            {/* IMAGE */}
-            <figure className={styles.lightboxFigure}>
-              <div className={styles.lightboxMedia}>
-                <Image
-                  src={selectedImage}
-                  alt={imageDescription(selectedIndex)}
-                  fill
-                  sizes="(max-width: 760px) 92vw, 86vw"
-                  className={styles.lightboxImage}
+                <FaXmark
+                  aria-hidden="true"
                 />
-              </div>
-
-              <figcaption
-                className={styles.lightboxCaption}
-                aria-live="polite"
-              >
-                Photograph {selectedIndex + 1} of{" "}
-                {activeImages.length}
-              </figcaption>
-            </figure>
-
-            {/* NEXT */}
-            {activeImages.length > 1 && (
-              <button
-                type="button"
-                className={`${styles.lightboxNav} ${styles.lightboxNext}`}
-                onClick={() => moveImage(1)}
-                aria-label="View next photograph"
-              >
-                <FaChevronRight aria-hidden="true" />
               </button>
-            )}
-          </div>
-        )}
+
+              {/* PREVIOUS */}
+
+              {activeImages.length >
+                1 && (
+                <button
+                  type="button"
+                  className={`${styles.lightboxNav} ${styles.lightboxPrevious}`}
+                  onClick={() =>
+                    moveImage(-1)
+                  }
+                  aria-label="View previous photograph"
+                >
+                  <FaChevronLeft
+                    aria-hidden="true"
+                  />
+                </button>
+              )}
+
+              {/* IMAGE */}
+
+              <figure
+                className={
+                  styles.lightboxFigure
+                }
+              >
+                <div
+                  className={
+                    styles.lightboxMedia
+                  }
+                >
+                  <Image
+                    src={
+                      selectedImage
+                    }
+                    alt={imageDescription(
+                      selectedIndex
+                    )}
+                    fill
+                    sizes="
+                      (max-width: 760px) 92vw,
+                      86vw
+                    "
+                    className={
+                      styles.lightboxImage
+                    }
+                    priority
+                  />
+                </div>
+
+                <figcaption
+                  className={
+                    styles.lightboxCaption
+                  }
+                  aria-live="polite"
+                >
+                  Photograph{" "}
+                  {selectedIndex +
+                    1}{" "}
+                  of{" "}
+                  {
+                    activeImages.length
+                  }
+                </figcaption>
+              </figure>
+
+              {/* NEXT */}
+
+              {activeImages.length >
+                1 && (
+                <button
+                  type="button"
+                  className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+                  onClick={() =>
+                    moveImage(1)
+                  }
+                  aria-label="View next photograph"
+                >
+                  <FaChevronRight
+                    aria-hidden="true"
+                  />
+                </button>
+              )}
+            </div>
+          )}
       </dialog>
     </>
   );

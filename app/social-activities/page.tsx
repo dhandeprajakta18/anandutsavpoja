@@ -14,57 +14,27 @@ import styles from "./SocialActivities.module.css";
 const activities = [
   {
     id: 1,
-    title: "Food Distribution",
-    bengali: "খাদ্য বিতরণ",
-    description:
-      "Sharing meals with families and individuals in need, bringing our community together through compassion and care.",
-    image: "/images/random1.png",
-    year: "2025",
+    image: "/csr/WhatsApp Image 2026-08-30 at 9.28.28 PM.jpeg",
   },
   {
     id: 2,
-    title: "Educational Support",
-    bengali: "শিক্ষা সহায়তা",
-    description:
-      "Supporting children with educational resources, learning materials and opportunities to help build a brighter future.",
-    image: "/images/random2.png",
-    year: "2025",
+    image: "/csr/WhatsApp Image 2026-08-30 at 9.29.36 PM.jpeg",
   },
   {
     id: 3,
-    title: "Clothing Donation",
-    bengali: "বস্ত্র বিতরণ",
-    description:
-      "Providing essential clothing to families and individuals who need support throughout our wider community.",
-    image: "/images/random3.png",
-    year: "2025",
+    image: "/csr/WhatsApp Image 2026-08-31 at 5.40.52 PM.jpeg",
   },
   {
     id: 4,
-    title: "Health & Wellness",
-    bengali: "স্বাস্থ্য ও সুস্থতা",
-    description:
-      "Community health initiatives focused on awareness, wellbeing and helping people access essential support.",
-    image: "/images/random1.png",
-    year: "2025",
+    image: "/csr/WhatsApp Image 2026-08-31 at 6.00.23 PM.jpeg",
   },
   {
     id: 5,
-    title: "Community Support",
-    bengali: "সম্প্রদায় সহায়তা",
-    description:
-      "Standing beside our community during difficult times and extending meaningful support wherever it is needed.",
-    image: "/images/random2.png",
-    year: "2025",
+    image: "/csr/WhatsApp Image 2026-09-01 at 4.36.21 PM.jpeg",
   },
   {
     id: 6,
-    title: "Volunteer Initiatives",
-    bengali: "স্বেচ্ছাসেবী উদ্যোগ",
-    description:
-      "Bringing volunteers together to create positive change through service, kindness and collective responsibility.",
-    image: "/images/random3.png",
-    year: "2025",
+    image: "/csr/WhatsApp Image 2026-09-01 at 5.52.19 PM.jpeg",
   },
 ];
 
@@ -209,51 +179,32 @@ export default function SocialActivitiesPage() {
           ACTIVITIES / IMAGES
       ========================= */}
 
-      <section className={styles.activitiesSection}>
-        <div className={styles.container}>
-          <div className={styles.activitiesGrid}>
-            {activities.map((activity) => (
-              <article
-                className={styles.activityCard}
-                key={activity.id}
-              >
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={activity.image}
-                    alt={activity.title}
-                    fill
-                    sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                    className={styles.activityImage}
-                  />
-
-                  <div className={styles.imageOverlay} />
-
-                  <span className={styles.year}>
-                    {activity.year}
-                  </span>
-                </div>
-
-                <div className={styles.cardContent}>
-                  <h3>
-                    {activity.title}
-                  </h3>
-
-                  <p className={styles.cardBengali}>
-                    {activity.bengali}
-                  </p>
-
-                  <span className={styles.cardLine} />
-
-                  <p className={styles.cardDescription}>
-                    {activity.description}
-                  </p>
-                </div>
-              </article>
-            ))}
+<section className={styles.activitiesSection}>
+  <div className={styles.container}>
+    <div className={styles.activitiesGrid}>
+      {activities.map((activity, index) => (
+        <div
+          className={styles.activityCard}
+          key={activity.id}
+        >
+          <div className={styles.imageWrapper}>
+            <Image
+              src={activity.image}
+              alt={`Ananda Utsav social activity ${index + 1}`}
+              fill
+              sizes="
+                (max-width: 700px) 100vw,
+                (max-width: 1000px) 50vw,
+                33vw
+              "
+              className={styles.activityImage}
+            />
           </div>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* =========================
           FEATURED
       ========================= */}
@@ -263,7 +214,7 @@ export default function SocialActivitiesPage() {
           <div className={styles.featuredInner}>
             <div className={styles.featuredImage}>
               <Image
-                src="/images/featured.png"
+                src="/csr/WhatsApp Image 2026-09-01 at 6.00.13 PM.jpeg"
                 alt="Community social activity"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"

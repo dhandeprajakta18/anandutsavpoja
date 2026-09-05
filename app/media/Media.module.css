@@ -6,7 +6,6 @@
   background: #fffaf2;
 }
 
-
 /* =====================================
    INTRO
 ===================================== */
@@ -24,7 +23,8 @@
     ),
     #fffaf2;
 
-  border-bottom: 1px solid rgba(143, 16, 11, 0.08);
+  border-bottom: 1px solid
+    rgba(143, 16, 11, 0.08);
 }
 
 .intro {
@@ -34,26 +34,6 @@
 
   text-align: center;
 }
-
-
-/* =====================================
-   EYEBROW
-===================================== */
-
-.eyebrow {
-  display: inline-block;
-
-  color: #a66d28;
-
-  font-size: 0.68rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
-
-  text-transform: uppercase;
-}
-
 
 /* =====================================
    MAIN TITLE
@@ -77,37 +57,45 @@
   line-height: 1.05;
 }
 
-
 /* =====================================
-   DIVIDER
+   DIVIDERS
 ===================================== */
 
-.introDivider {
+.introDivider,
+.sectionDivider {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
   gap: 10px;
+}
 
+.introDivider {
   margin: 19px 0 18px;
 }
 
-.introDivider span {
+.sectionDivider {
+  margin: 15px auto 17px;
+}
+
+.introDivider span,
+.sectionDivider span {
   width: 48px;
   height: 1px;
 
-  background: rgba(184, 128, 55, 0.55);
+  background:
+    rgba(184, 128, 55, 0.55);
 }
 
-.introDivider i {
+.introDivider i,
+.sectionDivider i {
   color: #b78037;
 
   font-size: 0.45rem;
 
   font-style: normal;
 }
-
 
 /* =====================================
    INTRO TEXT
@@ -124,7 +112,6 @@
 
   line-height: 1.75;
 }
-
 
 /* =====================================
    MEDIA PUBLICATIONS
@@ -147,8 +134,6 @@
 .mediaNames span {
   color: #8b756c;
 
-  font-family: inherit;
-
   font-weight: 400;
 }
 
@@ -158,21 +143,57 @@
   font-weight: 700;
 }
 
-.mediaNames b {
-  margin: 0 8px;
+/* =====================================
+   SECTION HEADINGS
+===================================== */
 
-  color: #b78037;
+.sectionHeading,
+.galleryHeading {
+  width: min(100%, 650px);
 
-  font-weight: 400;
+  margin: 0 auto 38px;
+
+  text-align: center;
 }
 
+.sectionHeading h2,
+.galleryHeading h2 {
+  margin: 0;
+
+  color: var(--red);
+
+  font-family: var(--heading-font);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3rem
+  );
+
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+.sectionHeading > p,
+.galleryHeading > p {
+  max-width: 570px;
+
+  margin: 0 auto;
+
+  color: var(--text-muted);
+
+  font-size: 0.87rem;
+
+  line-height: 1.7;
+}
 
 /* =====================================
    NEWS SECTION
 ===================================== */
 
 .newsSection {
-  padding: 55px 4% 95px;
+  padding: 60px 4% 75px;
 
   background:
     linear-gradient(
@@ -182,27 +203,25 @@
     );
 }
 
-
 /* =====================================
    ARTICLE GRID
 ===================================== */
 
 .grid {
-  width: min(100%, 1180px);
+  width: min(100%, 1050px);
 
   margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(2, minmax(0, 1fr));
 
-  gap: 28px;
+  gap: 30px;
 }
 
-
 /* =====================================
-   CARD
+   ARTICLE CARD
 ===================================== */
 
 .card {
@@ -211,15 +230,16 @@
   overflow: hidden;
 
   display: flex;
-
   flex-direction: column;
 
   background: #fffdf9;
 
-  border: 1px solid rgba(143, 16, 11, 0.12);
+  border: 1px solid
+    rgba(143, 16, 11, 0.12);
 
   box-shadow:
-    0 12px 30px rgba(80, 22, 12, 0.06);
+    0 12px 30px
+    rgba(80, 22, 12, 0.06);
 
   transition:
     transform 0.3s ease,
@@ -230,21 +250,24 @@
 .card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(143, 16, 11, 0.2);
+  border-color:
+    rgba(143, 16, 11, 0.2);
 
   box-shadow:
-    0 18px 38px rgba(80, 22, 12, 0.11);
+    0 18px 38px
+    rgba(80, 22, 12, 0.11);
 }
 
-
 /* =====================================
-   IMAGE
+   ARTICLE IMAGE
 ===================================== */
 
 .imageWrap {
   position: relative;
 
-  aspect-ratio: 1.6;
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
@@ -261,7 +284,6 @@
 .card:hover .image {
   transform: scale(1.045);
 }
-
 
 /* =====================================
    CATEGORY
@@ -280,7 +302,6 @@
   color: #fff8ed;
 
   font-size: 0.61rem;
-
   font-weight: 700;
 
   letter-spacing: 0.09em;
@@ -288,24 +309,20 @@
   text-transform: uppercase;
 }
 
-
 /* =====================================
-   CARD CONTENT
+   ARTICLE CONTENT
 ===================================== */
 
 .cardContent {
-  padding: 21px 21px 23px;
-
   display: flex;
-
   flex: 1;
-
   flex-direction: column;
+
+  padding: 23px 23px 25px;
 }
 
-
 /* =====================================
-   ARTICLE META
+   META
 ===================================== */
 
 .articleMeta {
@@ -325,7 +342,6 @@
   font-family: var(--heading-font);
 
   font-size: 0.7rem;
-
   font-weight: 700;
 
   letter-spacing: 0.08em;
@@ -337,7 +353,6 @@
   color: #a97937;
 
   font-size: 0.66rem;
-
   font-weight: 700;
 
   letter-spacing: 0.06em;
@@ -347,32 +362,30 @@
   white-space: nowrap;
 }
 
-
 /* =====================================
    ARTICLE TITLE
 ===================================== */
 
-.card h2 {
-  margin: 4px 0 10px;
+.card h3 {
+  margin: 4px 0 11px;
 
   color: var(--red);
 
   font-family: var(--heading-font);
 
   font-size: clamp(
-    1.35rem,
-    1.8vw,
-    1.65rem
+    1.45rem,
+    2vw,
+    1.8rem
   );
 
   font-weight: 600;
 
-  line-height: 1.15;
+  line-height: 1.18;
 }
 
-
 /* =====================================
-   ARTICLE DESCRIPTION
+   DESCRIPTION
 ===================================== */
 
 .cardContent > p {
@@ -385,7 +398,6 @@
   line-height: 1.7;
 }
 
-
 /* =====================================
    READ MORE
 ===================================== */
@@ -394,7 +406,8 @@
   width: fit-content;
 
   margin-top: auto;
-  padding-top: 18px;
+
+  padding-top: 20px;
 
   display: inline-flex;
 
@@ -407,7 +420,6 @@
   font-family: var(--heading-font);
 
   font-size: 0.76rem;
-
   font-weight: 700;
 
   letter-spacing: 0.04em;
@@ -438,18 +450,423 @@
   transform: translateX(3px);
 }
 
+/* =====================================
+   MEDIA GALLERY SECTION
+===================================== */
+
+.mediaGallerySection {
+  padding: 75px 4% 100px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(212, 164, 77, 0.1),
+      transparent 35%
+    ),
+    #fffaf2;
+
+  border-top: 1px solid
+    rgba(143, 16, 11, 0.07);
+}
+
+/* =====================================
+   MEDIA GRID
+===================================== */
+
+.mediaGallery {
+  width: min(100%, 1180px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+/* =====================================
+   GALLERY CARD
+===================================== */
+
+.galleryCard {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  display: block;
+
+  padding: 0;
+
+  background: #f1e5d6;
+
+  border: 1px solid
+    rgba(143, 16, 11, 0.12);
+
+  box-shadow:
+    0 10px 24px
+    rgba(80, 22, 12, 0.06);
+
+  cursor: pointer;
+
+  appearance: none;
+
+  font: inherit;
+
+  text-align: inherit;
+}
+
+.galleryCard::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  z-index: 2;
+
+  border: 1px solid
+    rgba(230, 183, 94, 0);
+
+  pointer-events: none;
+
+  transition:
+    border-color 0.35s ease;
+}
+
+.galleryCard:focus-visible {
+  outline: 2px solid #8f100b;
+
+  outline-offset: 4px;
+}
+
+/* =====================================
+   GALLERY IMAGE
+===================================== */
+
+.galleryImage {
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.galleryCard:hover .galleryImage {
+  transform: scale(1.035);
+}
+
+.galleryCard:hover::after {
+  border-color:
+    rgba(230, 183, 94, 0.55);
+}
+
+/* =====================================
+   IMAGE NUMBER
+===================================== */
+
+.galleryNumber {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 12px;
+  bottom: 12px;
+
+  padding: 5px 8px;
+
+  background:
+    rgba(75, 5, 3, 0.76);
+
+  color: #fff8ed;
+
+  font-family: var(--heading-font);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  pointer-events: none;
+}
+
+/* =====================================
+   LIGHTBOX
+===================================== */
+
+.lightbox {
+  width: 100%;
+  max-width: none;
+
+  height: 100%;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  overflow: hidden;
+}
+
+.lightbox::backdrop {
+  background:
+    rgba(20, 7, 4, 0.94);
+
+  backdrop-filter: blur(7px);
+}
+
+/* =====================================
+   LIGHTBOX CONTENT
+===================================== */
+
+.lightboxContent {
+  position: relative;
+
+  width: 100%;
+
+  height: 100dvh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    60px
+    90px
+    45px;
+}
+
+/* =====================================
+   LIGHTBOX FIGURE
+===================================== */
+
+.lightboxFigure {
+  position: relative;
+
+  width: min(100%, 1250px);
+
+  height: min(84vh, 900px);
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+}
+
+/* =====================================
+   LIGHTBOX MEDIA
+===================================== */
+
+.lightboxMedia {
+  position: relative;
+
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 0;
+}
+
+/* =====================================
+   FULL IMAGE
+===================================== */
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+/* =====================================
+   LIGHTBOX CAPTION
+===================================== */
+
+.lightboxCaption {
+  flex-shrink: 0;
+
+  color:
+    rgba(255, 250, 242, 0.8);
+
+  font-family: var(--heading-font);
+
+  font-size: 0.75rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* =====================================
+   CLOSE BUTTON
+===================================== */
+
+.lightboxClose {
+  position: fixed;
+
+  top: 24px;
+  right: 28px;
+
+  z-index: 30;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #fffaf2;
+
+  cursor: pointer;
+
+  font-size: 1.2rem;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.lightboxClose:hover {
+  background:
+    rgba(255, 255, 255, 0.18);
+
+  border-color:
+    rgba(255, 255, 255, 0.45);
+
+  transform: rotate(8deg);
+}
+
+/* =====================================
+   PREVIOUS / NEXT
+===================================== */
+
+.lightboxNav {
+  position: fixed;
+
+  top: 50%;
+
+  z-index: 30;
+
+  width: 50px;
+  height: 50px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #fffaf2;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  transform: translateY(-50%);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.lightboxNav:hover {
+  background:
+    rgba(255, 255, 255, 0.18);
+
+  border-color:
+    rgba(255, 255, 255, 0.42);
+}
+
+.lightboxPrevious {
+  left: 28px;
+}
+
+.lightboxNext {
+  right: 28px;
+}
+
+/* =====================================
+   LIGHTBOX FOCUS
+===================================== */
+
+.lightboxClose:focus-visible,
+.lightboxNav:focus-visible {
+  outline: 2px solid #e4bd72;
+
+  outline-offset: 3px;
+}
 
 /* =====================================
    TABLET
 ===================================== */
 
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
   .grid {
+    width: min(100%, 680px);
+
+    grid-template-columns: 1fr;
+  }
+
+  .mediaGallery {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
-}
 
+  .lightboxContent {
+    padding:
+      60px
+      65px
+      35px;
+  }
+
+  .lightboxPrevious {
+    left: 12px;
+  }
+
+  .lightboxNext {
+    right: 12px;
+  }
+
+  .lightboxNav {
+    width: 44px;
+    height: 44px;
+  }
+}
 
 /* =====================================
    MOBILE
@@ -457,7 +874,10 @@
 
 @media (max-width: 680px) {
   .introSection {
-    padding: 62px 20px 44px;
+    padding:
+      62px
+      20px
+      44px;
   }
 
   .intro h1 {
@@ -472,7 +892,8 @@
     margin: 16px 0;
   }
 
-  .introDivider span {
+  .introDivider span,
+  .sectionDivider span {
     width: 34px;
   }
 
@@ -488,12 +909,16 @@
     line-height: 2;
   }
 
-  .mediaNames b {
-    margin: 0 5px;
+  .newsSection {
+    padding:
+      45px
+      5%
+      65px;
   }
 
-  .newsSection {
-    padding: 38px 5% 70px;
+  .sectionHeading,
+  .galleryHeading {
+    margin-bottom: 30px;
   }
 
   .grid {
@@ -510,7 +935,7 @@
     padding: 19px;
   }
 
-  .card h2 {
+  .card h3 {
     font-size: 1.4rem;
   }
 
@@ -521,11 +946,88 @@
 
     gap: 4px;
   }
-}
 
+  .mediaGallerySection {
+    padding:
+      55px
+      5%
+      75px;
+  }
+
+  .mediaGallery {
+    gap: 13px;
+  }
+
+  /* LIGHTBOX */
+
+  .lightboxContent {
+    padding:
+      65px
+      12px
+      25px;
+  }
+
+  .lightboxFigure {
+    width: 100%;
+
+    height: 80vh;
+  }
+
+  .lightboxClose {
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.05rem;
+  }
+
+  .lightboxNav {
+    top: auto;
+
+    bottom: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    transform: none;
+
+    background:
+      rgba(30, 8, 5, 0.82);
+  }
+
+  .lightboxPrevious {
+    left: 18px;
+  }
+
+  .lightboxNext {
+    right: 18px;
+  }
+
+  .lightboxCaption {
+    padding-bottom: 44px;
+
+    font-size: 0.68rem;
+  }
+}
 
 /* =====================================
    SMALL MOBILE
+===================================== */
+
+@media (max-width: 500px) {
+  .mediaGallery {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryCard {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* =====================================
+   EXTRA SMALL MOBILE
 ===================================== */
 
 @media (max-width: 400px) {
@@ -540,8 +1042,10 @@
     font-size: 2.25rem;
   }
 
-  .newsSection {
+  .newsSection,
+  .mediaGallerySection {
     padding-left: 17px;
+
     padding-right: 17px;
   }
 }

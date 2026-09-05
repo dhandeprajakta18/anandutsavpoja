@@ -50,7 +50,7 @@ export default function AboutPage() {
             <div className={styles.imageFrame}>
               <div className={styles.imageInner}>
                 <Image
-                  src="/real/aboutus.jpeg"
+                  src="/real/about2.jpeg"
                   alt="Durga Puja celebration at Ananda Utsav"
                   fill
                   priority

@@ -1,4 +1,5 @@
-//app/gallery/galleryData.ts
+// app/gallery/galleryData.ts
+
 export type GalleryImage = string;
 
 export type GalleryCategory = {
@@ -21,6 +22,7 @@ export const galleryImages: GalleryImage[] = [
   "/gallery/WhatsApp Image 2026-08-30 at 9.50.45 PM.jpeg",
   "/gallery/WhatsApp Image 2026-08-30 at 9.52.03 PM.jpeg",
   "/gallery/WhatsApp Image 2026-08-30 at 9.52.45 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-08-31 at 5.40.20 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 5.40.20 PM.jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 5.40.21 PM (1).jpeg",
@@ -31,6 +33,7 @@ export const galleryImages: GalleryImage[] = [
   "/gallery/WhatsApp Image 2026-08-31 at 5.40.52 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 5.40.52 PM (2).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 5.40.52 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.23 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.23 PM (2).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.23 PM (3).jpeg",
@@ -42,7 +45,6 @@ export const galleryImages: GalleryImage[] = [
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.26 PM (2).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.26 PM (3).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.26 PM.jpeg",
-  
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.27 PM (2).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.27 PM.jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.28 PM (1).jpeg",
@@ -55,25 +57,24 @@ export const galleryImages: GalleryImage[] = [
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.29 PM.jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.30 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.00.30 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-08-31 at 6.02.40 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.02.40 PM (2).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.02.40 PM (3).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.02.40 PM (4).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.02.40 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-08-31 at 6.10.59 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 6.10.59 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-08-31 at 7.59.29 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 7.59.29 PM.jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 7.59.47 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 7.59.47 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-08-31 at 8.10.50 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-08-31 at 8.10.50 PM.jpeg",
-  "/gallery/WhatsApp Image 2026-09-01 at 1.33.49 PM.jpeg",
-  "/gallery/WhatsApp Image 2026-09-01 at 2.12.49 PM (1).jpeg",
-  "/gallery/WhatsApp Image 2026-09-01 at 2.12.49 PM (2).jpeg",
-  "/gallery/WhatsApp Image 2026-09-01 at 2.12.49 PM (3).jpeg",
-  "/gallery/WhatsApp Image 2026-09-01 at 2.12.49 PM.jpeg",
-  "/gallery/WhatsApp Image 2026-09-01 at 2.12.50 PM.jpeg",
+
   "/gallery/WhatsApp Image 2026-09-01 at 1.33.49 PM.jpeg",
   "/gallery/WhatsApp Image 2026-09-01 at 2.12.49 PM (1).jpeg",
   "/gallery/WhatsApp Image 2026-09-01 at 2.12.49 PM (2).jpeg",
@@ -123,8 +124,75 @@ export const galleryImages: GalleryImage[] = [
   "/gallery/WhatsApp Image 2026-09-03 at 10.00.29 AM (3).jpeg",
   "/gallery/WhatsApp Image 2026-09-03 at 10.00.29 AM.jpeg",
   "/gallery/WhatsApp Image 2026-09-03 at 10.00.30 AM.jpeg",
-];
 
+  /* =====================================
+     NEW SEPTEMBER 4 IMAGES
+  ===================================== */
+
+  "/gallery/WhatsApp Image 2026-09-04 at 4.53.21 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 4.53.41 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 4.56.12 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 4.59.19 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 4.59.50 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.00.05 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.00.25 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.00.34 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.04.11 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.05.38 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.09.16 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 5.50.21 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 5.50.21 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 6.02.15 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.02.15 PM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.02.15 PM (3).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.02.15 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.02.16 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.39 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.39 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.40 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.40 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.41 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.41 PM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.41 PM (3).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.41 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.42 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.42 PM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.42 PM (3).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.42 PM.jpeg",
+
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.43 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.43 PM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.03.43 PM.jpeg",
+
+   "/gallery/WhatsApp Image 2026-09-04 at 6.06.14 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-04 at 6.19.07 PM.jpeg",
+
+  // September 5
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.18 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.19 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.19 PM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.19 PM (3).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.19 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.20 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.20 PM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.20 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.21 PM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 2.20.21 PM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.07.42 AM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.07.42 AM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.07.42 AM (3).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.07.42 AM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.13.51 AM.jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.13.52 AM (1).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.13.52 AM (2).jpeg",
+  "/gallery/WhatsApp Image 2026-09-05 at 11.13.52 AM.jpeg",
+];
 export const galleryCategories: GalleryCategory[] = [
   {
     id: "durga-puja",
@@ -136,6 +204,7 @@ export const galleryCategories: GalleryCategory[] = [
       "/durgapuja/WhatsApp Image 2026-09-01 at 5.52.19 PM.jpeg",
     ],
   },
+
   {
     id: "other-events",
     label: "Other Events",
@@ -145,12 +214,27 @@ export const galleryCategories: GalleryCategory[] = [
       "/otherevents/WhatsApp Image 2026-09-01 at 6.00.38 PM.jpeg",
     ],
   },
+
   {
-    id: "members",
-    label: "Members",
-    images: [
-      "/member/WhatsApp Image 2026-09-01 at 4.33.30 PM.jpeg",
-      "/member/WhatsApp Image 2026-09-01 at 4.36.37 PM.jpeg",
-    ],
-  },
+  id: "members",
+  label: "Members",
+  images: [
+    "/member/WhatsApp Image 2026-09-01 at 4.33.30 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-01 at 4.36.37 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 4.50.52 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 4.50.59 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 4.57.28 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 4.58.48 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 5.12.45 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 5.14.13 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 5.53.02 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 5.53.45 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 6.22.03 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-04 at 9.30.15 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-05 at 2.19.26 PM.jpeg",
+    "/member/WhatsApp Image 2026-09-05 at 11.07.00 AM.jpeg",
+    "/member/WhatsApp Image 2026-09-05 at 11.08.46 AM.jpeg",
+    "/member/WhatsApp Image 2026-09-05 at 11.13.20 AM.jpeg",
+  ],
+},
 ];
