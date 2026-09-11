@@ -22,7 +22,8 @@ const contactDetails = [
     icon: FaLocationDot,
     label: "Visit Us",
     title: "Ananda Utsav Cultural Association",
-    text: "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Goregaon West, Mumbai. Next to Ozone Swimming Pool.",
+    text:
+      "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Goregaon West, Mumbai. Next to Ozone Swimming Pool.",
   },
   {
     icon: FaEnvelope,
@@ -55,13 +56,11 @@ export default async function ContactPage({
 
   return (
     <main>
-      {/* =========================
-          CONTACT INTRO
-      ========================= */}
-
       <section className={styles.contactSection}>
         <div className={styles.container}>
-          {/* LEFT CONTENT */}
+          {/* =========================
+              LEFT CONTENT
+          ========================= */}
 
           <div className={styles.infoSide}>
             <h1>
@@ -76,18 +75,9 @@ export default async function ContactPage({
               <span />
             </div>
 
-            {/* <p className={styles.intro}>
-              Ananda Utsav grows through the participation, support and
-              togetherness of our community.
-            </p>
-
-            <p className={styles.description}>
-              Reach out to us for festival enquiries, cultural participation,
-              volunteering, sponsorship opportunities, CSR initiatives or any
-              other information about Ananda Utsav.
-            </p> */}
-
-            {/* MEMBERSHIP + SPONSORSHIP */}
+            {/* =========================
+                MEMBERSHIP + SPONSORSHIP
+            ========================= */}
 
             <div className={styles.involvementOptions}>
               <article className={styles.involvementCard}>
@@ -121,7 +111,9 @@ export default async function ContactPage({
               </article>
             </div>
 
-            {/* CONTACT DETAILS */}
+            {/* =========================
+                CONTACT DETAILS
+            ========================= */}
 
             <div className={styles.contactList}>
               {contactDetails.map((item) => {
@@ -136,7 +128,7 @@ export default async function ContactPage({
                       <Icon />
                     </div>
 
-                    <div>
+                    <div className={styles.contactContent}>
                       <span className={styles.contactLabel}>
                         {item.label}
                       </span>
@@ -163,28 +155,47 @@ export default async function ContactPage({
               })}
             </div>
 
-            {/* SOCIAL */}
+            {/* =========================
+                SOCIAL
+            ========================= */}
 
             <div className={styles.socialSection}>
               <span>FOLLOW OUR CELEBRATIONS</span>
 
               <div className={styles.socials}>
-                <a href="#" aria-label="Facebook">
+                <a
+                  href="https://www.facebook.com/AnandaUtsavPuja"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
                   <FaFacebookF />
                 </a>
 
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://www.instagram.com/ananda.utsav/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <FaInstagram />
                 </a>
 
-                <a href="#" aria-label="YouTube">
+                <a
+                  href="https://youtube.com/@anandautsav3988?si=fdgd5jvCrwGCWaTq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
                   <FaYoutube />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* =========================
+              RIGHT IMAGE
+          ========================= */}
 
           <div className={styles.imageSide}>
             <div className={styles.imageFrame}>
@@ -208,21 +219,24 @@ export default async function ContactPage({
 
               <div>
                 <small>ANANDA UTSAV</small>
-                <p>Community • Culture • Togetherness</p>
+
+                <p>
+                  Community • Culture • Togetherness
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* FORM PREVIEW / FORM */}
+        {/* =========================
+            CONTACT FORM
+        ========================= */}
 
         <div
           className={styles.formSection}
           id="contact-form"
         >
           <div className={styles.formIntro}>
-            {/* <span>SEND US A MESSAGE</span> */}
-
             <h2>How Can We Help?</h2>
 
             <p>
@@ -237,6 +251,7 @@ export default async function ContactPage({
 
               <div>
                 <small>GET IN TOUCH</small>
+
                 <h3>Send Us A Message</h3>
               </div>
             </div>
@@ -253,6 +268,7 @@ export default async function ContactPage({
                     name="name"
                     type="text"
                     placeholder="Enter your name"
+                    autoComplete="name"
                     required
                   />
                 </div>
@@ -267,6 +283,7 @@ export default async function ContactPage({
                     name="phone"
                     type="tel"
                     placeholder="+91 00000 00000"
+                    autoComplete="tel"
                   />
                 </div>
               </div>
@@ -282,6 +299,7 @@ export default async function ContactPage({
                     name="email"
                     type="email"
                     placeholder="yourname@email.com"
+                    autoComplete="email"
                     required
                   />
                 </div>
@@ -296,7 +314,10 @@ export default async function ContactPage({
                     name="subject"
                     defaultValue={selectedInterest}
                   >
-                    <option value="" disabled>
+                    <option
+                      value=""
+                      disabled
+                    >
                       Select an enquiry
                     </option>
 
@@ -362,7 +383,9 @@ export default async function ContactPage({
               <span />
               <i>◆</i>
 
-              <p>আপনাদের সহযোগিতাই আমাদের শক্তি</p>
+              <p>
+                আপনাদের সহযোগিতাই আমাদের শক্তি
+              </p>
 
               <i>◆</i>
               <span />
@@ -380,7 +403,10 @@ export default async function ContactPage({
           <h2>
             Celebrate With Us.
             <br />
-            <em>Be Part Of The Tradition.</em>
+
+            <em>
+              Be Part Of The Tradition.
+            </em>
           </h2>
 
           <p>

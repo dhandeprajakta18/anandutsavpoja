@@ -6,7 +6,6 @@
   background: #fffaf2;
 }
 
-
 /* =====================================
    HERO
 ===================================== */
@@ -41,7 +40,6 @@
     );
 
   color: #fff;
-
   text-align: center;
 }
 
@@ -90,11 +88,11 @@
 .content > span {
   display: inline-block;
 
-  margin-bottom: 11px;
+  margin-bottom: 12px;
 
   color: #e4b35b;
 
-  font-size: 0.68rem;
+  font-size: 0.78rem;
 
   font-weight: 700;
 
@@ -109,9 +107,9 @@
   font-family: var(--heading-font);
 
   font-size: clamp(
-    2.7rem,
+    2.9rem,
     5vw,
-    4.3rem
+    4.5rem
   );
 
   font-weight: 600;
@@ -122,13 +120,14 @@
 .content > div {
   width: 110px;
 
-  margin: 17px auto 12px;
+  margin: 18px auto 14px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
+
+  gap: 10px;
 }
 
 .content > div::before,
@@ -136,43 +135,37 @@
   content: "";
 
   width: 38px;
-
   height: 1px;
 
   background: rgba(224, 174, 85, 0.55);
 }
 
-.content > div {
-  gap: 10px;
-}
-
 .content > div i {
   color: #dfad54;
 
-  font-size: 0.48rem;
+  font-size: 0.5rem;
 
   font-style: normal;
 }
 
 .content p {
-  max-width: 570px;
+  max-width: 590px;
 
   margin: 0 auto;
 
-  color: rgba(255, 245, 230, 0.78);
+  color: rgba(255, 245, 230, 0.82);
 
-  font-size: 0.92rem;
+  font-size: 1rem;
 
   line-height: 1.75;
 }
-
 
 /* =====================================
    DONATION OPTIONS
 ===================================== */
 
 .donationSection {
-  padding: 78px 0 88px;
+  padding: 82px 0 92px;
 
   background:
     radial-gradient(
@@ -189,15 +182,14 @@
   margin: 0 auto;
 }
 
-
 /* =====================================
    SECTION HEADING
 ===================================== */
 
 .sectionHeading {
-  max-width: 670px;
+  max-width: 700px;
 
-  margin: 0 auto 38px;
+  margin: 0 auto 42px;
 
   text-align: center;
 }
@@ -210,9 +202,9 @@
   font-family: var(--heading-font);
 
   font-size: clamp(
-    2.25rem,
+    2.5rem,
     4vw,
-    3.3rem
+    3.6rem
   );
 
   font-weight: 600;
@@ -225,27 +217,26 @@
 
   display: block;
 
-  margin: 17px auto 13px;
+  margin: 18px auto 14px;
 
   color: #b47d37;
 
   font-family: inherit;
 
-  font-size: 0.45rem;
+  font-size: 0.48rem;
 }
 
 .sectionHeading p {
-  max-width: 590px;
+  max-width: 620px;
 
   margin: 0 auto;
 
-  color: #71605a;
+  color: #675750;
 
-  font-size: 0.88rem;
+  font-size: 1rem;
 
-  line-height: 1.75;
+  line-height: 1.8;
 }
-
 
 /* =====================================
    DONATION CARDS
@@ -257,7 +248,7 @@
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 24px;
+  gap: 26px;
 }
 
 .donationCard {
@@ -265,9 +256,10 @@
 
   overflow: hidden;
 
-  padding: 32px 32px 30px;
+  padding: 36px 34px 34px;
 
-  border: 1px solid rgba(176, 117, 49, 0.3);
+  border:
+    1px solid rgba(176, 117, 49, 0.3);
 
   background: #fffdf8;
 
@@ -291,9 +283,11 @@
   width: 90px;
   height: 90px;
 
-  border-top: 1px solid rgba(128, 21, 15, 0.18);
+  border-top:
+    1px solid rgba(128, 21, 15, 0.18);
 
-  border-right: 1px solid rgba(128, 21, 15, 0.18);
+  border-right:
+    1px solid rgba(128, 21, 15, 0.18);
 
   pointer-events: none;
 }
@@ -301,7 +295,8 @@
 .donationCard:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(176, 117, 49, 0.55);
+  border-color:
+    rgba(176, 117, 49, 0.55);
 
   box-shadow:
     0 18px 38px rgba(80, 22, 12, 0.09);
@@ -315,25 +310,25 @@
       #f9ead7
     );
 
-  border-color: rgba(128, 21, 15, 0.22);
+  border-color:
+    rgba(128, 21, 15, 0.22);
 }
-
 
 /* =====================================
    ICON
 ===================================== */
 
 .iconWrap {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
 
-  margin-bottom: 23px;
+  margin-bottom: 25px;
 
   display: grid;
-
   place-items: center;
 
-  border: 1px solid rgba(128, 21, 15, 0.25);
+  border:
+    1px solid rgba(128, 21, 15, 0.25);
 
   border-radius: 50%;
 
@@ -341,12 +336,12 @@
 
   color: #86150f;
 
-  font-size: 1.15rem;
+  font-size: 1.35rem;
 
   box-shadow:
-    0 0 0 5px rgba(180, 122, 51, 0.05);
+    0 0 0 5px
+      rgba(180, 122, 51, 0.05);
 }
-
 
 /* =====================================
    CARD TEXT
@@ -355,47 +350,46 @@
 .donationCard > span {
   display: block;
 
-  color: #a47536;
+  color: #9b6c34;
 
-  font-size: 0.58rem;
+  font-size: 0.68rem;
 
   font-weight: 700;
 
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
 }
 
 .donationCard h3 {
-  margin: 8px 0 11px;
+  margin: 9px 0 13px;
 
   color: #80150f;
 
   font-family: var(--heading-font);
 
   font-size: clamp(
-    1.65rem,
+    1.85rem,
     3vw,
-    2.1rem
+    2.3rem
   );
 
   font-weight: 600;
 
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .donationCard p {
   max-width: 470px;
 
-  min-height: 65px;
+  min-height: 72px;
 
   margin: 0;
 
-  color: #71605a;
+  color: #675750;
 
-  font-size: 0.84rem;
+  font-size: 0.95rem;
 
-  line-height: 1.75;
+  line-height: 1.8;
 }
-
 
 /* =====================================
    BUTTONS
@@ -403,23 +397,26 @@
 
 .primaryButton,
 .secondaryButton {
-  margin-top: 22px;
+  margin-top: 25px;
 
-  padding: 12px 16px;
+  padding: 14px 18px;
 
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
-  gap: 9px;
+  gap: 10px;
 
-  border: 1px solid #82140e;
+  border:
+    1px solid #82140e;
 
-  font-family: var(--heading-font);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 0.72rem;
+  font-size: 0.78rem;
 
   font-weight: 700;
 
@@ -462,16 +459,16 @@
 
 .primaryButton svg,
 .secondaryButton svg {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease;
 }
 
 .primaryButton:hover svg,
 .secondaryButton:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
-
 
 /* =====================================
    BANK SECTION
@@ -480,7 +477,7 @@
 .bankSection {
   position: relative;
 
-  padding: 82px 0 95px;
+  padding: 88px 0 100px;
 
   background:
     radial-gradient(
@@ -494,7 +491,8 @@
       #f1e1ce 100%
     );
 
-  border-top: 1px solid rgba(143, 16, 11, 0.08);
+  border-top:
+    1px solid rgba(143, 16, 11, 0.08);
 }
 
 .bankContainer {
@@ -513,7 +511,6 @@
   align-items: center;
 }
 
-
 /* =====================================
    BANK INTRO
 ===================================== */
@@ -530,9 +527,9 @@
   font-family: var(--heading-font);
 
   font-size: clamp(
-    2.25rem,
+    2.5rem,
     4vw,
-    3.2rem
+    3.5rem
   );
 
   font-weight: 600;
@@ -545,39 +542,49 @@
 
   display: block;
 
-  margin: 17px 0 15px;
+  margin: 18px 0 16px;
 
   color: #b47d37;
 
-  font-size: 0.45rem;
+  font-size: 0.48rem;
 }
 
 .bankIntro p {
-  max-width: 440px;
+  max-width: 450px;
 
-  color: #71605a;
+  color: #675750;
 
-  font-size: 0.87rem;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  line-height: 1.8;
+  font-size: 0.98rem;
+
+  line-height: 1.85;
 }
 
 .bankIntro a {
-  margin-top: 22px;
+  margin-top: 24px;
 
   display: inline-flex;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 
   color: #86150f;
 
-  font-family: var(--heading-font);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 0.86rem;
+  font-size: 0.9rem;
 
   font-weight: 700;
+
+  text-decoration: none;
 
   transition:
     color 0.25s ease,
@@ -591,9 +598,8 @@
 }
 
 .bankIntro a svg {
-  font-size: 0.7rem;
+  font-size: 0.76rem;
 }
-
 
 /* =====================================
    BANK CARD
@@ -604,12 +610,14 @@
 
   overflow: hidden;
 
-  border: 1px solid rgba(176, 117, 49, 0.4);
+  border:
+    1px solid rgba(176, 117, 49, 0.4);
 
   background: #fffdf8;
 
   box-shadow:
-    0 18px 45px rgba(88, 40, 20, 0.08);
+    0 18px 45px
+      rgba(88, 40, 20, 0.08);
 }
 
 .bankCard::before {
@@ -623,46 +631,67 @@
   width: 120px;
   height: 120px;
 
-  border-top: 1px solid rgba(135, 21, 15, 0.18);
+  border-top:
+    1px solid rgba(135, 21, 15, 0.18);
 
-  border-right: 1px solid rgba(135, 21, 15, 0.18);
+  border-right:
+    1px solid rgba(135, 21, 15, 0.18);
 
   pointer-events: none;
 }
-
 
 /* =====================================
    BANK CARD HEADER
 ===================================== */
 
 .bankCardHeader {
-  padding: 23px 27px;
+  padding: 25px 28px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 14px;
+  gap: 15px;
 
   background: #79100a;
 
   color: #fff;
 }
 
-.bankCardHeader > svg {
+.bankIcon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid rgba(223, 173, 84, 0.35);
+
+  border-radius: 50%;
+
   color: #dfad54;
 
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 .bankCardHeader span {
   display: block;
 
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 
   color: #dca950;
 
-  font-size: 0.55rem;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.65rem;
 
   font-weight: 700;
 
@@ -676,13 +705,20 @@
 
   font-family: var(--heading-font);
 
-  font-size: 1.45rem;
+  font-size: 1.65rem;
 
   font-weight: 500;
 
   line-height: 1.15;
 }
 
+/* =====================================
+   BANK CARD BODY
+===================================== */
+
+.bankCardBody {
+  background: #fffdf8;
+}
 
 /* =====================================
    BANK DETAILS
@@ -691,11 +727,11 @@
 .bankDetails {
   margin: 0;
 
-  padding: 8px 27px;
+  padding: 10px 28px;
 }
 
 .bankDetails > div {
-  padding: 15px 0;
+  padding: 17px 0;
 
   display: grid;
 
@@ -703,7 +739,9 @@
     0.8fr
     1.2fr;
 
-  gap: 20px;
+  gap: 22px;
+
+  align-items: center;
 
   border-bottom:
     1px solid rgba(176, 117, 49, 0.16);
@@ -713,72 +751,147 @@
   border-bottom: none;
 }
 
-.bankDetails dt {
-  color: #9b713f;
+/*
+   Labels are simple and clear.
+*/
 
-  font-size: 0.63rem;
+.bankDetails dt {
+  color: #87633d;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.78rem;
 
   font-weight: 700;
 
-  letter-spacing: 0.09em;
+  letter-spacing: 0.05em;
+
+  line-height: 1.5;
 
   text-transform: uppercase;
 }
 
+/*
+   IMPORTANT:
+   Bank values use a clean readable
+   sans-serif font instead of heading font.
+*/
+
 .bankDetails dd {
   margin: 0;
 
-  color: #4f3933;
+  color: #3f3430;
 
-  font-family: var(--heading-font);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 1rem;
+  font-size: 1.05rem;
 
   font-weight: 600;
+
+  line-height: 1.55;
 
   word-break: break-word;
 }
 
+/*
+   Make account number + IFSC especially
+   easy to read.
+*/
+
+.bankDetails > div:nth-child(4) dd,
+.bankDetails > div:nth-child(5) dd {
+  color: #74140e;
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
 
 /* =====================================
    BANK NOTE
 ===================================== */
 
 .bankNote {
-  padding: 17px 27px;
+  padding: 20px 28px;
 
   display: flex;
 
   align-items: flex-start;
 
-  gap: 10px;
+  gap: 13px;
 
   background: #f7e8d3;
 
   border-top:
     1px solid rgba(176, 117, 49, 0.15);
 
-  color: #8a261d;
+  color: #7b241d;
 }
 
-.bankNote svg {
+.noteIcon {
+  width: 30px;
+  height: 30px;
+
   flex: 0 0 auto;
 
-  margin-top: 2px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(166, 117, 52, 0.12);
 
   color: #a67534;
+}
 
-  font-size: 0.85rem;
+.noteIcon svg {
+  font-size: 0.95rem;
+}
+
+.bankNote strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6f1b15;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
 }
 
 .bankNote p {
+  max-width: 600px;
+
   margin: 0;
 
-  font-size: 0.75rem;
+  color: #695852;
 
-  line-height: 1.6;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.86rem;
+
+  line-height: 1.75;
 }
-
 
 /* =====================================
    RESPONSIVE
@@ -788,13 +901,15 @@
   .bankContainer {
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 45px;
   }
 
   .bankIntro {
     max-width: 650px;
 
     margin: 0 auto;
+
+    padding-right: 0;
 
     text-align: center;
   }
@@ -814,7 +929,6 @@
   }
 }
 
-
 /* =====================================
    TABLET
 ===================================== */
@@ -822,13 +936,13 @@
 @media (max-width: 760px) {
   .donationSection,
   .bankSection {
-    padding: 62px 0 70px;
+    padding: 68px 0 75px;
   }
 
   .donationOptions {
     grid-template-columns: 1fr;
 
-    gap: 18px;
+    gap: 20px;
   }
 
   .donationCard p {
@@ -839,7 +953,6 @@
     width: min(90%, 650px);
   }
 }
-
 
 /* =====================================
    MOBILE
@@ -860,7 +973,7 @@
   }
 
   .content p {
-    font-size: 0.86rem;
+    font-size: 0.95rem;
   }
 
   .container {
@@ -868,24 +981,36 @@
   }
 
   .sectionHeading {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 
   .sectionHeading h2 {
-    font-size: 2.25rem;
+    font-size: 2.35rem;
+  }
+
+  .sectionHeading p {
+    font-size: 0.94rem;
   }
 
   .donationCard {
-    padding: 27px 23px;
+    padding: 29px 24px;
   }
 
   .donationCard h3 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+  }
+
+  .donationCard p {
+    font-size: 0.92rem;
   }
 
   .primaryButton,
   .secondaryButton {
     width: 100%;
+
+    min-height: 48px;
+
+    font-size: 0.77rem;
   }
 
   .bankContainer {
@@ -893,37 +1018,68 @@
   }
 
   .bankIntro h2 {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+  }
+
+  .bankIntro p {
+    font-size: 0.94rem;
   }
 
   .bankCardHeader {
-    padding: 20px;
+    padding: 21px;
+  }
+
+  .bankIcon {
+    width: 44px;
+    height: 44px;
+
+    font-size: 1.1rem;
+  }
+
+  .bankCardHeader h3 {
+    font-size: 1.5rem;
   }
 
   .bankDetails {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 21px;
+    padding-right: 21px;
   }
 
   .bankDetails > div {
     grid-template-columns: 1fr;
 
-    gap: 5px;
+    gap: 6px;
 
-    padding: 14px 0;
+    padding: 16px 0;
+  }
+
+  .bankDetails dt {
+    font-size: 0.72rem;
   }
 
   .bankDetails dd {
-    font-size: 0.95rem;
+    font-size: 1rem;
+  }
+
+  .bankDetails > div:nth-child(4) dd,
+  .bankDetails > div:nth-child(5) dd {
+    font-size: 1.05rem;
   }
 
   .bankNote {
     padding:
-      15px
-      20px;
+      18px
+      21px;
+  }
+
+  .bankNote strong {
+    font-size: 0.88rem;
+  }
+
+  .bankNote p {
+    font-size: 0.82rem;
   }
 }
-
 
 /* =====================================
    SMALL MOBILE
@@ -939,14 +1095,18 @@
   }
 
   .donationCard {
-    padding: 24px 20px;
+    padding: 25px 20px;
   }
 
   .sectionHeading h2 {
-    font-size: 2rem;
+    font-size: 2.05rem;
   }
 
   .bankIntro h2 {
-    font-size: 2.05rem;
+    font-size: 2.1rem;
+  }
+
+  .bankDetails dd {
+    font-size: 0.96rem;
   }
 }

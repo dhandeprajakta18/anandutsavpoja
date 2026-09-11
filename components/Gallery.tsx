@@ -15,7 +15,7 @@ const galleryImages = [
     category: "Devotion",
   },
   {
-    src: "/real/bhog.jpeg",
+    src: "/real/bhog2.jpeg",
     alt: "Bhog at Ananda Utsav",
     title: "Bhog",
     category: "Tradition",
@@ -33,10 +33,10 @@ const galleryImages = [
     category: "Devotion",
   },
   {
-    src: "/real/foodstall1.jpeg",
-    alt: "Food stalls at Ananda Utsav",
-    title: "Food Stall",
-    category: "Festivities",
+    src: "/real/philanthropy1.jpeg",
+    alt: "Philanthropy at Ananda Utsav",
+    title: "Philanthropy",
+    category: "Community Outreach",
   },
 ];
 

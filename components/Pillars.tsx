@@ -26,14 +26,14 @@ const pillars = [
       "Music, dance, performances and community celebrations create a vibrant platform to preserve and share our rich Bengali heritage.",
   },
   {
-    number: "03",
-    icon: FaHandHoldingHeart,
-    title: "CSR",
-    bengali: "সমাজের প্রতি দায়বদ্ধতা",
-    subtitle: "Compassion",
-    description:
-  "Through community services and social initiatives, we come together to support those in need, extend a helping hand and contribute to the well-being of our wider community.",
- },
+  number: "03",
+  icon: FaHandHoldingHeart,
+  title: "Philanthropy",
+  bengali: "সমাজের প্রতি দায়বদ্ধতা",
+  subtitle: "Compassion",
+  description:
+  "Through compassion and community support, we help those in need and create a meaningful positive impact beyond our celebrations.",
+},
 ];
 
 export default function Pillars() {

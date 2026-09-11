@@ -81,7 +81,7 @@ export default function Footer() {
             <div className={styles.socials}>
 
               <a
-                href="#"
+                href="https://www.facebook.com/AnandaUtsavPuja"
                 aria-label="Facebook"
                 className={styles.socialIcon}
               >
@@ -89,7 +89,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/ananda.utsav/?hl=en"
                 aria-label="Instagram"
                 className={styles.socialIcon}
               >
@@ -97,7 +97,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://youtube.com/@anandautsav3988?si=fdgd5jvCrwGCWaTq"
                 aria-label="YouTube"
                 className={styles.socialIcon}
               >
@@ -177,7 +177,7 @@ export default function Footer() {
 
               {/* PHONE */}
 
-              <div className={styles.contactItem}>
+              {/* <div className={styles.contactItem}>
 
                 <div className={styles.contactIcon}>
                   <FaPhone />
@@ -191,7 +191,7 @@ export default function Footer() {
                   </a>
                 </div>
 
-              </div>
+              </div> */}
 
 
               {/* EMAIL */}

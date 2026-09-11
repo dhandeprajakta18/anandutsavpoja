@@ -5,7 +5,7 @@
 .contactSection {
   position: relative;
 
-  padding: 70px 0 90px;
+  padding: 75px 0 95px;
 
   background:
     radial-gradient(
@@ -47,9 +47,9 @@
   font-family: var(--heading-font);
 
   font-size: clamp(
-    2.7rem,
-    4vw,
-    4rem
+    3rem,
+    4.5vw,
+    4.4rem
   );
 
   font-weight: 600;
@@ -68,15 +68,15 @@
 }
 
 .divider {
-  width: 100px;
+  width: 110px;
 
-  margin: 18px 0;
+  margin: 21px 0 25px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 }
 
 .divider span {
@@ -84,44 +84,15 @@
 
   height: 1px;
 
-  background:
-    rgba(177, 119, 50, 0.5);
+  background: rgba(177, 119, 50, 0.5);
 }
 
 .divider i {
   color: #ae7834;
 
-  font-size: 6px;
+  font-size: 7px;
 
   font-style: normal;
-}
-
-.intro {
-  max-width: 460px;
-
-  margin: 0;
-
-  color: #493934;
-
-  font-family: var(--heading-font);
-
-  font-size: 17px;
-
-  font-weight: 600;
-
-  line-height: 1.6;
-}
-
-.description {
-  max-width: 470px;
-
-  margin: 12px 0 0;
-
-  color: #71605a;
-
-  font-size: 11.5px;
-
-  line-height: 1.8;
 }
 
 /* =========================
@@ -129,24 +100,40 @@
 ========================= */
 
 .involvementOptions {
-  margin-top: 25px;
+  margin-top: 28px;
 
   display: grid;
 
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 12px;
+  gap: 14px;
 }
 
 .involvementCard {
-  padding: 16px;
+  padding: 20px 19px;
 
   border:
     1px solid rgba(176, 117, 49, 0.3);
 
   background:
     rgba(255, 253, 248, 0.72);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.involvementCard:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(176, 117, 49, 0.5);
+
+  box-shadow:
+    0 8px 25px
+      rgba(89, 40, 19, 0.06);
 }
 
 .involvementCard > span {
@@ -154,49 +141,49 @@
 
   color: #a47536;
 
-  font-size: 7px;
+  font-size: 9px;
 
   font-weight: 700;
 
-  letter-spacing: 1.2px;
+  letter-spacing: 1.4px;
 }
 
 .involvementCard h3 {
-  margin: 5px 0 6px;
+  margin: 7px 0 9px;
 
   color: #80150f;
 
   font-family: var(--heading-font);
 
-  font-size: 19px;
+  font-size: 22px;
 
   font-weight: 600;
 
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .involvementCard p {
   margin: 0;
 
-  color: #71605a;
+  color: #665650;
 
-  font-size: 9.5px;
+  font-size: 12.5px;
 
-  line-height: 1.55;
+  line-height: 1.7;
 }
 
 .involvementCard a {
   display: inline-block;
 
-  margin-top: 10px;
+  margin-top: 13px;
 
   color: #881810;
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 700;
 
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
 
   text-transform: uppercase;
 }
@@ -210,28 +197,32 @@
 ========================= */
 
 .contactList {
-  margin-top: 27px;
+  margin-top: 32px;
 
   display: flex;
 
   flex-direction: column;
 
-  gap: 18px;
+  gap: 24px;
 }
 
 .contactItem {
   display: grid;
 
-  grid-template-columns: 46px 1fr;
+  grid-template-columns: 55px 1fr;
 
-  gap: 14px;
+  gap: 16px;
 
   align-items: center;
 }
 
+.contactContent {
+  min-width: 0;
+}
+
 .iconCircle {
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
 
   display: flex;
 
@@ -247,43 +238,51 @@
 
   color: #881810;
 
-  font-size: 14px;
+  font-size: 18px;
 
   box-shadow:
-    0 0 0 4px
+    0 0 0 5px
       rgba(180, 122, 51, 0.06);
 }
 
 .contactLabel {
   display: block;
 
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 
-  color: #a47536;
+  color: #9b6b32;
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 700;
 
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
 
   text-transform: uppercase;
 }
+
+/*
+   Simple readable font instead of
+   the decorative heading font.
+*/
 
 .contactTitle {
   display: block;
 
   margin: 0;
 
-  color: #5c4540;
+  color: #4f403b;
 
-  font-family: var(--heading-font);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 14px;
+  font-size: 15px;
 
   font-weight: 600;
 
-  line-height: 1.4;
+  line-height: 1.55;
 
   text-decoration: none;
 }
@@ -293,11 +292,22 @@ a.contactTitle:hover {
 }
 
 .contactText {
-  margin: 2px 0 0;
+  max-width: 430px;
 
-  color: #907970;
+  margin: 4px 0 0;
 
-  font-size: 9.5px;
+  color: #75645d;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12.5px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
 }
 
 /* =========================
@@ -305,9 +315,9 @@ a.contactTitle:hover {
 ========================= */
 
 .socialSection {
-  margin-top: 25px;
+  margin-top: 32px;
 
-  padding-top: 18px;
+  padding-top: 22px;
 
   border-top:
     1px solid rgba(166, 111, 49, 0.2);
@@ -316,26 +326,26 @@ a.contactTitle:hover {
 .socialSection > span {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 
-  color: #9b713f;
+  color: #8f6332;
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 700;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.7px;
 }
 
 .socials {
   display: flex;
 
-  gap: 8px;
+  gap: 12px;
 }
 
 .socials a {
-  width: 31px;
-  height: 31px;
+  width: 42px;
+  height: 42px;
 
   display: flex;
 
@@ -343,15 +353,19 @@ a.contactTitle:hover {
   justify-content: center;
 
   border:
-    1px solid rgba(134, 21, 15, 0.25);
+    1px solid rgba(134, 21, 15, 0.3);
 
   border-radius: 50%;
 
   color: #86150f;
 
-  font-size: 11px;
+  font-size: 16px;
 
-  transition: 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .socials a:hover {
@@ -361,7 +375,7 @@ a.contactTitle:hover {
 
   color: #f5c86f;
 
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* =========================
@@ -457,15 +471,15 @@ a.contactTitle:hover {
   left: -22px;
   bottom: 24px;
 
-  min-width: 240px;
+  min-width: 260px;
 
-  padding: 13px 18px;
+  padding: 15px 20px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 13px;
 
   background: #78100a;
 
@@ -481,16 +495,18 @@ a.contactTitle:hover {
 
 .imageCaption > span {
   color: #dfae55;
+
+  font-size: 15px;
 }
 
 .imageCaption small {
   display: block;
 
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 
   color: #dca74e;
 
-  font-size: 7px;
+  font-size: 9px;
 
   font-weight: 700;
 
@@ -502,7 +518,7 @@ a.contactTitle:hover {
 
   font-family: var(--heading-font);
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* =========================
@@ -512,38 +528,17 @@ a.contactTitle:hover {
 .formSection {
   width: min(90%, 900px);
 
-  /*
-   * This negative margin brings the
-   * form upward so the user sees that
-   * another section continues below.
-   */
-  margin: 55px auto 0;
+  margin: 70px auto 0;
 
   scroll-margin-top: 100px;
 }
 
 .formIntro {
-  max-width: 580px;
+  max-width: 600px;
 
-  margin: 0 auto 24px;
+  margin: 0 auto 28px;
 
   text-align: center;
-}
-
-.formIntro > span {
-  display: block;
-
-  margin-bottom: 7px;
-
-  color: #a47536;
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
 }
 
 .formIntro h2 {
@@ -554,9 +549,9 @@ a.contactTitle:hover {
   font-family: var(--heading-font);
 
   font-size: clamp(
-    2rem,
+    2.3rem,
     4vw,
-    3rem
+    3.3rem
   );
 
   font-weight: 600;
@@ -565,15 +560,15 @@ a.contactTitle:hover {
 }
 
 .formIntro p {
-  max-width: 480px;
+  max-width: 500px;
 
-  margin: 10px auto 0;
+  margin: 12px auto 0;
 
-  color: #71605a;
+  color: #665650;
 
-  font-size: 11px;
+  font-size: 13px;
 
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* =========================
@@ -617,13 +612,13 @@ a.contactTitle:hover {
 }
 
 .formTop {
-  padding: 18px 24px 16px;
+  padding: 20px 26px 18px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 13px;
 
   border-bottom:
     1px solid rgba(178, 120, 50, 0.2);
@@ -636,17 +631,17 @@ a.contactTitle:hover {
 .formTop > span {
   color: #dfad54;
 
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .formTop small {
   display: block;
 
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 
   color: #dca950;
 
-  font-size: 7px;
+  font-size: 9px;
 
   font-weight: 700;
 
@@ -660,7 +655,7 @@ a.contactTitle:hover {
 
   font-family: var(--heading-font);
 
-  font-size: 22px;
+  font-size: 25px;
 
   font-weight: 500;
 }
@@ -670,7 +665,7 @@ a.contactTitle:hover {
 ========================= */
 
 .form {
-  padding: 24px;
+  padding: 28px;
 
   background: #fffdf8;
 }
@@ -681,21 +676,21 @@ a.contactTitle:hover {
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 16px;
+  gap: 18px;
 }
 
 .field {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .field label {
   display: block;
 
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 
-  color: #674e47;
+  color: #5c4943;
 
-  font-size: 9px;
+  font-size: 11px;
 
   font-weight: 700;
 
@@ -711,12 +706,12 @@ a.contactTitle:hover {
 .field textarea {
   width: 100%;
 
-  padding: 12px 13px;
+  padding: 14px 14px;
 
   outline: none;
 
   border:
-    1px solid rgba(153, 111, 76, 0.25);
+    1px solid rgba(153, 111, 76, 0.28);
 
   border-radius: 0;
 
@@ -724,9 +719,12 @@ a.contactTitle:hover {
 
   color: #493934;
 
-  font: inherit;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 10.5px;
+  font-size: 13px;
 
   transition:
     border-color 0.25s ease,
@@ -735,16 +733,16 @@ a.contactTitle:hover {
 }
 
 .field textarea {
-  min-height: 100px;
+  min-height: 120px;
 
   resize: vertical;
 
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #ac9990;
+  color: #a18f87;
 }
 
 .field input:focus,
@@ -761,22 +759,23 @@ a.contactTitle:hover {
 }
 
 /* =========================
-   SUBMIT
+   SUBMIT BUTTON
 ========================= */
 
 .submitButton {
   width: 100%;
 
-  min-height: 44px;
+  min-height: 50px;
 
-  border: 1px solid #82140e;
+  border:
+    1px solid #82140e;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
+  gap: 11px;
 
   background: #82140e;
 
@@ -784,21 +783,27 @@ a.contactTitle:hover {
 
   cursor: pointer;
 
-  font-family: var(--heading-font);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 11px;
+  font-size: 12px;
 
   font-weight: 700;
 
-  letter-spacing: 0.7px;
+  letter-spacing: 0.8px;
 
   text-transform: uppercase;
 
-  transition: 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .submitButton svg {
-  font-size: 10px;
+  font-size: 12px;
 
   transition:
     transform 0.3s ease;
@@ -813,7 +818,7 @@ a.contactTitle:hover {
 }
 
 .submitButton:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* =========================
@@ -821,20 +826,20 @@ a.contactTitle:hover {
 ========================= */
 
 .formBottom {
-  padding: 13px 20px;
+  padding: 15px 20px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 9px;
 
   background: #f5e8d6;
 }
 
 .formBottom span {
-  width: 30px;
+  width: 32px;
   height: 1px;
 
   background:
@@ -844,7 +849,7 @@ a.contactTitle:hover {
 .formBottom i {
   color: #ad7937;
 
-  font-size: 5px;
+  font-size: 6px;
 
   font-style: normal;
 }
@@ -854,7 +859,7 @@ a.contactTitle:hover {
 
   color: #8a261d;
 
-  font-size: 10px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -864,7 +869,7 @@ a.contactTitle:hover {
 ========================= */
 
 .bottomMessage {
-  padding: 55px 20px;
+  padding: 65px 20px;
 
   background:
     radial-gradient(
@@ -878,7 +883,7 @@ a.contactTitle:hover {
 }
 
 .bottomInner {
-  max-width: 650px;
+  max-width: 680px;
 
   margin: 0 auto;
 }
@@ -891,14 +896,14 @@ a.contactTitle:hover {
   font-family: var(--heading-font);
 
   font-size: clamp(
-    2rem,
+    2.2rem,
     4vw,
-    3rem
+    3.3rem
   );
 
   font-weight: 500;
 
-  line-height: 1.05;
+  line-height: 1.08;
 
   text-transform: uppercase;
 }
@@ -912,12 +917,14 @@ a.contactTitle:hover {
 }
 
 .bottomInner p {
-  margin-top: 13px;
+  margin-top: 16px;
 
   color:
-    rgba(241, 192, 103, 0.85);
+    rgba(241, 192, 103, 0.9);
 
-  font-size: 13px;
+  font-size: 15px;
+
+  line-height: 1.6;
 }
 
 /* =========================
@@ -948,7 +955,7 @@ a.contactTitle:hover {
   .formSection {
     width: min(90%, 760px);
 
-    margin-top: 65px;
+    margin-top: 70px;
   }
 }
 
@@ -958,21 +965,59 @@ a.contactTitle:hover {
 
 @media (max-width: 600px) {
   .contactSection {
-    padding: 55px 0 70px;
+    padding: 55px 0 75px;
   }
 
   .container {
     width: 88%;
 
-    gap: 45px;
+    gap: 48px;
   }
 
   .infoSide h1 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .involvementOptions {
     grid-template-columns: 1fr;
+  }
+
+  .involvementCard {
+    padding: 19px;
+  }
+
+  .involvementCard h3 {
+    font-size: 21px;
+  }
+
+  .involvementCard p {
+    font-size: 12.5px;
+  }
+
+  .contactItem {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .iconCircle {
+    width: 47px;
+    height: 47px;
+
+    font-size: 17px;
+  }
+
+  .contactTitle {
+    font-size: 14px;
+  }
+
+  .contactText {
+    font-size: 12px;
+  }
+
+  .socials a {
+    width: 40px;
+    height: 40px;
+
+    font-size: 15px;
   }
 
   .imageInner {
@@ -985,13 +1030,13 @@ a.contactTitle:hover {
 
     bottom: -22px;
 
-    min-width: 210px;
+    min-width: 230px;
   }
 
   .formSection {
     width: 88%;
 
-    margin-top: 75px;
+    margin-top: 80px;
   }
 
   .formRow {
@@ -1001,11 +1046,17 @@ a.contactTitle:hover {
   }
 
   .form {
-    padding: 22px 19px;
+    padding: 24px 20px;
   }
 
   .formTop {
-    padding: 18px 19px;
+    padding: 19px 20px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 13px;
   }
 }
 
@@ -1019,7 +1070,7 @@ a.contactTitle:hover {
   }
 
   .infoSide h1 {
-    font-size: 2.15rem;
+    font-size: 2.3rem;
   }
 
   .imageCaption {
@@ -1038,11 +1089,19 @@ a.contactTitle:hover {
   .formSection {
     width: 90%;
 
-    margin-top: 55px;
+    margin-top: 60px;
   }
 
   .formIntro h2 {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+
+  .formIntro p {
+    font-size: 12.5px;
+  }
+
+  .formTop h3 {
+    font-size: 22px;
   }
 
   .formBottom span {
@@ -1050,6 +1109,23 @@ a.contactTitle:hover {
   }
 
   .formBottom p {
+    font-size: 11px;
+
     text-align: center;
+  }
+
+  .contactTitle {
+    font-size: 13.5px;
+  }
+
+  .contactText {
+    font-size: 11.5px;
+  }
+
+  .socials a {
+    width: 39px;
+    height: 39px;
+
+    font-size: 15px;
   }
 }
