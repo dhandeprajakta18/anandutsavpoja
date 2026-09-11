@@ -216,12 +216,13 @@ export default function SocialActivitiesClient({
         <div className={styles.container}>
           <div className={styles.featuredInner}>
             <div className={styles.featuredImage}>
-              <Image
-                src="/csr/WhatsApp Image 2026-09-01 at 6.00.13 PM.jpeg"
-                alt="Community social activity"
-                fill
-                sizes="(max-width: 800px) 100vw, 50vw"
-              />
+            <Image
+  src="/real/csr.jpeg"
+  alt="Ananda Utsav community outreach"
+  fill
+  sizes="(max-width: 800px) 100vw, 50vw"
+  className={styles.activityImage}
+/>
 
               <div
                 className={styles.featuredImageBorder}
