@@ -1,3 +1,4 @@
+//app/gallery/GalleryGrid.tsx
 "use client";
 
 import {

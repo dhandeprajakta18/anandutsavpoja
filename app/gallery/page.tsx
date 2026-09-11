@@ -1,8 +1,14 @@
+// app/gallery/page.tsx
+
 import fs from "fs";
 import path from "path";
 
 import styles from "./Gallery.module.css";
 import GalleryGrid from "./GalleryGrid";
+
+/* =====================================
+   TYPES
+===================================== */
 
 export type GalleryImage = string;
 
@@ -11,6 +17,12 @@ export type GalleryCategory = {
   label: string;
   images: GalleryImage[];
 };
+
+/* =====================================
+   ALWAYS READ CURRENT FOLDER
+===================================== */
+
+export const dynamic = "force-dynamic";
 
 /* =====================================
    ALLOWED IMAGE TYPES
@@ -25,10 +37,10 @@ const allowedExtensions = [
 ];
 
 /* =====================================
-   READ IMAGES FROM PUBLIC FOLDER
+   NORMAL GALLERY IMAGES
 ===================================== */
 
-function getImagesFromFolder(
+function getGalleryImages(
   folderName: string
 ): GalleryImage[] {
   const directory = path.join(
@@ -37,16 +49,11 @@ function getImagesFromFolder(
     folderName
   );
 
-  /*
-   * If folder does not exist,
-   * return empty array instead of
-   * breaking the page.
-   */
   if (!fs.existsSync(directory)) {
     return [];
   }
 
-  return fs
+  const files = fs
     .readdirSync(directory)
     .filter((fileName) => {
       const extension = path
@@ -57,40 +64,129 @@ function getImagesFromFolder(
         extension
       );
     })
-
-    /*
-     * Keep files ordered naturally.
-     *
-     * Example:
-     * image 1
-     * image 2
-     * image 10
-     *
-     * instead of:
-     * image 1
-     * image 10
-     * image 2
-     */
     .sort((a, b) =>
       a.localeCompare(b, undefined, {
         numeric: true,
         sensitivity: "base",
       })
+    );
+
+  /*
+   * Remove duplicate file names
+   */
+  const uniqueFiles = [
+    ...new Set(files),
+  ];
+
+  return uniqueFiles.map(
+    (fileName) =>
+      `/${folderName}/${fileName}`
+  );
+}
+
+/* =====================================
+   MEMBERS IMAGES
+===================================== */
+
+function getMemberImages(): GalleryImage[] {
+  const folderName = "member";
+
+  const directory = path.join(
+    process.cwd(),
+    "public",
+    folderName
+  );
+
+  if (!fs.existsSync(directory)) {
+    return [];
+  }
+
+  /*
+   * We ONLY accept member images
+   * following this naming format:
+   *
+   * row1.1.jpeg
+   * row1.2.jpeg
+   * row1.3.jpeg
+   * row1.4.jpeg
+   *
+   * row2.1.jpeg
+   * row2.2.jpeg
+   * ...
+   */
+
+  const rowImagePattern =
+    /^row(\d+)\.(\d+)\.(jpg|jpeg|png|webp|avif)$/i;
+
+  const files = fs
+    .readdirSync(directory)
+
+    /*
+     * Only allow rowX.X images.
+     *
+     * This prevents old WhatsApp images
+     * or previous files in /member
+     * from showing again.
+     */
+    .filter((fileName) =>
+      rowImagePattern.test(fileName)
     )
 
     /*
-     * Convert:
+     * Sort by:
      *
-     * public/gallery/photo.jpeg
+     * row1.1
+     * row1.2
+     * row1.3
+     * row1.4
      *
-     * into:
-     *
-     * /gallery/photo.jpeg
+     * row2.1
+     * row2.2
+     * row2.3
+     * row2.4
      */
-    .map(
-      (fileName) =>
-        `/${folderName}/${fileName}`
-    );
+    .sort((a, b) => {
+      const aMatch =
+        a.match(rowImagePattern);
+
+      const bMatch =
+        b.match(rowImagePattern);
+
+      if (!aMatch || !bMatch) {
+        return 0;
+      }
+
+      const aRow = Number(aMatch[1]);
+      const aColumn = Number(aMatch[2]);
+
+      const bRow = Number(bMatch[1]);
+      const bColumn = Number(bMatch[2]);
+
+      /*
+       * First sort by row.
+       */
+      if (aRow !== bRow) {
+        return aRow - bRow;
+      }
+
+      /*
+       * Then sort by position
+       * inside that row.
+       */
+      return aColumn - bColumn;
+    });
+
+  /*
+   * Extra duplicate protection
+   */
+  const uniqueFiles = [
+    ...new Set(files),
+  ];
+
+  return uniqueFiles.map(
+    (fileName) =>
+      `/member/${fileName}`
+  );
 }
 
 /* =====================================
@@ -99,18 +195,26 @@ function getImagesFromFolder(
 
 export default function GalleryPage() {
   /*
-   * Automatically read all images
-   * from public/gallery
+   * DURGA PUJA
+   *
+   * Reads every supported image
+   * inside public/gallery
    */
   const galleryImages =
-    getImagesFromFolder("gallery");
+    getGalleryImages("gallery");
 
   /*
-   * Automatically read all images
-   * from public/member
+   * MEMBERS
+   *
+   * Only reads files named:
+   *
+   * row1.1.jpeg
+   * row1.2.jpeg
+   * row2.1.jpeg
+   * etc.
    */
   const memberImages =
-    getImagesFromFolder("member");
+    getMemberImages();
 
   const galleryCategories: GalleryCategory[] =
     [
@@ -160,9 +264,9 @@ export default function GalleryPage() {
           </p>
 
           <p className={styles.description}>
-            A collection of moments filled with
-            devotion, colour, culture, laughter
-            and togetherness.
+            A collection of moments filled
+            with devotion, colour, culture,
+            laughter and togetherness.
           </p>
         </div>
       </section>
@@ -179,7 +283,9 @@ export default function GalleryPage() {
           className={styles.galleryContainer}
         >
           <GalleryGrid
-            categories={galleryCategories}
+            categories={
+              galleryCategories
+            }
           />
         </div>
       </section>
