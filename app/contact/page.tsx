@@ -23,7 +23,7 @@ const contactDetails = [
     label: "Visit Us",
     title: "Ananda Utsav Cultural Association",
     text:
-      "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Goregaon West, Mumbai. Next to Ozone Swimming Pool.",
+      "Trento Lawns, Shrirang Sabde Marg, Siddharth Nagar, Next to Ozone Swimming Pool. Goregaon West, Mumbai. ",
   },
   {
     icon: FaEnvelope,
