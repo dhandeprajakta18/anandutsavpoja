@@ -1,3 +1,4 @@
+//app/contact/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
@@ -6,8 +7,10 @@ import {
   FaFacebookF,
   FaInstagram,
   FaYoutube,
-  FaPaperPlane,
 } from "react-icons/fa6";
+
+import ContactForm from "./ContactForm";
+
 
 import styles from "./Contact.module.css";
 
@@ -28,8 +31,8 @@ const contactDetails = [
   {
     icon: FaEnvelope,
     label: "Write To Us",
-    title: "info@anandautsav.org",
-    href: "mailto:info@anandautsav.org",
+    title: "anandautsavpuja@gmail.com",
+    href: "mailto:anandautsavpuja@gmail.com",
     text: "We would love to hear from you",
   },
 ];
@@ -255,8 +258,8 @@ export default async function ContactPage({
                 <h3>Send Us A Message</h3>
               </div>
             </div>
-
-            <form className={styles.form}>
+<ContactForm selectedInterest={selectedInterest ?? ""} />
+            {/* <form className={styles.form}>
               <div className={styles.formRow}>
                 <div className={styles.field}>
                   <label htmlFor="name">
@@ -377,7 +380,7 @@ export default async function ContactPage({
                 <span>Send Message</span>
                 <FaPaperPlane />
               </button>
-            </form>
+            </form> */}
 
             <div className={styles.formBottom}>
               <span />

@@ -205,8 +205,8 @@ export default function Footer() {
                 <div>
                   <span>Email Us</span>
 
-                  <a href="mailto:info@anandautsav.org">
-                    info@anandautsav.org
+                  <a href="mailto:anandautsavpuja@gmail.com">
+                    anandautsavpuja@gmail.com
                   </a>
                 </div>
 
