@@ -271,17 +271,9 @@ export default function Footer() {
             All Rights Reserved.
           </p>
 
-          <p className={styles.credit}>
-            Designed & Developed by{" "}
-
-            <a
-              href="https://planetdezign.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Planet Dezign
-            </a>
-          </p>
+         <p className={styles.credit}>
+  Designed & Developed by <strong>Planet Dezign</strong>
+</p>
 
           <div className={styles.bottomLinks}>
 

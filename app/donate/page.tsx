@@ -188,7 +188,7 @@ export default function DonatePage() {
 
             <div className={styles.bankDivider}>
               <span />
-              <i>◆</i>
+              {/* <i>◆</i> */}
               <span />
             </div>
 
