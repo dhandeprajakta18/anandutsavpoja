@@ -1,4 +1,5 @@
-//app/layout.tsx
+// app/layout.tsx
+
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
@@ -14,6 +15,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://anandautsavpuja.com"),
+
   title: {
     default: "Ananda Utsav | Celebrating Tradition, Culture & Togetherness",
     template: "%s | Ananda Utsav",
@@ -39,11 +42,37 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Ananda Utsav | Celebrating Tradition, Culture & Togetherness",
+
     description:
       "Celebrating devotion, Bengali heritage, culture and community through Durga Puja, festivities and social initiatives.",
+
+    url: "https://anandautsavpuja.com",
+
     type: "website",
+
     locale: "en_IN",
+
     siteName: "Ananda Utsav",
+
+    images: [
+      {
+        url: "/images/logonew.png",
+        width: 1024,
+        height: 1024,
+        alt: "Ananda Utsav",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Ananda Utsav | Celebrating Tradition, Culture & Togetherness",
+
+    description:
+      "Celebrating devotion, Bengali heritage, culture and community through Durga Puja, festivities and social initiatives.",
+
+    images: ["/images/logonew.png"],
   },
 
   robots: {
@@ -63,7 +92,6 @@ export default function RootLayout({
       className={`${geistSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-
         {/* GLOBAL NAVBAR */}
         <Navbar />
 
@@ -77,7 +105,6 @@ export default function RootLayout({
 
         {/* ALWAYS-AVAILABLE DONATE LINK */}
         <FloatingDonate />
-
       </body>
     </html>
   );
